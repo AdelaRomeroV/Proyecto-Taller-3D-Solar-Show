@@ -18,19 +18,13 @@ public class Spawn : MonoBehaviour
     {
         while (true)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 4; i++)
             {
                 Vector3 spawnPosition = transform.position + new Vector3(
                 Random.Range(-spawnSize.x / 2f, spawnSize.x / 2f),
                 Random.Range(-spawnSize.y / 2f, spawnSize.y / 2f),
                 Random.Range(-spawnSize.z / 2f, spawnSize.z / 2f));
-                GameObject meteor = Instantiate(meteorPrefab, spawnPosition, Quaternion.identity);
-
-                Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
-                if (meteorRb != null)
-                {
-                    meteorRb.velocity += Vector3.down * (Random.Range(10, 50));
-                }
+                Instantiate(meteorPrefab, spawnPosition, Quaternion.identity);
             }
             yield return new WaitForSeconds(spawnInterval);
         }
