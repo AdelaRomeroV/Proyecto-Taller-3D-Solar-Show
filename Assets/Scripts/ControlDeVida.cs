@@ -5,6 +5,12 @@ using UnityEngine;
 public class ControlDeVida : MonoBehaviour
 {
     public bool recibioDaño = false;
+    private Turbo turboPlayer;
+
+    private void Awake()
+    {
+        turboPlayer = GetComponent<Turbo>();
+    }
 
     private void FixedUpdate()
     {
@@ -14,6 +20,12 @@ public class ControlDeVida : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Pared"))
         {
+            turboPlayer.GestionarEnergia(20);
+            recibioDaño = true;
+        }
+        if (collision.gameObject.CompareTag("Hazards"))
+        {
+            turboPlayer.GestionarEnergia(10);
             recibioDaño = true;
         }
     }
@@ -21,6 +33,7 @@ public class ControlDeVida : MonoBehaviour
     {
         if (other.CompareTag("AtaqueEnemigo"))
         {
+            turboPlayer.GestionarEnergia(2);
             recibioDaño = true;
         }
     }

@@ -12,6 +12,7 @@ public class Mov : MonoBehaviour
     public float aceleracion = 5f;
     public float velocidadMaxima = 10f;
     public float fuerzaFreno = 5f;
+    public bool onStun = false;
 
     [Header("Giro")]
     public float velocidadGiro = 2f;
@@ -52,12 +53,20 @@ public class Mov : MonoBehaviour
 
     void FixedUpdate()
     {
-        GestionarAceleracion();
-        GestionarGiro();
-        GestionarBoost();
-        AplicarVelocidad();
-        GestionarTurbo();
-        ColorChanges();
+        if (!onStun)
+        {
+            GestionarAceleracion();
+            GestionarGiro();
+            GestionarBoost();
+            AplicarVelocidad();
+            GestionarTurbo();
+            ColorChanges();
+        }
+    }
+
+    public void OffStun()
+    {
+        onStun = false;
     }
 
     void GestionarAceleracion()

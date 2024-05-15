@@ -32,19 +32,15 @@ public class Turbo : MonoBehaviour
         //Efecto de suavizado para la barra
         BarraDeEnergia.fillAmount = Mathf.Lerp(BarraDeEnergia.fillAmount, EnergiaActual/100, 2 * Time.deltaTime);
 
-
         UsingTurbo();
         ReloadBar();
-        GestionarEnergia();
         SideKick();
     }
 
-    private void GestionarEnergia()
+    public void GestionarEnergia(int a)
     {
-        if (controlVida.recibioDaño)
-        {
-            EnergiaActual = EnergiaActual - 5;
-        }
+        EnergiaActual = EnergiaActual - a;
+
     }
 
     void UsingTurbo()
