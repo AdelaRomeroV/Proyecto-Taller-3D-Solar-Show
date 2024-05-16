@@ -9,6 +9,7 @@ public class Aplastador : MonoBehaviour
     private Rigidbody rb;
     public bool isFalling = true;
     private Mov player;
+    public bool inicio;
 
     private void Start()
     {
@@ -27,16 +28,15 @@ public class Aplastador : MonoBehaviour
             while (isFalling)
             {
                 DowCrusher();
+                inicio = false;
                 yield return null;
             }
 
-            while (Vector3.Distance(transform.position, startPoint.position) >= 0.1f)
+            while (!inicio)
             {
                 UpCrushed();
                 yield return null;
             }
-
-            transform.position = startPoint.position;
         }
     }
 
@@ -62,6 +62,10 @@ public class Aplastador : MonoBehaviour
             player.velocidadActual = 0;
             player.onStun = true;
             player.Invoke("OffStun", 1f);
+        }
+        if (collision.gameObject.CompareTag("Point"))
+        {
+            inicio = true;
         }
     }
 }

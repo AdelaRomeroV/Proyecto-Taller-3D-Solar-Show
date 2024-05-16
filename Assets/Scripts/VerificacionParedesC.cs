@@ -23,7 +23,7 @@ public class VerificacionParedesC : MonoBehaviour
             paredB.IniciarCorutina();
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         StartCoroutine(RepetirVerificacion());
     }
 }

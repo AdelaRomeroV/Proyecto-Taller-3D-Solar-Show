@@ -34,7 +34,7 @@ public class ParedPuasB : MonoBehaviour
                 yield return null;
             }
 
-            while (Vector3.Distance(transform.position, startPoint.position) >= 1.1f && !inicio)
+            while (!inicio)
             {
                 RightCrushed();
                 yield return null;
