@@ -7,19 +7,23 @@ public class VerificacionParedesC : MonoBehaviour
     private ParedPuasA paredA;
     private ParedPuasB paredB;
 
-    public bool cerrarpuerta;
-
     private void Start()
     {
         paredA = GetComponentInChildren<ParedPuasA>();
         paredB = GetComponentInChildren<ParedPuasB>();
+
+        StartCoroutine(RepetirVerificacion());
     }
 
-    private void Update()
+    IEnumerator RepetirVerificacion()
     {
         if (paredA.inicio && paredB.inicio)
         {
-            cerrarpuerta = true;
+            paredA.IniciarCorutina();
+            paredB.IniciarCorutina();
         }
+
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(RepetirVerificacion());
     }
 }

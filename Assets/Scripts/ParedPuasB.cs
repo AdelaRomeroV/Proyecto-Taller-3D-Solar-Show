@@ -15,35 +15,30 @@ public class ParedPuasB : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Mov>();
+    }
+
+    public void IniciarCorutina()
+    {
         StartCoroutine(CrushRoutine());
     }
 
     private IEnumerator CrushRoutine()
     {
-        while (true)
-        {
-                yield return new WaitForSeconds(2f);
-                isFalling = true;
+            yield return new WaitForSeconds(2f);
+            isFalling = true;
 
-                while (isFalling)
-                {
-                    LeftCrusher();
-                    inicio = false;
-                    yield return null;
-                }
+            while (isFalling)
+            {
+                LeftCrusher();
+                inicio = false;
+                yield return null;
+            }
 
-                while (Vector3.Distance(transform.position, startPoint.position) >= 0.1f)
-                {
-                    RightCrushed();
-                    yield return null;
-                }
-
-                transform.position = startPoint.position;
-                if (transform.position == startPoint.position)
-                {
-                    inicio = true;
-                }
-        }
+            while (Vector3.Distance(transform.position, startPoint.position) >= 1.1f && !inicio)
+            {
+                RightCrushed();
+                yield return null;
+            }
     }
 
     private void LeftCrusher()
@@ -69,5 +64,9 @@ public class ParedPuasB : MonoBehaviour
             player.onStun = true;
             player.Invoke("OffStun", 1f);
         }
+        if (collision.gameObject.CompareTag("Point"))
+        {
+            inicio = true;
+        }
     }
-}
+} 

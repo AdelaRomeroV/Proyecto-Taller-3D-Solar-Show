@@ -9,6 +9,7 @@ TagManager:
   - Peligro
   - Suelo
   - Hazards
+  - Point
   layers:
   - Default
   - TransparentFX
