@@ -23,23 +23,18 @@ public class Dialogo : MonoBehaviour
 
     void Update()
     {
-        if(isPlayerInRange)
+        if (didDialogueStart)
         {
-            if (!didDialogueStart) 
-            { 
-                StartDialogue(); 
-            }
 
-            else if (dialogueText.text == dialogueLine[lineaIndex].line) 
-            { 
-                NextDialogueLine(); 
+            if (dialogueText.text == dialogueLine[lineaIndex].line)
+            {
+                NextDialogueLine();
             }
-
-            else
-            { 
-                StopAllCoroutines(); 
-                dialogueText.text = dialogueLine[lineaIndex].line;
-            }
+            //else
+            //{ 
+            //    StopAllCoroutines(); 
+            //    dialogueText.text = dialogueLine[lineaIndex].line;
+            //}
         }
     }
 
@@ -54,44 +49,47 @@ public class Dialogo : MonoBehaviour
 
     private void NextDialogueLine()
     {
-       lineaIndex++;
-        if(lineaIndex < dialogueLine.Length)
+        lineaIndex++;
+        if (lineaIndex < dialogueLine.Length)
         {
             StartCoroutine(ShowLine());
         }
 
         else
         {
-            didDialogueStart = false;
-            dialoguePanel.SetActive(false);
-            Time.timeScale = 1f;
-
+            StartCoroutine(LastDialogue());
         }
     }
 
     private IEnumerator ShowLine()
     {
+        yield return new WaitForSecondsRealtime(1);
         dialogueText.text = string.Empty;
-        foreach(char ch in dialogueLine[lineaIndex].line)
+
+        foreach (char ch in dialogueLine[lineaIndex].line)
         {
             dialogueText.text += ch;
             yield return new WaitForSecondsRealtime(typingTime);
         }
     }
 
+    private IEnumerator LastDialogue()
+    {
+        didDialogueStart = false;
+        yield return new WaitForSecondsRealtime(1);
+        dialoguePanel.SetActive(false);
+        Time.timeScale = 1f;
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            isPlayerInRange = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            isPlayerInRange = false;
+            if (!didDialogueStart)
+            {
+                StartDialogue();
+            }
         }
     }
 
