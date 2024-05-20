@@ -43,7 +43,7 @@ public class Dialogo : MonoBehaviour
         didDialogueStart = true;
         dialoguePanel.SetActive(true);
         lineaIndex = 0;
-        Time.timeScale = 3f;
+        Time.timeScale = 0f; //afecta en el movimiento del player
         StartCoroutine(ShowLine());
     }
 
