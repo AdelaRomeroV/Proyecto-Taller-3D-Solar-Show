@@ -25,7 +25,8 @@ public class ControlDeVida : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Hazards"))
         {
-            turboPlayer.GestionarEnergia(10);
+            CountPeligro turbo = collision.gameObject.GetComponent<CountPeligro>();
+            if(turbo != null) { turboPlayer.GestionarEnergia(turbo.count); }
             recibioDaño = true;
         }
     }

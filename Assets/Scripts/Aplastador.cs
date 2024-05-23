@@ -6,6 +6,7 @@ public class Aplastador : MonoBehaviour
 {
     public Transform startPoint;
     public float moveSpeed;
+    public float moveSpeedDeCaida;
     private Rigidbody rb;
     public bool isFalling = true;
     private Mov player;
@@ -42,7 +43,7 @@ public class Aplastador : MonoBehaviour
 
     private void DowCrusher()
     {
-        rb.MovePosition(transform.position + Vector3.down * 240 * Time.deltaTime);
+        rb.MovePosition(transform.position + Vector3.down * moveSpeedDeCaida * Time.deltaTime);
     }
 
     private void UpCrushed()

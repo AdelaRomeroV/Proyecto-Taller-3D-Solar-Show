@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9127870403411973515}
   - component: {fileID: 7169386920603418389}
   - component: {fileID: 7284943339170426551}
+  - component: {fileID: 8597455111658610904}
   m_Layer: 0
   m_Name: Meteoritos
   m_TagString: Hazards
@@ -146,3 +147,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267506e3dd5d6754a83019de8223335f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8597455111658610904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4684217220475641037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2baf5ec391dee55428089ed790e25a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 15

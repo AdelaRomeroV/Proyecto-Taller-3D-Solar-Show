@@ -152,11 +152,13 @@ public class Mov : MonoBehaviour
             tiempoBoostPresionado += Time.deltaTime;
             if (tiempoBoostPresionado >= tiempoBoostNecesario)
             {
+                turbo.reload = true;
                 boostActivado = true;
             }
         }
         else
         {
+            turbo.reload = false;
             if (boostActivado)
             {
                 velocidadMaxima += aumentoVelocidadBoost;

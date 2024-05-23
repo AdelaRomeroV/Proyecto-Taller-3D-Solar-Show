@@ -111,5 +111,10 @@ public class Turbo : MonoBehaviour
         {
             reload = false;
         }
+        if (other.CompareTag("HazardsPeligro"))
+        {
+            CountPeligro turbo = other.GetComponent<CountPeligro>();
+            if (turbo != null) { EnergiaActual += turbo.count; }
+        }
     }
 }
