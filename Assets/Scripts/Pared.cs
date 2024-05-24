@@ -26,9 +26,9 @@ public class Pared : MonoBehaviour
                 autoRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
                 autoRigidbody.velocity = Vector3.zero;
 
-                player.velocidadActual /= 2;
+                player.velocidadActual = 0;
                 player.onStun = true;
-                Invoke("OffStun", 0.25f);
+                Invoke("OffStun", 0.5f);
             }
         }
     }
