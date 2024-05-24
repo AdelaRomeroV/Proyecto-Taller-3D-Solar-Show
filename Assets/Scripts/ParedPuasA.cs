@@ -10,6 +10,7 @@ public class ParedPuasA : MonoBehaviour
     private bool isFalling = true;
     private Mov player;
     public bool inicio;
+    public bool anguloDeGiro;
 
     private void Start()
     {
@@ -23,7 +24,8 @@ public class ParedPuasA : MonoBehaviour
 
     private IEnumerator CrushRoutine()
     {
-
+        if(anguloDeGiro)
+        {
             yield return new WaitForSeconds(2f);
             isFalling = true;
 
@@ -39,6 +41,26 @@ public class ParedPuasA : MonoBehaviour
                 LeftCrusher();
                 yield return null;
             }
+        }
+        else
+        {
+            yield return new WaitForSeconds(2f);
+            isFalling = true;
+
+            while (isFalling)
+            {
+                MoveBackward();
+                inicio = false;
+                yield return null;
+            }
+
+            while (!inicio)
+            {
+                MoveForward();
+                yield return null;
+            }
+        }
+
     }
 
     private void LeftCrusher()
@@ -49,6 +71,16 @@ public class ParedPuasA : MonoBehaviour
     private void RightCrushed()
     {
         rb.MovePosition(transform.position + Vector3.right * 120 * Time.deltaTime);
+    }
+
+    private void MoveForward()
+    {
+        rb.MovePosition(transform.position + Vector3.forward * moveSpeed * Time.deltaTime);
+    }
+
+    private void MoveBackward()
+    {
+        rb.MovePosition(transform.position + Vector3.back * 120 * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)

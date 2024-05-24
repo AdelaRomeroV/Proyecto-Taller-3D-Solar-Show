@@ -11,7 +11,6 @@ public class Meteorito : MonoBehaviour
     private void Awake()
     {
         meteorRb = GetComponent<Rigidbody>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Mov>();
     }
     private void Start()
     {
@@ -26,10 +25,14 @@ public class Meteorito : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            player.velocidadActual = 0;
-            player.onStun = true;
-            player.Invoke("OffStun", 0.5f);
-            Destroy(gameObject);
+            player = collision.gameObject.GetComponent<Mov>();
+            if (player != null)
+            {
+                player.velocidadActual = 0;
+                player.onStun = true;
+                player.Invoke("OffStun", 0.5f);
+                Destroy(gameObject);
+            }
         }
     }
 }
