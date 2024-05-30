@@ -45,12 +45,12 @@ public class Turbo : MonoBehaviour
 
     void UsingTurbo()
     {
-        if (Input.GetKey(KeyCode.Space) && EnergiaActual > 0)
+        if (Input.GetKey(KeyCode.Space) && EnergiaActual > 10)
         {
             EnergiaActual -= 0.3f;
             TurboActivo = true;
         }
-        else if (Input.GetKeyUp(KeyCode.Space) || EnergiaActual <= 0)
+        else if (Input.GetKeyUp(KeyCode.Space) || EnergiaActual <= 10)
         {
             TurboActivo = false;
         }

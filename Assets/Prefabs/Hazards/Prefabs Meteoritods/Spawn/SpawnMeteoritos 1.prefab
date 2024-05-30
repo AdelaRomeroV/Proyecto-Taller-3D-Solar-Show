@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 7219358413746978616, guid: 1063523a1edd3074ebf3d908fe999605, type: 3}
   - {fileID: 2243282894642167783, guid: b9600d8a81ded0c4294da00574c76b5d, type: 3}
   - {fileID: 1262205925392268322, guid: af560ffa048c3af49b650b72b269ee00, type: 3}
-  spawnInterval: 2
+  spawnInterval: 4
 --- !u!1 &8970759953821651332
 GameObject:
   m_ObjectHideFlags: 0

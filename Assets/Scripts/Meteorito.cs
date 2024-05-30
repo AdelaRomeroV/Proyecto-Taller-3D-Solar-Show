@@ -14,14 +14,14 @@ public class Meteorito : MonoBehaviour
     }
     private void Start()
     {
-        meteorRb.velocity += Vector3.down * Random.Range(25, 75); 
+        meteorRb.velocity += Vector3.down * Random.Range(50, 100); 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Suelo"))
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 1);
         }
         if (collision.gameObject.CompareTag("Player"))
         {

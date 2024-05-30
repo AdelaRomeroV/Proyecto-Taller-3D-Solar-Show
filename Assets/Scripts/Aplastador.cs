@@ -6,6 +6,7 @@ public class Aplastador : MonoBehaviour
 {
     public Transform startPoint;
     public float moveSpeed;
+    public float moveSpeedDePrevcion;
     public float moveSpeedDeCaida;
     private Rigidbody rb;
     public bool isFalling = true;
@@ -26,14 +27,24 @@ public class Aplastador : MonoBehaviour
             yield return new WaitForSeconds(2f);
 
             isFalling = true;
+            float timeFalling = 0f;
             while (isFalling)
             {
-                DowCrusher();
+                if (timeFalling >= 1f)
+                {
+                    DowCrusher(moveSpeedDeCaida);
+                }
+                else
+                {
+                    DowCrusher(moveSpeedDePrevcion);
+                }
+
                 inicio = false;
+                timeFalling += Time.deltaTime;
                 yield return null;
             }
 
-            while (!inicio)
+            while (!inicio )
             {
                 UpCrushed();
                 yield return null;
@@ -41,9 +52,9 @@ public class Aplastador : MonoBehaviour
         }
     }
 
-    private void DowCrusher()
+    private void DowCrusher(float move)
     {
-        rb.MovePosition(transform.position + Vector3.down * moveSpeedDeCaida * Time.deltaTime);
+        rb.MovePosition(transform.position + Vector3.down * move * Time.deltaTime);
     }
 
     private void UpCrushed()

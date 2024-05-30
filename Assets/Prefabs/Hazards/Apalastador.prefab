@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 3492236425095833756}
   moveSpeed: 30
+  moveSpeedDePrevcion: 10
   moveSpeedDeCaida: 240
   isFalling: 1
   inicio: 1
@@ -308,7 +309,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -30.1, y: 8.95, z: -76.5008}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3492236425095833756}
