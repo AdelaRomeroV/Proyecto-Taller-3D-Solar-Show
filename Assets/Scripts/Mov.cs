@@ -49,7 +49,7 @@ public class Mov : MonoBehaviour
     private void Update()
     {
         Animations();
-         if(velocidadActual < 0.5f) { velocidadActual = 0; }
+         if(velocidadActual < 0.5f && !Input.GetKey(KeyCode.S)) { velocidadActual = 0; }
     }
 
     void FixedUpdate()
