@@ -151,6 +151,8 @@ MonoBehaviour:
   moveSpeed: 30
   inicio: 1
   anguloDeGiro: 0
+  moveSpeedDePrevcion: 20
+  moveSpeedDeCaida: 120
 --- !u!114 &5489619761076579587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,8 +217,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 6.249157, z: 7.053735}
+  m_Center: {x: -2.1372928e-16, y: 0.35044575, z: 0.23496008}
 --- !u!1 &5689618611921599284
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +246,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -82.63, y: 2.4, z: 4959.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3676483566798321357}
@@ -317,8 +319,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 4.7393646, z: 6.112085}
+  m_Center: {x: 1.5619261e-17, y: 0.51273435, z: -0.0067133904}
 --- !u!1 &8401051990183762433
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,6 +591,8 @@ MonoBehaviour:
   moveSpeed: 30
   inicio: 1
   anguloDeGiro: 0
+  moveSpeedDePrevcion: 20
+  moveSpeedDeCaida: 130
 --- !u!114 &4150278587741143280
 MonoBehaviour:
   m_ObjectHideFlags: 0
