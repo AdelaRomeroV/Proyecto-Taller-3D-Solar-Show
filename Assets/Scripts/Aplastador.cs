@@ -76,6 +76,7 @@ public class Aplastador : MonoBehaviour
             isFalling = false;
 
             player.velocidadActual = 0;
+            player.rb.velocity = Vector3.zero;
             player.onStun = true;
             player.Invoke("OffStun", 1f);
         }
