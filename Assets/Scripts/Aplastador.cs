@@ -13,6 +13,8 @@ public class Aplastador : MonoBehaviour
     private Mov player;
     public bool inicio;
 
+    public GameObject luz;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -38,7 +40,7 @@ public class Aplastador : MonoBehaviour
                 {
                     DowCrusher(moveSpeedDePrevcion);
                 }
-
+                luz.SetActive(true);
                 inicio = false;
                 timeFalling += Time.deltaTime;
                 yield return null;
@@ -46,6 +48,7 @@ public class Aplastador : MonoBehaviour
 
             while (!inicio )
             {
+                luz.SetActive(false);
                 UpCrushed();
                 yield return null;
             }
@@ -71,6 +74,7 @@ public class Aplastador : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isFalling = false;
+            StartCoroutine(DesactivarColision());
             player.velocidadActual = 0;
             player.onStun = true;
             player.Invoke("OffStun", 1f);
@@ -79,5 +83,13 @@ public class Aplastador : MonoBehaviour
         {
             inicio = true;
         }
+    }
+
+    private IEnumerator DesactivarColision()
+    {
+        Collider collider = GetComponent<Collider>();
+        collider.isTrigger = true;
+        yield return new WaitForSeconds(2f);
+        collider.isTrigger = false;
     }
 }
