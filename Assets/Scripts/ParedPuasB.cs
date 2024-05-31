@@ -29,7 +29,7 @@ public class ParedPuasB : MonoBehaviour
     {
         if (anguloDeGiro)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.5f);
             isFalling = true;
             float timeFalling = 0f;
             while (isFalling)
@@ -56,7 +56,7 @@ public class ParedPuasB : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.5f);
             isFalling = true;
 
             float timeFalling = 0f;

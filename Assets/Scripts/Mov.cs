@@ -26,7 +26,7 @@ public class Mov : MonoBehaviour
     private Color colorPreparacionBoost = Color.yellow;
     private Color colorListoBoost = Color.red;
 
-    [SerializeField] Rigidbody rb;
+    [SerializeField] public Rigidbody rb;
     public float velocidadActual = 0f;
     public bool estaDerrapando = false;
     public bool boostActivado = false;
@@ -43,13 +43,13 @@ public class Mov : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
 
         colorOriginal = cocheRenderer.material.color;
-        direccion = 0.5f;
-        if(velocidadActual < 0.1) { velocidadActual = 0; }
+        direccion = 0.5f;      
     }
 
     private void Update()
     {
         Animations();
+        if (velocidadActual > -0.5f || velocidadActual < 0.5f) { velocidadActual = 0; }
     }
 
     void FixedUpdate()

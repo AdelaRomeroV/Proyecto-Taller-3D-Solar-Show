@@ -74,7 +74,7 @@ public class Aplastador : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isFalling = false;
-            StartCoroutine(DesactivarColision());
+
             player.velocidadActual = 0;
             player.onStun = true;
             player.Invoke("OffStun", 1f);
