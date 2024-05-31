@@ -44,6 +44,7 @@ public class Mov : MonoBehaviour
 
         colorOriginal = cocheRenderer.material.color;
         direccion = 0.5f;
+        if(velocidadActual < 0.1) { velocidadActual = 0; }
     }
 
     private void Update()
@@ -206,18 +207,18 @@ public class Mov : MonoBehaviour
 
     IEnumerator ReducirVelocidadMaxima()
     {
-        while (velocidadMaxima > 30f)
+        while (velocidadMaxima > 50f)
         {
             float reduccionVelocidad = aumentoVelocidadBoost * Time.deltaTime * 0.5f;
 
             velocidadMaxima -= reduccionVelocidad;
 
-            velocidadMaxima = Mathf.Max(velocidadMaxima, 30f);
+            velocidadMaxima = Mathf.Max(velocidadMaxima, 50f);
 
             yield return null;
         }
 
-        velocidadMaxima = 30f;
+        velocidadMaxima = 50f;
     }
 
     void ColorChanges()
