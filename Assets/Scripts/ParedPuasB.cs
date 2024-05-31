@@ -11,6 +11,8 @@ public class ParedPuasB : MonoBehaviour
     private Mov player;
     public bool inicio;
     public bool anguloDeGiro;
+    public float moveSpeedDePrevcion;
+    public float moveSpeedDeCaida;
 
     private void Start()
     {
@@ -29,11 +31,20 @@ public class ParedPuasB : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             isFalling = true;
-
+            float timeFalling = 0f;
             while (isFalling)
             {
-                LeftCrusher();
+                if (timeFalling >= 1f)
+                {
+                    LeftCrusher(moveSpeedDeCaida);
+                }
+                else
+                {
+                    LeftCrusher(moveSpeedDePrevcion);
+                }
+
                 inicio = false;
+                timeFalling += Time.deltaTime;
                 yield return null;
             }
 
@@ -48,10 +59,20 @@ public class ParedPuasB : MonoBehaviour
             yield return new WaitForSeconds(2f);
             isFalling = true;
 
+            float timeFalling = 0f;
             while (isFalling)
             {
-                MoveForward();
+                if (timeFalling >= 1f)
+                {
+                    MoveForward(moveSpeedDeCaida);
+                }
+                else
+                {
+                    MoveForward(moveSpeedDePrevcion);
+                }
+
                 inicio = false;
+                timeFalling += Time.deltaTime;
                 yield return null;
             }
 
@@ -64,18 +85,18 @@ public class ParedPuasB : MonoBehaviour
 
     }
 
-    private void LeftCrusher()
+    private void LeftCrusher(float move)
     {
-        rb.MovePosition(transform.position + Vector3.left * 120 * Time.deltaTime);
+        rb.MovePosition(transform.position + Vector3.left * move * Time.deltaTime);
     }
 
     private void RightCrushed()
     {
         rb.MovePosition(transform.position + Vector3.right * moveSpeed * Time.deltaTime);
     }
-    private void MoveForward()
+    private void MoveForward(float move)
     {
-        rb.MovePosition(transform.position + Vector3.forward * 120 * Time.deltaTime);
+        rb.MovePosition(transform.position + Vector3.forward * move * Time.deltaTime);
     }
 
     private void MoveBackward()

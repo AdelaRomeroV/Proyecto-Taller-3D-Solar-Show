@@ -11,6 +11,8 @@ public class ParedPuasA : MonoBehaviour
     private Mov player;
     public bool inicio;
     public bool anguloDeGiro;
+    public float moveSpeedDePrevcion;
+    public float moveSpeedDeCaida;
 
     private void Start()
     {
@@ -28,11 +30,20 @@ public class ParedPuasA : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             isFalling = true;
-
+            float timeFalling = 0f;
             while (isFalling)
             {
-                RightCrushed();
+                if (timeFalling >= 1f)
+                {
+                    RightCrushed(moveSpeedDeCaida);
+                }
+                else
+                {
+                    RightCrushed(moveSpeedDePrevcion);
+                }
+
                 inicio = false;
+                timeFalling += Time.deltaTime;
                 yield return null;
             }
 
@@ -47,10 +58,20 @@ public class ParedPuasA : MonoBehaviour
             yield return new WaitForSeconds(2f);
             isFalling = true;
 
+            float timeFalling = 0f;
             while (isFalling)
             {
-                MoveBackward();
+                if (timeFalling >= 1f)
+                {
+                    MoveBackward(moveSpeedDeCaida);
+                }
+                else
+                {
+                    MoveBackward(moveSpeedDePrevcion);
+                }
+
                 inicio = false;
+                timeFalling += Time.deltaTime;
                 yield return null;
             }
 
@@ -68,9 +89,9 @@ public class ParedPuasA : MonoBehaviour
         rb.MovePosition(transform.position + Vector3.left * moveSpeed * Time.deltaTime);
     }
 
-    private void RightCrushed()
+    private void RightCrushed(float move)
     {
-        rb.MovePosition(transform.position + Vector3.right * 120 * Time.deltaTime);
+        rb.MovePosition(transform.position + Vector3.right * move * Time.deltaTime);
     }
 
     private void MoveForward()
@@ -78,9 +99,9 @@ public class ParedPuasA : MonoBehaviour
         rb.MovePosition(transform.position + Vector3.forward * moveSpeed * Time.deltaTime);
     }
 
-    private void MoveBackward()
+    private void MoveBackward(float move)
     {
-        rb.MovePosition(transform.position + Vector3.back * 120 * Time.deltaTime);
+        rb.MovePosition(transform.position + Vector3.back * move * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)

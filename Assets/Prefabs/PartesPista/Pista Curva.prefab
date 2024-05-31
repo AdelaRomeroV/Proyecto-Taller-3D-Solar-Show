@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 4549753819930750524}
   - component: {fileID: 3357977985959368959}
   - component: {fileID: 2905494582853692905}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pista Curva
   m_TagString: Untagged
   m_Icon: {fileID: 0}

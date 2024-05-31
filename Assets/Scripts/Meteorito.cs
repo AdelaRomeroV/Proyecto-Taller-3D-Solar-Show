@@ -14,14 +14,14 @@ public class Meteorito : MonoBehaviour
     }
     private void Start()
     {
-        meteorRb.velocity += Vector3.down * Random.Range(50, 100); 
+        meteorRb.velocity += Vector3.down * Random.Range(50, 75); 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Suelo"))
         {
-            Destroy(gameObject, 1);
+            Destroy(gameObject, 2);
         }
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -30,7 +30,7 @@ public class Meteorito : MonoBehaviour
             {
                 player.velocidadActual = 0;
                 player.onStun = true;
-                player.Invoke("OffStun", 0.5f);
+                player.Invoke("OffStun", 0.75f);
                 Destroy(gameObject);
             }
         }

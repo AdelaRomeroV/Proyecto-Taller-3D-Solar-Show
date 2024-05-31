@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 9190974004928377778}
   - component: {fileID: 8724544032270222173}
   - component: {fileID: 3798371156223166243}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pista Recta
   m_TagString: Suelo
   m_Icon: {fileID: 0}
