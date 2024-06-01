@@ -313,7 +313,7 @@ MonoBehaviour:
   startPoint: {fileID: 3492236425095833756}
   moveSpeed: 30
   moveSpeedDePrevcion: 10
-  moveSpeedDeCaida: 240
+  moveSpeedDeCaida: 300
   isFalling: 1
   inicio: 1
   luz: {fileID: 1963035705769732926}

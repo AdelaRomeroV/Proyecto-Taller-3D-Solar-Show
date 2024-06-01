@@ -26,13 +26,14 @@ public class Aplastador : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(2f);
+            float a = Random.Range(1f, 2.5f);
+            yield return new WaitForSeconds(a);
 
             isFalling = true;
             float timeFalling = 0f;
             while (isFalling)
             {
-                if (timeFalling >= 1f)
+                if (timeFalling >= 0.5f)
                 {
                     DowCrusher(moveSpeedDeCaida);
                 }
