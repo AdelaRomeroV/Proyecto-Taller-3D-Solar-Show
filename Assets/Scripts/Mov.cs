@@ -209,16 +209,20 @@ public class Mov : MonoBehaviour
     {
         while (velocidadMaxima > 50f)
         {
-            float reduccionVelocidad = aumentoVelocidadBoost * Time.deltaTime * 0.5f;
-
-            velocidadMaxima -= reduccionVelocidad;
-
-            velocidadMaxima = Mathf.Max(velocidadMaxima, 50f);
-
+            if (velocidadMaxima <= 125)
+            {
+                float reduccionVelocidad = aumentoVelocidadBoost * Time.deltaTime * 0.1f;
+                velocidadMaxima -= reduccionVelocidad;
+            }
+            else 
+            { 
+                float reduccionVelocidad = aumentoVelocidadBoost * Time.deltaTime * 0.5f;
+                velocidadMaxima -= reduccionVelocidad;
+            }                   
+            if (velocidadMaxima <= 50) { velocidadMaxima = 50f; }
             yield return null;
         }
 
-        velocidadMaxima = 50f;
     }
 
     void ColorChanges()

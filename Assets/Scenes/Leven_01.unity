@@ -171,7 +171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &28599410
 Transform:
   m_ObjectHideFlags: 0
@@ -863,7 +863,7 @@ MonoBehaviour:
   umbralDrift: 0.5
   fuerzaBoostDrift: 2
   tiempoBoostNecesario: 1
-  aumentoVelocidadBoost: 4
+  aumentoVelocidadBoost: 3
   rb: {fileID: 246642861}
   velocidadActual: 0
   estaDerrapando: 0
