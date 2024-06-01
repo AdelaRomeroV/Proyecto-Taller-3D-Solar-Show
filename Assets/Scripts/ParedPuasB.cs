@@ -29,7 +29,7 @@ public class ParedPuasB : MonoBehaviour
     {
         if (anguloDeGiro)
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
             isFalling = true;
             float timeFalling = 0f;
             while (isFalling)
@@ -56,7 +56,7 @@ public class ParedPuasB : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
             isFalling = true;
 
             float timeFalling = 0f;
@@ -106,21 +106,32 @@ public class ParedPuasB : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Hazards"))
-        {
-            isFalling = false;
-        }
         if (collision.gameObject.CompareTag("Player"))
         {
-            isFalling = false;
             player.velocidadActual = 0;
             player.rb.velocity = Vector3.zero;
             player.onStun = true;
             player.Invoke("OffStun", 1f);
+            StartCoroutine(DesactivarColision());
         }
-        if (collision.gameObject.CompareTag("Point"))
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Point"))
         {
             inicio = true;
         }
+        if (other.CompareTag("Hazards") || other.CompareTag("Player"))
+        {
+            isFalling = false;
+        }
+    }
+    private IEnumerator DesactivarColision()
+    {
+        Collider collider = GetComponent<Collider>();
+        collider.isTrigger = true;
+        yield return new WaitForSeconds(2f);
+        collider.isTrigger = false;
     }
 } 

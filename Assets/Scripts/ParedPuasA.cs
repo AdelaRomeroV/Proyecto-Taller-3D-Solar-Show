@@ -11,7 +11,7 @@ public class ParedPuasA : MonoBehaviour
     private Mov player;
     public bool inicio;
     public bool anguloDeGiro;
-    public float moveSpeedDePrevcion;
+    public float moveSpeedDePrevencion;
     public float moveSpeedDeCaida;
 
     private void Start()
@@ -19,6 +19,7 @@ public class ParedPuasA : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Mov>();
     }
+
     public void IniciarCorutina()
     {
         StartCoroutine(CrushRoutine());
@@ -26,9 +27,11 @@ public class ParedPuasA : MonoBehaviour
 
     private IEnumerator CrushRoutine()
     {
-        if(anguloDeGiro)
+
+
+        if (anguloDeGiro)
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
             isFalling = true;
             float timeFalling = 0f;
             while (isFalling)
@@ -39,7 +42,7 @@ public class ParedPuasA : MonoBehaviour
                 }
                 else
                 {
-                    RightCrushed(moveSpeedDePrevcion);
+                    RightCrushed(moveSpeedDePrevencion);
                 }
 
                 inicio = false;
@@ -55,9 +58,8 @@ public class ParedPuasA : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
             isFalling = true;
-
             float timeFalling = 0f;
             while (isFalling)
             {
@@ -67,9 +69,8 @@ public class ParedPuasA : MonoBehaviour
                 }
                 else
                 {
-                    MoveBackward(moveSpeedDePrevcion);
+                    MoveBackward(moveSpeedDePrevencion);
                 }
-
                 inicio = false;
                 timeFalling += Time.deltaTime;
                 yield return null;
@@ -81,7 +82,6 @@ public class ParedPuasA : MonoBehaviour
                 yield return null;
             }
         }
-
     }
 
     private void LeftCrusher()
@@ -106,21 +106,32 @@ public class ParedPuasA : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Hazards"))
-        {
-            isFalling = false;
-        }
         if (collision.gameObject.CompareTag("Player"))
-        {
-            isFalling = false;
-            player.velocidadActual = 0;
-            player.rb.velocity = Vector3.zero;
-            player.onStun = true;
-            player.Invoke("OffStun", 1f);
-        }
-        if (collision.gameObject.CompareTag("Point"))
+            {
+                player.velocidadActual = 0;
+                player.rb.velocity = Vector3.zero;
+                player.onStun = true;
+                player.Invoke("OffStun", 1f);
+                StartCoroutine(DesactivarColision());
+            }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Point"))
         {
             inicio = true;
         }
+        if (other.CompareTag("Hazards") || other.CompareTag("Player"))
+        {
+            isFalling = false;
+        }
+    }
+    private IEnumerator DesactivarColision()
+    {
+        Collider collider = GetComponent<Collider>();
+        collider.isTrigger = true;
+        yield return new WaitForSeconds(2f);
+        collider.isTrigger = false;
     }
 }

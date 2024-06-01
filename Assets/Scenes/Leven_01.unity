@@ -3655,37 +3655,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 163072478}
     m_Modifications:
-    - target: {fileID: 125560916170757092, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
-      propertyPath: moveSpeedDeCaida
-      value: 130
-      objectReference: {fileID: 0}
-    - target: {fileID: 125560916170757092, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
-      propertyPath: moveSpeedDePrevcion
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 5689618611921599284, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
       propertyPath: m_Name
       value: ParedesCostado (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244561248153151178, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
-      propertyPath: moveSpeedDeCaida
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244561248153151178, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
-      propertyPath: moveSpeedDePrevcion
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8543510753322681974, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8543510753322681974, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8543510753322681974, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8543510753322681974, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4597,6 +4569,14 @@ PrefabInstance:
     - target: {fileID: 125560916170757092, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
       propertyPath: moveSpeedDePrevcion
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 371312732646239368, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 558084203986052806, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5689618611921599284, guid: 12c0c4161c7aa3245973b79a22c3dd25, type: 3}
       propertyPath: m_Name
