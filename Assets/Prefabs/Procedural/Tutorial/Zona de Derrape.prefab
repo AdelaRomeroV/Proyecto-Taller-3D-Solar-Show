@@ -44,7 +44,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 353904091954946384}
-  - component: {fileID: 5786066375824305989}
+  - component: {fileID: 3722024929276949803}
   m_Layer: 3
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -67,7 +67,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6211546896307957798}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5786066375824305989
+--- !u!114 &3722024929276949803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,13 +76,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2403659599835809363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 986e7414da9c2d941bd3dda509d8a499, type: 3}
+  m_Script: {fileID: 11500000, guid: 770ba4f22eb108c429f1761b0c0a5ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Jugador: {fileID: 0}
   PistaRecta: {fileID: 525393149118417077, guid: 3f4296d2dbc533d4b9f5983825f9540e, type: 3}
   Zona_de_Derrape: {fileID: 8218145597248771903}
   Zona_de_Hazard: {fileID: 0}
-  Dialogo_Derrape: {fileID: 0}
+  Dialogo_Derrape: {fileID: 2466452130729953766, guid: f5810c4a23982f74e95ba7fe96dfbcc7, type: 3}
   Dialogo_Turbo: {fileID: 4326893517783481166, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
 --- !u!1 &2461487291880376291
 GameObject:
@@ -330,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6211546896307957798}
   m_Layer: 3
-  m_Name: Zona Curva
+  m_Name: Zona de Derrape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

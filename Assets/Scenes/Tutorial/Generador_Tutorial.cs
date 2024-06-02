@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class GeneradorDePista : MonoBehaviour
+public class Generador_Tutorial : GeneradorDePista
 {
-    [Header ("Zonas de pista")]
+    [Header("Zonas de pista")]
     [SerializeField] GameObject PistaRecta;
     [SerializeField] GameObject Zona_de_Derrape;
     [SerializeField] GameObject Zona_de_Hazard;
@@ -14,28 +11,18 @@ public class GeneradorDePista : MonoBehaviour
     [SerializeField] GameObject Dialogo_Derrape;
     [SerializeField] GameObject Dialogo_Turbo;
 
-    [Header ("Dependencias")]
+    [Header("Dependencias")]
     ControladorTutorial Controlador;
-    Transform Jugador;
-
+    
     private void Start()
     {
         Controlador = GameObject.Find("Controlador").GetComponent<ControladorTutorial>();
-        Jugador = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     private void Update()
     {
         ControladorDePiezas();
-    }
-
-    void GenerarPista(GameObject Pista)
-    {
-        if (Vector3.Distance(Jugador.position, transform.position) <= 300)
-        {
-            Instantiate(Pista, transform.position, transform.rotation);
-            Destroy(this);
-        }
     }
 
     void ControladorDePiezas()
@@ -46,7 +33,7 @@ public class GeneradorDePista : MonoBehaviour
         }
         else if (!Controlador.Completo_Derrape) //Completo_MovimientoBasico = true
         {
-            if(Controlador.dialogo == 1)
+            if (Controlador.dialogo == 1)
             {
                 Instantiate(Dialogo_Derrape, Jugador.position, Jugador.rotation);
                 Controlador.dialogo = 2;

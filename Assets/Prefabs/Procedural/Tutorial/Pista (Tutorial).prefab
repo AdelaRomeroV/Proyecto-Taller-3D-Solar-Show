@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3857793336994273370}
   - component: {fileID: 4483062850452443871}
   m_Layer: 3
-  m_Name: Pista Procedural
+  m_Name: Pista (Tutorial)
   m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8085411138420377198}
-  - component: {fileID: 1353948959455490469}
+  - component: {fileID: 721691346620077243}
   m_Layer: 3
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -141,7 +141,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3759661565276880311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1353948959455490469
+--- !u!114 &721691346620077243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,9 +150,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6103582774257457126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 986e7414da9c2d941bd3dda509d8a499, type: 3}
+  m_Script: {fileID: 11500000, guid: 770ba4f22eb108c429f1761b0c0a5ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Jugador: {fileID: 0}
   PistaRecta: {fileID: 525393149118417077}
   Zona_de_Derrape: {fileID: 8218145597248771903, guid: 23530e5518554d648bf2be3d6863bd01, type: 3}
   Zona_de_Hazard: {fileID: 0}
