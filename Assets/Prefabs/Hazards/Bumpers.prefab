@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 7693265392671858731}
   - component: {fileID: 3299357242401713512}
   - component: {fileID: 4436029442059089349}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bumpers
   m_TagString: Hazards
   m_Icon: {fileID: 0}

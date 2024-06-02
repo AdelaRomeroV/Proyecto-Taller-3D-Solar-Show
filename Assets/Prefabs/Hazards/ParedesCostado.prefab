@@ -700,7 +700,7 @@ MonoBehaviour:
   inicio: 1
   anguloDeGiro: 0
   moveSpeedDePrevcion: 20
-  moveSpeedDeCaida: 130
+  moveSpeedDeCaida: 120
 --- !u!114 &4150278587741143280
 MonoBehaviour:
   m_ObjectHideFlags: 0

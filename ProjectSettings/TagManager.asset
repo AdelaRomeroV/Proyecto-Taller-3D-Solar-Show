@@ -11,6 +11,7 @@ TagManager:
   - Hazards
   - Point
   - HazardsPeligro
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - Suelo
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Hazards
   - 
   - 
   - 

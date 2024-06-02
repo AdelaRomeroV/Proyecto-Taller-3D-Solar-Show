@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 8503702124037223275}
   - component: {fileID: 4530994460145354245}
   - component: {fileID: 1221973276271840647}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Aplastador
   m_TagString: Hazards
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 9218216986482371962}
   - component: {fileID: 630204584861930250}
   - component: {fileID: 3605053605916584224}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (10)
   m_TagString: HazardsPeligro
   m_Icon: {fileID: 0}
