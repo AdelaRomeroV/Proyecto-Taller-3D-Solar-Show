@@ -11,10 +11,10 @@ public class ControladorTutorial : MonoBehaviour
     //----------------------------------------------------------
 
     [Header("FASES")]
-    [NonSerialized] public bool MovimientoBasico_Completo;
-    [NonSerialized] public bool Derrape_Completo;
-    [NonSerialized] public bool Turbo_Completo;
-    [NonSerialized] public bool RecargaEnergia_Completo;
+    public bool Completo_MovimientoBasico;
+    public bool Completo_Derrape;
+    [NonSerialized] public bool Completo_Turbo;
+    [NonSerialized] public bool Completo_RecargaEnergia;
 
     [Header("Objetivos por fase")] 
 
@@ -27,14 +27,15 @@ public class ControladorTutorial : MonoBehaviour
     [NonSerialized] public bool A_pressed;
     [NonSerialized] public bool D_pressed;
 
-    [NonSerialized] public int derrape = 0; //Necesita llegar a 4 esquinas derrapando para continuar
+     public int derrape = 0; //Necesita llegar a 5 esquinas derrapando para continuar
 
-    [Header("Scrips")]
-    [SerializeField] Turbo turboScript;
+    //[Header("Scrips")]
+    //[SerializeField] Turbo turboScript;
 
     private void Update()
     {
         MovimientoBasico();
+        Derrape();
 
         if(movimientoBasico >= 3 && derrape >= 4)
         {
@@ -44,20 +45,33 @@ public class ControladorTutorial : MonoBehaviour
 
     void MovimientoBasico()
     {
-        if (Input.GetKeyUp(KeyCode.W) && !W_pressed)
+        if (Input.GetKeyDown(KeyCode.W) && !W_pressed)
         {
             W_pressed = true;
             movimientoBasico++;
         }
-        if (Input.GetKeyUp(KeyCode.A) && !A_pressed)
+        if (Input.GetKeyDown(KeyCode.A) && !A_pressed)
         {
             A_pressed = true;
             movimientoBasico++;
         }
-        if (Input.GetKeyUp(KeyCode.D) && !D_pressed)
+        if (Input.GetKeyDown(KeyCode.D) && !D_pressed)
         {
             D_pressed = true;
             movimientoBasico++;
+        }
+
+        if(movimientoBasico >= 3)
+        {
+            Completo_MovimientoBasico = true;
+        }
+    }
+
+    void Derrape()
+    {
+        if (derrape >= 4)
+        {
+            Completo_Derrape = true;
         }
     }
 }
