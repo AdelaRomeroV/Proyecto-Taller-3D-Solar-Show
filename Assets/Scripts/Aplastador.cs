@@ -86,6 +86,17 @@ public class Aplastador : MonoBehaviour
             inicio = true;
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Point"))
+        {
+            inicio = true;
+        }
+        if (other.CompareTag("Suelo") || other.CompareTag("Player"))
+        {
+            isFalling = false;
+        }
+    }
 
     private IEnumerator DesactivarColision()
     {

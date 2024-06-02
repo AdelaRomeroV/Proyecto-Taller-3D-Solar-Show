@@ -14,7 +14,7 @@ public class Meteorito : MonoBehaviour
     }
     private void Start()
     {
-        meteorRb.velocity += Vector3.down * Random.Range(50, 75); 
+        meteorRb.velocity += Vector3.down * Random.Range(50, 250); 
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -28,7 +28,6 @@ public class Meteorito : MonoBehaviour
             player = collision.gameObject.GetComponent<Mov>();
             if (player != null)
             {
-                player.velocidadActual = 0;
                 player.onStun = true;
                 player.Invoke("OffStun", 0.75f);
                 Destroy(gameObject);

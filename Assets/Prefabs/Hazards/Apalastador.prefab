@@ -313,7 +313,7 @@ MonoBehaviour:
   startPoint: {fileID: 3492236425095833756}
   moveSpeed: 30
   moveSpeedDePrevcion: 10
-  moveSpeedDeCaida: 300
+  moveSpeedDeCaida: 200
   isFalling: 1
   inicio: 1
   luz: {fileID: 1963035705769732926}
@@ -579,7 +579,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
