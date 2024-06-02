@@ -11,8 +11,8 @@ public class ControladorTutorial : MonoBehaviour
     //----------------------------------------------------------
 
     [Header("FASES")]
-    public bool Completo_MovimientoBasico;
-    public bool Completo_Derrape;
+    [NonSerialized] public bool Completo_MovimientoBasico;
+    [NonSerialized] public bool Completo_Derrape;
     [NonSerialized] public bool Completo_Turbo;
     [NonSerialized] public bool Completo_RecargaEnergia;
 
@@ -22,26 +22,34 @@ public class ControladorTutorial : MonoBehaviour
     //Estas variables se pueden usar para el UI para aclarar los objetivos al jugador
     //--------------------------------------------------------------------------------
 
-    [NonSerialized] public int movimientoBasico = 0; //Necesita llegar al valor de 3 (W, A, D)
+    /*[NonSerialized]*/ public int movimientoBasico = 0; //Necesita llegar al valor de 3 (W, A, D)
     [NonSerialized] public bool W_pressed;
     [NonSerialized] public bool A_pressed;
     [NonSerialized] public bool D_pressed;
 
-     public int derrape = 0; //Necesita llegar a 5 esquinas derrapando para continuar
+    [NonSerialized] public int derrape = 0; //Necesita llegar a 5 esquinas derrapando para continuar
 
     //[Header("Scrips")]
     //[SerializeField] Turbo turboScript;
+
+    public int dialogo = 0;
+
+    //1: Derrape
+    //2: Turbo
+    //3: Hazard
+    //4: SideArrack
+    //5: Final
+    private void Start()
+    {
+        StartCoroutine(StartDelay());
+    }
 
     private void Update()
     {
         MovimientoBasico();
         Derrape();
-
-        if(movimientoBasico >= 3 && derrape >= 4)
-        {
-
-        }
     }
+
 
     void MovimientoBasico()
     {
@@ -61,7 +69,7 @@ public class ControladorTutorial : MonoBehaviour
             movimientoBasico++;
         }
 
-        if(movimientoBasico >= 3)
+        if(movimientoBasico == 3 && dialogo == 1)
         {
             Completo_MovimientoBasico = true;
         }
@@ -69,9 +77,18 @@ public class ControladorTutorial : MonoBehaviour
 
     void Derrape()
     {
-        if (derrape >= 4)
+        if (derrape == 5)
         {
             Completo_Derrape = true;
         }
     }
+
+    IEnumerator StartDelay()
+    {
+        yield return new WaitForSeconds(5);
+
+        dialogo = 1;
+    }
+
+    
 }

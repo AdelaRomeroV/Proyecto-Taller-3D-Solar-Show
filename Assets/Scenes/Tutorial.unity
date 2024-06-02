@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 74576336}
   - component: {fileID: 74576335}
   - component: {fileID: 74576334}
+  - component: {fileID: 74576343}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -486,6 +487,18 @@ Transform:
   - {fileID: 957179464}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &74576343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74576333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddc55b6b5bfb8449a2ea3568ed8979b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &138754006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,7 +1046,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098456071}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22975291, y: 0.0000000187227, z: -0.0000000044198294, w: 0.973249}
+  m_LocalRotation: {x: 0.22975291, y: -0.0000000187227, z: 0.0000000044198294, w: 0.973249}
   m_LocalPosition: {x: -49.75, y: 9.394, z: 251.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1262,7 +1275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674754461}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22975291, y: 0.0000000187227, z: -0.0000000044198294, w: 0.973249}
+  m_LocalRotation: {x: 0.22975291, y: -0.0000000187227, z: 0.0000000044198294, w: 0.973249}
   m_LocalPosition: {x: -49.75, y: 9.394, z: 251.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1299,7 +1312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fc1863f5d80b84c8064374310c5b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Completo_MovimientoBasico: 0
+  movimientoBasico: 0
+  dialogo: 0
 --- !u!4 &1748706873
 Transform:
   m_ObjectHideFlags: 0
@@ -1526,10 +1540,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pista Recta (Con Spawner)
       objectReference: {fileID: 0}
-    - target: {fileID: 1353948959455490469, guid: 3f4296d2dbc533d4b9f5983825f9540e, type: 3}
-      propertyPath: Zona_de_Derrape
-      value: 
-      objectReference: {fileID: 8218145597248771903, guid: 23530e5518554d648bf2be3d6863bd01, type: 3}
     - target: {fileID: 3759661565276880311, guid: 3f4296d2dbc533d4b9f5983825f9540e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5086484
@@ -1575,6 +1585,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f4296d2dbc533d4b9f5983825f9540e, type: 3}
+--- !u!1001 &6318962363816901754
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1745006519258022143, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -55.201443
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745006519258022143, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.9101543
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745006519258022143, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 244.50636
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745006519258022143, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745006519258022143, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745006519258022143, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745006519258022143, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745006519258022143, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745006519258022143, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745006519258022143, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326893517783481166, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
+      propertyPath: m_Name
+      value: Dialogo-Turbo
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1585,3 +1652,4 @@ SceneRoots:
   - {fileID: 1748706873}
   - {fileID: 74576342}
   - {fileID: 1674754463}
+  - {fileID: 6318962363816901754}

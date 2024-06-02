@@ -6,9 +6,13 @@ using UnityEngine;
 public class GeneradorDePista : MonoBehaviour
 {
     [Header ("Zonas de pista")]
-    [SerializeField] GameObject PistaRecta_ConSpawner;
+    [SerializeField] GameObject PistaRecta;
     [SerializeField] GameObject Zona_de_Derrape;
     [SerializeField] GameObject Zona_de_Hazard;
+
+    [Header("Colliders con dialogo")]
+    [SerializeField] GameObject Dialogo_Derrape;
+    [SerializeField] GameObject Dialogo_Turbo;
 
     [Header ("Dependencias")]
     ControladorTutorial Controlador;
@@ -22,14 +26,7 @@ public class GeneradorDePista : MonoBehaviour
 
     private void Update()
     {
-        if (!Controlador.Completo_MovimientoBasico)
-        {
-            GenerarPista(PistaRecta_ConSpawner);
-        }
-        else if (!Controlador.Completo_Derrape)
-        {
-            GenerarPista(Zona_de_Derrape);
-        }
+        ControladorDePiezas();
     }
 
     void GenerarPista(GameObject Pista)
@@ -38,6 +35,34 @@ public class GeneradorDePista : MonoBehaviour
         {
             Instantiate(Pista, transform.position, transform.rotation);
             Destroy(this);
+        }
+    }
+
+    void ControladorDePiezas()
+    {
+        if (!Controlador.Completo_MovimientoBasico)
+        {
+            GenerarPista(PistaRecta);
+        }
+        else if (!Controlador.Completo_Derrape) //Completo_MovimientoBasico = true
+        {
+            if(Controlador.dialogo == 1)
+            {
+                Instantiate(Dialogo_Derrape, Jugador.position, Jugador.rotation);
+                Controlador.dialogo = 2;
+            }
+
+            GenerarPista(Zona_de_Derrape);
+        }
+        else if (!Controlador.Completo_Turbo)
+        {
+            if (Controlador.dialogo == 2)
+            {
+                Instantiate(Dialogo_Turbo, Jugador.position, Jugador.rotation);
+                Controlador.dialogo = 3;
+            }
+
+            GenerarPista(PistaRecta);
         }
     }
 }

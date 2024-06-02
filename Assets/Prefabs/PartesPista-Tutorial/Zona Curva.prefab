@@ -79,9 +79,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986e7414da9c2d941bd3dda509d8a499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PistaRecta_ConSpawner: {fileID: 525393149118417077, guid: 3f4296d2dbc533d4b9f5983825f9540e, type: 3}
+  PistaRecta: {fileID: 525393149118417077, guid: 3f4296d2dbc533d4b9f5983825f9540e, type: 3}
   Zona_de_Derrape: {fileID: 8218145597248771903}
   Zona_de_Hazard: {fileID: 0}
+  Dialogo_Derrape: {fileID: 0}
+  Dialogo_Turbo: {fileID: 4326893517783481166, guid: 57856970bc2790949bc8f03f3ee1b775, type: 3}
 --- !u!1 &2461487291880376291
 GameObject:
   m_ObjectHideFlags: 0

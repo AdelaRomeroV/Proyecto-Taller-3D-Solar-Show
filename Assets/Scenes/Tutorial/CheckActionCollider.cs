@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class CheckActionCollider : MonoBehaviour
 {
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
