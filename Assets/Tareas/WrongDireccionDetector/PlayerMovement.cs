@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Material wrong;
     [SerializeField] private float speed;
     private Rigidbody rb;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
