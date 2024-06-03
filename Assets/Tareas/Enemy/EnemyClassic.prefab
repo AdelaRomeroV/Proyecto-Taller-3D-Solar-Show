@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 52fcf190865a96c479ce0414b3d0dcb3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -139,8 +139,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  fxExplosion: {fileID: 6409451932765839406, guid: e9b15c3d6530f5e4bb94c17a3c288b29,
-    type: 3}
+  fxExplosion: {fileID: 6409451932765839406, guid: e9b15c3d6530f5e4bb94c17a3c288b29, type: 3}
 --- !u!135 &3054549607434006876
 SphereCollider:
   m_ObjectHideFlags: 0
