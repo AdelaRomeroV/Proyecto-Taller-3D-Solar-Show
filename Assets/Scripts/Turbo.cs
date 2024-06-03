@@ -40,7 +40,13 @@ public class Turbo : MonoBehaviour
 
     private void Energia()
     {
-        if (EnergiaActual <= 0) { EnergiaActual = 0; }
+        if (EnergiaActual <= 0) 
+        {
+            BarraDeEnergia.fillAmount = 0;
+            EnergiaActual = 0;
+            //Instantiate(efecto, transform.position);
+            Destroy(gameObject);
+        }
         if (EnergiaActual >= 100) { EnergiaActual = 100; }
     }
 
