@@ -30,17 +30,23 @@ public class Turbo : MonoBehaviour
     private void Update()
     {
         //Efecto de suavizado para la barra
-        BarraDeEnergia.fillAmount = Mathf.Lerp(BarraDeEnergia.fillAmount, EnergiaActual/100, 2 * Time.deltaTime);
+        BarraDeEnergia.fillAmount = Mathf.Lerp(BarraDeEnergia.fillAmount, EnergiaActual / 100, 2 * Time.deltaTime);
 
         UsingTurbo();
         ReloadBar();
         SideKick();
+        Energia();
+    }
+
+    private void Energia()
+    {
+        if (EnergiaActual <= 0) { EnergiaActual = 0; }
+        if (EnergiaActual >= 100) { EnergiaActual = 100; }
     }
 
     public void GestionarEnergia(int a)
     {
         EnergiaActual = EnergiaActual - a;
-
     }
 
     void UsingTurbo()
@@ -48,6 +54,7 @@ public class Turbo : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && EnergiaActual > 10)
         {
             EnergiaActual -= 0.3f;
+            if (EnergiaActual <= 0) { EnergiaActual = 0; }
             TurboActivo = true;
         }
         else if (Input.GetKeyUp(KeyCode.Space) || EnergiaActual <= 10)
