@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ListaDeCheckpoints : MonoBehaviour
 { 
@@ -9,9 +10,16 @@ public class ListaDeCheckpoints : MonoBehaviour
     [SerializeField] private Material normal;
     [SerializeField] private List<GameObject> Aros;
     [SerializeField] private int count;
-    [SerializeField] private int laps;
+    [SerializeField] public int laps;
+
+    private LapCounter lapcounter;
 
     public static ListaDeCheckpoints Instance {  get { return instance; } }
+    public void Start()
+    {
+        lapcounter = GameObject.Find("LapCounterText").GetComponent<LapCounter>();
+        lapcounter.UpdateText(laps);
+    }
 
     private void Awake()
     {
@@ -36,6 +44,7 @@ public class ListaDeCheckpoints : MonoBehaviour
             if(Aros.Count == count) 
             {
                 laps++;
+                lapcounter.UpdateText(laps);
                 count = 0;
                 if(laps==3)
                 {
