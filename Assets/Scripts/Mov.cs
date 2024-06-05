@@ -6,7 +6,6 @@ public class Mov : MonoBehaviour
 {
     [Header("Scripts")]
     Turbo turbo;
-    Animator anim;
     
     [Header("Movimiento")]
     public float aceleracion = 5f;
@@ -35,20 +34,19 @@ public class Mov : MonoBehaviour
     [SerializeField] Renderer cocheRenderer;
     private Color colorOriginal;
 
-    float direccion;
+    
 
     void Start()
     {
         turbo = GetComponent<Turbo>();
-        anim = GetComponentInChildren<Animator>();
+        
 
         colorOriginal = cocheRenderer.material.color;
-        direccion = 0.5f;      
+           
     }
 
     private void Update()
     {
-        Animations();
          if(velocidadActual < 0.5f && !Input.GetKey(KeyCode.S)) { velocidadActual = 0; }
     }
 
@@ -241,40 +239,5 @@ public class Mov : MonoBehaviour
         }
     }
 
-    void Animations()
-    {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        if (horizontalInput == 1 || horizontalInput == -1)
-        {
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                if (horizontalInput == 1)
-                {
-                    direccion = Mathf.Lerp(direccion, 1f, Time.deltaTime * 3);
-                }
-                else if (horizontalInput == -1)
-                {
-                    direccion = Mathf.Lerp(direccion, 0f, Time.deltaTime * 3);
-                }
-            }
-            else
-            {
-                if (horizontalInput == 1)
-                {
-                    direccion = Mathf.Lerp(direccion, 0.7f, Time.deltaTime * 3);
-                }
-                else if (horizontalInput == -1)
-                {
-                    direccion = Mathf.Lerp(direccion, 0.3f, Time.deltaTime * 3);
-                }
-            }
-
-        }
-        else
-        {
-            direccion = Mathf.Lerp(direccion, 0.5f, Time.deltaTime * 5);
-        }
-
-        anim.SetFloat("Direction", direccion);
-    }
+    
 }

@@ -18,7 +18,8 @@ public class Turbo : MonoBehaviour
     [SerializeField] GameObject RightBox;
     [SerializeField] GameObject LeftBox;
     public bool isKicking;
-
+    public bool RightAtack;
+    public bool LeftAtack;
 
     private void Start()
     {
@@ -108,6 +109,7 @@ public class Turbo : MonoBehaviour
             RightBox.SetActive(true);
             isKicking = true;
             CurrentEnergy -= 20;
+            RightAtack = true;
 
             Invoke("DisableKicking", 0.25f);
         }
@@ -116,6 +118,7 @@ public class Turbo : MonoBehaviour
             LeftBox.SetActive(true);
             isKicking = true;
             CurrentEnergy -= 20;
+            LeftAtack = true;
 
             Invoke("DisableKicking", 0.25f);
         }
