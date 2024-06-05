@@ -21,6 +21,10 @@ public class PlayerAnimations : MonoBehaviour
     {
         Drive();
         SideKick();
+        
+    }
+    private void FixedUpdate()
+    {
         GetDamage();
     }
 
