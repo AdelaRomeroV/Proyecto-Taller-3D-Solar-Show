@@ -78,10 +78,11 @@ public class Turbo : MonoBehaviour
                     CurrentEnergy = 0;
                 }
             }
-            else if (Input.GetKeyUp(KeyCode.Space))
-            {
-                TurboActive = false;
-            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            TurboActive = false;
         }
     }
 
