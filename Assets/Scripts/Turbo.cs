@@ -108,19 +108,19 @@ public class Turbo : MonoBehaviour
         {
             RightBox.SetActive(true);
             isKicking = true;
-            CurrentEnergy -= 20;
+            CurrentEnergy -= 10;
             RightAtack = true;
 
-            Invoke("DisableKicking", 0.25f);
+            Invoke("DisableKicking", 0.55f);
         }
         else if(Input.GetKeyDown(KeyCode.Mouse1) && !isKicking && CurrentEnergy > 20)
         {
             LeftBox.SetActive(true);
             isKicking = true;
-            CurrentEnergy -= 20;
+            CurrentEnergy -= 10;
             LeftAtack = true;
 
-            Invoke("DisableKicking", 0.25f);
+            Invoke("DisableKicking", 0.55f);
         }
     }
 
@@ -129,6 +129,8 @@ public class Turbo : MonoBehaviour
         isKicking = false;
         RightBox.SetActive(false);
         LeftBox.SetActive(false);
+        LeftAtack = false;
+        RightAtack = false;
     }
 
     private void OnTriggerEnter(Collider other)

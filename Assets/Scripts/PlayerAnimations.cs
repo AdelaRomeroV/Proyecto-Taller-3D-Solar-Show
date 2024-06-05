@@ -18,6 +18,7 @@ public class PlayerAnimations : MonoBehaviour
     private void Update()
     {
         Drive();
+        SideKick();
     }
 
     void Drive()
@@ -55,5 +56,11 @@ public class PlayerAnimations : MonoBehaviour
         }
 
         anim.SetFloat("Direction", direccion);
+    }
+
+    void SideKick()
+    {
+        anim.SetBool("RightAtk", turbo.RightAtack);
+        anim.SetBool("LeftAtk", turbo.LeftAtack);
     }
 }
