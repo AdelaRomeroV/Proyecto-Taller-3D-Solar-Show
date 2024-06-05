@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
+    ControlDeVida life;
     Turbo turbo;
     Animator anim;
     float direccion;
 
     private void Start()
     {
+        life = GetComponent<ControlDeVida>();
         turbo = GetComponent<Turbo>();
         anim = GetComponentInChildren<Animator>();
         direccion = 0.5f;
@@ -19,6 +21,7 @@ public class PlayerAnimations : MonoBehaviour
     {
         Drive();
         SideKick();
+        GetDamage();
     }
 
     void Drive()
@@ -62,5 +65,13 @@ public class PlayerAnimations : MonoBehaviour
     {
         anim.SetBool("RightAtk", turbo.RightAtack);
         anim.SetBool("LeftAtk", turbo.LeftAtack);
+    }
+
+    void GetDamage()
+    {
+        if (life.GetDamage)
+        {
+            anim.Play("GetDamage");
+        }
     }
 }
