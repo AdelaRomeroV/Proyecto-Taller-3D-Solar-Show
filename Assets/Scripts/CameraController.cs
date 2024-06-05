@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
         {
             ActualPos = new Vector3(transform.localPosition.x, transform.localPosition.y, -0.9f);
         }
-        else if (turbo.TurboActivo || mov.boostActivado)
+        else if (turbo.TurboActive || mov.boostActivado)
         {
             ActualPos = new Vector3(transform.localPosition.x, transform.localPosition.y, -1.1f);
         }

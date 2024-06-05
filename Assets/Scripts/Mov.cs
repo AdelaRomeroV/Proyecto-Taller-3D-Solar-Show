@@ -101,7 +101,7 @@ public class Mov : MonoBehaviour
         float modificadorGiroDrift = estaDerrapando ? 1.5f : 1f;
         float anguloGiro = horizontalInput * velocidadGiro * modificadorGiroDrift;
 
-        if (estaDerrapando && !turbo.TurboActivo)
+        if (estaDerrapando && !turbo.TurboActive)
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -153,13 +153,13 @@ public class Mov : MonoBehaviour
             tiempoBoostPresionado += Time.deltaTime;
             if (tiempoBoostPresionado >= tiempoBoostNecesario)
             {
-                turbo.reload = true;
+                turbo.Charging = true;
                 boostActivado = true;
             }
         }
         else
         {
-            turbo.reload = false;
+            turbo.Charging = false;
             if (boostActivado)
             {
                 velocidadMaxima += aumentoVelocidadBoost;
@@ -179,7 +179,7 @@ public class Mov : MonoBehaviour
 
     void GestionarTurbo()
     {
-        if (turbo.TurboActivo && !estaDerrapando)
+        if (turbo.TurboActive && !estaDerrapando)
         {
             velocidadMaxima += aumentoVelocidadBoost * 2;
             velocidadActual += fuerzaBoostDrift * Time.deltaTime;
@@ -227,7 +227,7 @@ public class Mov : MonoBehaviour
 
     void ColorChanges()
     {
-        if (boostActivado || turbo.TurboActivo)
+        if (boostActivado || turbo.TurboActive)
         {
             cocheRenderer.material.color = colorListoBoost;
         }

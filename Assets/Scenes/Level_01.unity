@@ -836,10 +836,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107ed3a88372d40478355f3844adcbfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BarraDeEnergia: {fileID: 299566830}
-  TurboActivo: 0
-  EnergiaActual: 100
-  reload: 0
+  EnergyBar: {fileID: 299566830}
+  TurboActive: 0
+  CurrentEnergy: 100
+  Charging: 0
   RightBox: {fileID: 1555343540}
   LeftBox: {fileID: 1215054592}
   isKicking: 0

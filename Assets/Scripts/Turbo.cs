@@ -5,14 +5,14 @@ using UnityEngine.UI;
 public class Turbo : MonoBehaviour
 {
     [Header("Componentes")]
-    [SerializeField] Image BarraDeEnergia;
-    ControlDeVida controlVida;
+    [SerializeField] Image EnergyBar;
+    ControlDeVida LifeControl;
 
     
     [Header("Enegy Bar")]
-    public bool TurboActivo = false;
-    [SerializeField] [Range(0,100)] float EnergiaActual = 100;
-    public bool reload;
+    public bool TurboActive = false;
+    [SerializeField] [Range(0,100)] float CurrentEnergy = 100;
+    public bool Charging;
 
     [Header("SideKick Variables")]
     [SerializeField] GameObject RightBox;
@@ -22,83 +22,99 @@ public class Turbo : MonoBehaviour
 
     private void Start()
     {
-        controlVida = GetComponent<ControlDeVida>();
+        LifeControl = GetComponent<ControlDeVida>();
 
-        BarraDeEnergia.fillAmount = EnergiaActual/100;
+        if(EnergyBar  != null)
+        {
+            EnergyBar.fillAmount = CurrentEnergy / 100;
+        }
     }
 
     private void Update()
     {
-        //Efecto de suavizado para la barra
-        BarraDeEnergia.fillAmount = Mathf.Lerp(BarraDeEnergia.fillAmount, EnergiaActual / 100, 2 * Time.deltaTime);
-
+        BarSmoothness();
         UsingTurbo();
         ReloadBar();
         SideKick();
         Energia();
     }
 
+    private void BarSmoothness()
+    {
+        if (EnergyBar != null)
+            EnergyBar.fillAmount = Mathf.Lerp(EnergyBar.fillAmount, CurrentEnergy / 100, 5 * Time.deltaTime);
+    }
+
     private void Energia()
     {
-        if (EnergiaActual <= 0) 
+        if (CurrentEnergy <= 0) 
         {
-            BarraDeEnergia.fillAmount = 0;
-            EnergiaActual = 0;
+            EnergyBar.fillAmount = 0;
+            CurrentEnergy = 0;
             //Instantiate(efecto, transform.position);
             Destroy(gameObject);
         }
-        if (EnergiaActual >= 100) { EnergiaActual = 100; }
+        if (CurrentEnergy >= 100) { CurrentEnergy = 100; }
     }
 
-    public void GestionarEnergia(int a)
+    public void GestionarEnergia(float a)
     {
-        EnergiaActual = EnergiaActual - a;
+        CurrentEnergy = CurrentEnergy - a;
     }
 
     void UsingTurbo()
     {
-        if (Input.GetKey(KeyCode.Space) && EnergiaActual > 10)
+        if (Input.GetKey(KeyCode.W))
         {
-            EnergiaActual -= 0.3f;
-            if (EnergiaActual <= 0) { EnergiaActual = 0; }
-            TurboActivo = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.Space) || EnergiaActual <= 10)
-        {
-            TurboActivo = false;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                TurboActive = true;
+            }
+            else if (Input.GetKey(KeyCode.Space))
+            {
+                GestionarEnergia(0.25f);
+                if (CurrentEnergy <= 0)
+                {
+                    CurrentEnergy = 0;
+                }
+            }
+            else if (Input.GetKeyUp(KeyCode.Space))
+            {
+                TurboActive = false;
+            }
         }
     }
 
     void ReloadBar() //Delay para recargar la barra
     {
-        if (!TurboActivo && EnergiaActual < 100 && !controlVida.recibioDaño) 
+        if (!TurboActive && CurrentEnergy < 100 && !LifeControl.GetDamage) 
         {
-            if (reload)
+            if (Charging)
             {
-                EnergiaActual += 0.15f;
+                CurrentEnergy += 0.15f;
             }
         }
-        else if (controlVida.recibioDaño)
+        else if (LifeControl.GetDamage)
         {
-            EnergiaActual -= 0.08f;
+            CurrentEnergy -= 0.08f;
         }
     }
 
     public void SideKick()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && !isKicking && EnergiaActual > 20)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && !isKicking && CurrentEnergy > 20)
         {
             RightBox.SetActive(true);
             isKicking = true;
-            EnergiaActual -= 20;
+            CurrentEnergy -= 20;
 
             Invoke("DisableKicking", 0.25f);
         }
-        else if(Input.GetKeyDown(KeyCode.Mouse1) && !isKicking && EnergiaActual > 20)
+        else if(Input.GetKeyDown(KeyCode.Mouse1) && !isKicking && CurrentEnergy > 20)
         {
             LeftBox.SetActive(true);
             isKicking = true;
-            EnergiaActual -= 20;
+            CurrentEnergy -= 20;
 
             Invoke("DisableKicking", 0.25f);
         }
@@ -115,19 +131,19 @@ public class Turbo : MonoBehaviour
     {
         if (other.CompareTag("Peligro"))
         {
-            reload = true;
+            Charging = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Peligro"))
         {
-            reload = false;
+            Charging = false;
         }
         if (other.CompareTag("HazardsPeligro"))
         {
             CountPeligro turbo = other.GetComponent<CountPeligro>();
-            if (turbo != null) { EnergiaActual += turbo.count; }
+            if (turbo != null) { CurrentEnergy += turbo.count; }
         }
     }
 }
