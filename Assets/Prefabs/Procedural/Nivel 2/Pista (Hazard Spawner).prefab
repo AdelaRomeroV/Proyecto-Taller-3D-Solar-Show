@@ -248,6 +248,7 @@ MonoBehaviour:
   Pistas:
   - {fileID: 3938004179760518277, guid: 32ae60c7af0f58e45a68916b6f1789de, type: 3}
   - {fileID: 481953597731926572}
+  - {fileID: 2771390851662258206, guid: 29f64e3120baca64aa379e9f595a6b47, type: 3}
 --- !u!1 &7360671782491242069
 GameObject:
   m_ObjectHideFlags: 0

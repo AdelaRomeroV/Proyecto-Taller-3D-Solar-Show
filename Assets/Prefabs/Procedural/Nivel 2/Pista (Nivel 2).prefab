@@ -247,6 +247,7 @@ MonoBehaviour:
   Pistas:
   - {fileID: 3938004179760518277}
   - {fileID: 481953597731926572, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
+  - {fileID: 2771390851662258206, guid: 29f64e3120baca64aa379e9f595a6b47, type: 3}
 --- !u!1001 &7373066809159752580
 PrefabInstance:
   m_ObjectHideFlags: 0
