@@ -30,7 +30,7 @@ public class Mov : MonoBehaviour
     public bool estaDerrapando = false;
     public bool boostActivado = false;
     public float tiempoBoostPresionado = 0f;
-
+    public bool boostOn;
     [SerializeField] Renderer cocheRenderer;
     private Color colorOriginal;
 
@@ -158,7 +158,7 @@ public class Mov : MonoBehaviour
         else
         {
             turbo.Charging = false;
-            if (boostActivado)
+            if (boostActivado && !boostOn)
             {
                 velocidadMaxima += aumentoVelocidadBoost;
                 velocidadActual += fuerzaBoostDrift * Time.deltaTime;
@@ -177,7 +177,7 @@ public class Mov : MonoBehaviour
 
     void GestionarTurbo()
     {
-        if (turbo.TurboActive && !estaDerrapando)
+        if (turbo.TurboActive && !estaDerrapando && !boostOn)
         {
             velocidadMaxima += aumentoVelocidadBoost * 2;
             velocidadActual += fuerzaBoostDrift * Time.deltaTime;
@@ -191,7 +191,7 @@ public class Mov : MonoBehaviour
         Vector3 velocidad = transform.forward * velocidadActual;
         rb.velocity = new Vector3(velocidad.x, rb.velocity.y, velocidad.z);
 
-        if (!boostActivado)
+        if (!boostActivado || !boostOn)
         {
             ReiniciarVelocidad();
         }
@@ -239,5 +239,12 @@ public class Mov : MonoBehaviour
         }
     }
 
+    public void Boost()
+    {
+        velocidadMaxima = 100;
+        velocidadActual += fuerzaBoostDrift * Time.deltaTime;
+        tiempoBoostPresionado = 0f;
+        boostOn = true;
+    }
     
 }
