@@ -6,15 +6,30 @@ public class ControlDeVida : MonoBehaviour
 {
     public bool GetDamage = false;
     private Turbo turboPlayer;
+    public AudioClip audioDamage;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         turboPlayer = GetComponent<Turbo>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
     {
+        if (GetDamage == true)
+        {
+            audioSource.clip = audioDamage;
+            audioSource.Play();
+            Invoke("ApagarAudio", 0.5f);
+        }
         GetDamage = false;
+    }
+
+    void ApagarAudio()
+    {
+        audioSource.Pause();
+        audioSource.clip = null; // Esto no se si es necesario o sobra, pero el metodo era por el audio me parecio un poco largo
     }
     private void OnCollisionEnter(Collision collision)
     {
