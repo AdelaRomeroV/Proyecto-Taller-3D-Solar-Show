@@ -6,14 +6,13 @@ public class PlayerAnimations : MonoBehaviour
 {
     ControlDeVida life;
     Turbo turbo;
-    Animator anim;
+    public Animator anim;
     float direccion;
 
     private void Start()
     {
         life = GetComponent<ControlDeVida>();
         turbo = GetComponent<Turbo>();
-        anim = GetComponentInChildren<Animator>();
         direccion = 0.5f;
     }
 
