@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CheckActionCollider : MonoBehaviour
+public class CheckDriftCollider : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
