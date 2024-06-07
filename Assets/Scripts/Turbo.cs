@@ -18,9 +18,11 @@ public class Turbo : MonoBehaviour
     [SerializeField] GameObject RightBox;
     [SerializeField] GameObject LeftBox;
     public bool isKicking;
-    public bool RightAtack;
-    public bool LeftAtack;
-    public bool AttackOn;
+
+    public bool RightAtacking;
+    public bool LeftAttaking;
+    public bool CanAttackRight = true;
+    public bool CanAttackLeft = true;
 
     private void Start()
     {
@@ -105,26 +107,23 @@ public class Turbo : MonoBehaviour
 
     public void SideKick()
     {
-        if(AttackOn)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isKicking && CurrentEnergy > 20 && CanAttackLeft)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !isKicking && CurrentEnergy > 20)
-            {
-                RightBox.SetActive(true);
-                isKicking = true;
-                CurrentEnergy -= 10;
-                RightAtack = true;
+            RightBox.SetActive(true);
+            isKicking = true;
+            CurrentEnergy -= 10;
+            RightAtacking = true;
 
-                Invoke("DisableKicking", 0.55f);
-            }
-            else if (Input.GetKeyDown(KeyCode.Mouse1) && !isKicking && CurrentEnergy > 20)
-            {
-                LeftBox.SetActive(true);
-                isKicking = true;
-                CurrentEnergy -= 10;
-                LeftAtack = true;
+            Invoke("DisableKicking", 0.55f);
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse1) && !isKicking && CurrentEnergy > 20 && CanAttackRight)
+        {
+            LeftBox.SetActive(true);
+            isKicking = true;
+            CurrentEnergy -= 10;
+            LeftAttaking = true;
 
-                Invoke("DisableKicking", 0.55f);
-            }
+            Invoke("DisableKicking", 0.55f);
         }
     }
 
@@ -133,8 +132,8 @@ public class Turbo : MonoBehaviour
         isKicking = false;
         RightBox.SetActive(false);
         LeftBox.SetActive(false);
-        LeftAtack = false;
-        RightAtack = false;
+        LeftAttaking = false;
+        RightAtacking = false;
     }
 
     private void OnTriggerEnter(Collider other)
