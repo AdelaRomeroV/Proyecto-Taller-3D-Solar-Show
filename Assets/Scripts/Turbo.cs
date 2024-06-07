@@ -50,7 +50,7 @@ public class Turbo : MonoBehaviour
     {
         if (CurrentEnergy <= 0) 
         {
-            EnergyBar.fillAmount = 0;
+            if(EnergyBar != null) { EnergyBar.fillAmount = 0; }
             CurrentEnergy = 0;
             //Instantiate(efecto, transform.position);
             Destroy(gameObject);
