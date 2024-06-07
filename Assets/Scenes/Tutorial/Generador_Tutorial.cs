@@ -1,15 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Generador_Tutorial : GeneradorDePista
 {
     [Header("Zonas de pista")]
-    [SerializeField] GameObject PistaRecta;
-    [SerializeField] GameObject Zona_de_Derrape;
-    [SerializeField] GameObject Zona_de_Hazard;
-
-    [Header("Colliders con dialogo")]
-    [SerializeField] GameObject Dialogo_Derrape;
-    [SerializeField] GameObject Dialogo_Turbo;
+    GameObject PistaRecta;
+    List<GameObject> Zonas = new List<GameObject>();
+    List<GameObject> Dialogos = new List<GameObject>();
 
     [Header("Dependencias")]
     ControladorTutorial Controlador;
@@ -18,6 +15,10 @@ public class Generador_Tutorial : GeneradorDePista
     {
         Controlador = GameObject.Find("Controlador").GetComponent<ControladorTutorial>();
         Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        PistaRecta = Controlador.PistaRecta;
+        Zonas = Controlador.Zonas;
+        Dialogos = Controlador.Dialogos;
     }
 
     private void Update()
@@ -27,29 +28,69 @@ public class Generador_Tutorial : GeneradorDePista
 
     void ControladorDePiezas()
     {
-        if (!Controlador.Completo_MovimientoBasico)
+        if (!Controlador.Completo_MovimientoBasico) //0
         {
             GenerarPista(PistaRecta);
         }
-        else if (!Controlador.Completo_Derrape) //Completo_MovimientoBasico = true
+        else if (!Controlador.Completo_Derrape) //1
+        {
+            if (Controlador.dialogo == 0)
+            {
+                Debug.Log("Dialogo-Derrape");
+                GenerarDialogo(0, 1);
+                Destroy(this);
+            }
+            else
+            {
+                GenerarPista(Zonas[0]);
+            }
+
+        }
+        else if (!Controlador.Completo_Turbo) //2
         {
             if (Controlador.dialogo == 1)
             {
-                Instantiate(Dialogo_Derrape, Jugador.position, Jugador.rotation);
-                Controlador.dialogo = 2;
+                Debug.Log("Dialogo-Turbo");
+                GenerarDialogo(1, 2);
+                Destroy(this);
+            }
+            else
+            {
+                GenerarPista(PistaRecta);
             }
 
-            GenerarPista(Zona_de_Derrape);
-        }
-        else if (!Controlador.Completo_Turbo)
+        }else if (!Controlador.Completo_SideAttack) //3
         {
             if (Controlador.dialogo == 2)
             {
-                Instantiate(Dialogo_Turbo, Jugador.position, Jugador.rotation);
-                Controlador.dialogo = 3;
+                Debug.Log("Dialogo-SideAttack");
+                GenerarDialogo(2, 3);
+                Destroy(this);
             }
-
-            GenerarPista(PistaRecta);
+            else
+            {
+                GenerarPista(PistaRecta);
+            }
         }
+        else if (!Controlador.Completo_RecargaEnergia) //4
+        {
+            if (Controlador.dialogo == 3)
+            {
+                Debug.Log("Dialogo-Recarga");
+                GenerarDialogo(3, 4);
+                Destroy(this);
+            }
+            else
+            {
+                GenerarPista(Zonas[3]);
+            }
+        }
+    }
+
+    void GenerarDialogo(int actual, int next)
+    {
+        Instantiate(Dialogos[actual], transform.position, transform.rotation);
+        Controlador.dialogo = next;
+
     }
 }
