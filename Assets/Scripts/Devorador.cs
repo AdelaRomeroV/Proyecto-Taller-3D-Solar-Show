@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Devorador : MonoBehaviour
 {
-    public Transform[] waypoints; 
+    public List<Transform> waypoints = new List<Transform>();
     public float speed; 
     private int currentWaypointIndex = 0;
     public bool reachedEnd = false;
@@ -19,17 +19,19 @@ public class Devorador : MonoBehaviour
 
     private void MoveToWaypoint()
     {
+        if (waypoints == null || waypoints.Count == 0) return;
+
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
+
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
         {
-            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Count;
 
             if (currentWaypointIndex == 0)
             {
                 reachedEnd = true;
             }
         }
-
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)

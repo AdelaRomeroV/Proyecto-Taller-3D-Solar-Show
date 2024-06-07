@@ -52,5 +52,11 @@ public class ControlDeVida : MonoBehaviour
             turboPlayer.GestionarEnergia(2);
             GetDamage = true;
         }
+        if (other.CompareTag("Hazards"))
+        {
+            CountPeligro turbo = other.gameObject.GetComponent<CountPeligro>();
+            if (turbo != null) { turboPlayer.GestionarEnergia(turbo.count); }
+            GetDamage = true;
+        }
     }
 }

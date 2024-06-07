@@ -16,17 +16,19 @@ public class Bumpers : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            
-            Rigidbody autoRigidbody = collision.gameObject.GetComponent<Rigidbody>();
-            if (autoRigidbody != null)
+            if(player != null)
             {
-                Vector3 pushDirection = -collision.transform.forward;
-                pushDirection.Normalize();
-                autoRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
+                Rigidbody autoRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+                if (autoRigidbody != null)
+                {
+                    Vector3 pushDirection = -collision.transform.forward;
+                    pushDirection.Normalize();
+                    autoRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
 
-                player.velocidadActual = 0;
-                player.onStun = true;
-                Invoke("OffStun", 0.75f);
+                    player.velocidadActual = 0;
+                    player.onStun = true;
+                    Invoke("OffStun", 0.75f);
+                }
             }
         }
     }
