@@ -23,7 +23,7 @@ public class Acelerador : MonoBehaviour
             playerMovement = other.gameObject.GetComponent<Mov>();
             if (playerMovement != null)
             {
-                playerMovement.boostOn = false;
+                playerMovement.ReiniciarVelocidad();
             }
         }
     }

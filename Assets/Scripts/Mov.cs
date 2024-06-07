@@ -160,7 +160,7 @@ public class Mov : MonoBehaviour
             turbo.Charging = false;
             if (boostActivado && !boostOn)
             {
-                velocidadMaxima += aumentoVelocidadBoost;
+                velocidadMaxima = 75;
                 velocidadActual += fuerzaBoostDrift * Time.deltaTime;
                 tiempoBoostPresionado = 0f;
                 Invoke("ReiniciarVelocidad", 0.5f);
@@ -179,7 +179,7 @@ public class Mov : MonoBehaviour
     {
         if (turbo.TurboActive && !estaDerrapando && !boostOn)
         {
-            velocidadMaxima += aumentoVelocidadBoost * 2;
+            velocidadMaxima = 150;
             velocidadActual += fuerzaBoostDrift * Time.deltaTime;
             tiempoBoostPresionado = 0f;
             Invoke("ReiniciarVelocidad", 0.5f);
@@ -191,13 +191,13 @@ public class Mov : MonoBehaviour
         Vector3 velocidad = transform.forward * velocidadActual;
         rb.velocity = new Vector3(velocidad.x, rb.velocity.y, velocidad.z);
 
-        if (!boostActivado || !boostOn)
+        if (!boostActivado)
         {
             ReiniciarVelocidad();
         }
     }
 
-    void ReiniciarVelocidad()
+    public void ReiniciarVelocidad()
     {
         boostActivado = false;
         StartCoroutine(ReducirVelocidadMaxima());
@@ -207,7 +207,7 @@ public class Mov : MonoBehaviour
     {
         while (velocidadMaxima > 50f)
         {
-            if (velocidadMaxima <= 125)
+            if (velocidadMaxima <= 120)
             {
                 float reduccionVelocidad = aumentoVelocidadBoost * Time.deltaTime * 0.1f;
                 velocidadMaxima -= reduccionVelocidad;

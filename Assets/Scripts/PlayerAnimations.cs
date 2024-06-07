@@ -66,8 +66,8 @@ public class PlayerAnimations : MonoBehaviour
 
     void SideKick()
     {
-        anim.SetBool("RightAtk", turbo.RightAtack);
-        anim.SetBool("LeftAtk", turbo.LeftAtack);
+        anim.SetBool("RightAtk", turbo.RightAtacking);
+        anim.SetBool("LeftAtk", turbo.LeftAttaking);
     }
 
     void GetDamage()
