@@ -11,7 +11,7 @@ public class Turbo : MonoBehaviour
     
     [Header("Enegy Bar")]
     public bool TurboActive = false;
-    [SerializeField] [Range(0,100)] float CurrentEnergy = 100;
+    [SerializeField] [Range(0,100)] public float CurrentEnergy = 100;
     public bool Charging;
 
     [Header("SideKick Variables")]
@@ -20,6 +20,7 @@ public class Turbo : MonoBehaviour
     public bool isKicking;
     public bool RightAtack;
     public bool LeftAtack;
+    public bool AttackOn;
 
     private void Start()
     {
@@ -104,23 +105,26 @@ public class Turbo : MonoBehaviour
 
     public void SideKick()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && !isKicking && CurrentEnergy > 20)
+        if(AttackOn)
         {
-            RightBox.SetActive(true);
-            isKicking = true;
-            CurrentEnergy -= 10;
-            RightAtack = true;
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !isKicking && CurrentEnergy > 20)
+            {
+                RightBox.SetActive(true);
+                isKicking = true;
+                CurrentEnergy -= 10;
+                RightAtack = true;
 
-            Invoke("DisableKicking", 0.55f);
-        }
-        else if(Input.GetKeyDown(KeyCode.Mouse1) && !isKicking && CurrentEnergy > 20)
-        {
-            LeftBox.SetActive(true);
-            isKicking = true;
-            CurrentEnergy -= 10;
-            LeftAtack = true;
+                Invoke("DisableKicking", 0.55f);
+            }
+            else if (Input.GetKeyDown(KeyCode.Mouse1) && !isKicking && CurrentEnergy > 20)
+            {
+                LeftBox.SetActive(true);
+                isKicking = true;
+                CurrentEnergy -= 10;
+                LeftAtack = true;
 
-            Invoke("DisableKicking", 0.55f);
+                Invoke("DisableKicking", 0.55f);
+            }
         }
     }
 
