@@ -10,7 +10,7 @@ public class Waypoints : MonoBehaviour
         GameObject devorador = GameObject.Find("Devorador");
         if (devorador != null ) 
         {
-            list = GetComponent<Devorador>();
+            list = devorador.GetComponent<Devorador>();
             list.waypoints.Add(gameObject.transform); 
         }
     }
