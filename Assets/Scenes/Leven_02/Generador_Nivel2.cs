@@ -16,9 +16,10 @@ public class Generador_Nivel2 : GeneradorDePista
         controlador = GameObject.Find("Controlador").GetComponent<Controlador_Nivel2>();
         Pistas = controlador.Pistas;
 
-        Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null) { Jugador = playerObject.GetComponent<Transform>(); }
 
-        
+
 
         StartCoroutine(StartDelay());
     }

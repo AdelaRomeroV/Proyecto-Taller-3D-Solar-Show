@@ -9,26 +9,24 @@ public class Bumpers : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Mov>();
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null) { player = playerObject.GetComponent<Mov>(); }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if(player != null)
+            Rigidbody autoRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+            if (autoRigidbody != null)
             {
-                Rigidbody autoRigidbody = collision.gameObject.GetComponent<Rigidbody>();
-                if (autoRigidbody != null)
-                {
-                    Vector3 pushDirection = -collision.transform.forward;
-                    pushDirection.Normalize();
-                    autoRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
+                Vector3 pushDirection = -collision.transform.forward;
+                pushDirection.Normalize();
+                autoRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
 
-                    player.velocidadActual = 0;
-                    player.onStun = true;
-                    Invoke("OffStun", 0.75f);
-                }
+                player.velocidadActual = 0;
+                player.onStun = true;
+                Invoke("OffStun", 0.75f);
             }
         }
     }

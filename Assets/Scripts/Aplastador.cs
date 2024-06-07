@@ -18,7 +18,8 @@ public class Aplastador : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Mov>();
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null) { player = playerObject.GetComponent<Mov>(); }
         StartCoroutine(CrushRoutine());
     }
 

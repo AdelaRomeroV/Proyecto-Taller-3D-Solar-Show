@@ -11,7 +11,8 @@ public class Pared : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Mov>();
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null) { player = playerObject.GetComponent<Mov>(); }
     }
 
     private void OnCollisionEnter(Collision collision)

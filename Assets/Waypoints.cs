@@ -7,7 +7,11 @@ public class Waypoints : MonoBehaviour
     Devorador list;
     private void Awake()
     {
-        list = GameObject.Find("Devorador").GetComponent<Devorador>();
-        if (list != null ) { list.waypoints.Add(gameObject.transform); }
+        GameObject devorador = GameObject.Find("Devorador");
+        if (devorador != null ) 
+        {
+            list = GetComponent<Devorador>();
+            list.waypoints.Add(gameObject.transform); 
+        }
     }
 }
