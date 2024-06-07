@@ -32,6 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1346951298427019431}
   - {fileID: 5853610569622619217}
   - {fileID: 7472409932998517525}
   - {fileID: 3114674360536954669}
@@ -199,6 +200,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 15
+--- !u!1 &1817734901764533736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346951298427019431}
+  - component: {fileID: 2212285664605445700}
+  - component: {fileID: 2629782255089678967}
+  m_Layer: 3
+  m_Name: GameObject
+  m_TagString: Suelo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1346951298427019431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817734901764533736}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2912340036103445852}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2212285664605445700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817734901764533736}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 49.24039, y: 6.9396915, z: 84.35723}
+  m_Center: {x: -0.014619827, y: -1.21, z: 0}
+--- !u!114 &2629782255089678967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817734901764533736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e235f5d0caf5a0e47973a1c90b051016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4879447406343577378
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,10 +312,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Jugador: {fileID: 0}
   LineaDeMeta: {fileID: 3938004179760518277, guid: 32ae60c7af0f58e45a68916b6f1789de, type: 3}
-  Pistas:
-  - {fileID: 3938004179760518277, guid: 32ae60c7af0f58e45a68916b6f1789de, type: 3}
-  - {fileID: 481953597731926572}
-  - {fileID: 2771390851662258206, guid: 29f64e3120baca64aa379e9f595a6b47, type: 3}
 --- !u!1 &7360671782491242069
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,10 +356,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09acb14abbfc08645b226b04acf6ac9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hazards:
-  - {fileID: 6432189462392678066, guid: d8725a43040cd8a4abced6fc264b8ec0, type: 3}
-  - {fileID: 4514639731671905672, guid: b457aaaed360cd74faaf342bdae26e0e, type: 3}
-  - {fileID: 6495926692263173224, guid: e0d51cebe3224524c93be761a37f9061, type: 3}
+  HazardsVa:
+  - {fileID: 6993850598211757104, guid: 22851f640159a2a4ba2a1ea6e7770dac, type: 3}
+  - {fileID: 576182385449157087, guid: 15b598dbd4fe59b4f8b0421753a751fb, type: 3}
+  pistaRecta: 1
 --- !u!1001 &1175094360563074727
 PrefabInstance:
   m_ObjectHideFlags: 0

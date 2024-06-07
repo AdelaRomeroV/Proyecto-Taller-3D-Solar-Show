@@ -121,6 +121,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1990502125131431527}
   - {fileID: 4185825299013439369}
   - {fileID: 1240491953439251223}
   - {fileID: 2449499973448508560}
@@ -198,6 +199,72 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 49.24039, y: 6.9396915, z: 84.35723}
   m_Center: {x: -0.014619827, y: -1.21, z: 0}
+--- !u!1 &4450913043691384228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990502125131431527}
+  - component: {fileID: 7372210488434280065}
+  - component: {fileID: 5370712489315739901}
+  m_Layer: 3
+  m_Name: GameObject
+  m_TagString: Suelo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1990502125131431527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450913043691384228}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7385009247647583971}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7372210488434280065
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450913043691384228}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 49.24039, y: 6.9396915, z: 84.35723}
+  m_Center: {x: -0.014619827, y: -1.21, z: 0}
+--- !u!114 &5370712489315739901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450913043691384228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e235f5d0caf5a0e47973a1c90b051016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6956572423276522692
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,10 +311,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Jugador: {fileID: 0}
   LineaDeMeta: {fileID: 3938004179760518277}
-  Pistas:
-  - {fileID: 3938004179760518277}
-  - {fileID: 481953597731926572, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
-  - {fileID: 2771390851662258206, guid: 29f64e3120baca64aa379e9f595a6b47, type: 3}
 --- !u!1001 &7373066809159752580
 PrefabInstance:
   m_ObjectHideFlags: 0

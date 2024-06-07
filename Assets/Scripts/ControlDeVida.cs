@@ -17,7 +17,7 @@ public class ControlDeVida : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (GetDamage == true)
+        if (GetDamage == true && audioSource != null)
         {
             audioSource.clip = audioDamage;
             audioSource.Play();

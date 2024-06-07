@@ -66,7 +66,7 @@ public class Aplastador : MonoBehaviour
         rb.MovePosition(transform.position + Vector3.up * moveSpeed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Suelo"))
         {
@@ -85,16 +85,25 @@ public class Aplastador : MonoBehaviour
         {
             inicio = true;
         }
-    }
+    }*/
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Suelo"))
+        {
+            isFalling = false;
+        }
+        if (other.CompareTag("Player"))
+        {
+            isFalling = false;
+
+            player.velocidadActual = 0;
+            player.rb.velocity = Vector3.zero;
+            player.onStun = true;
+            player.Invoke("OffStun", 1f);
+        }
         if (other.CompareTag("Point"))
         {
             inicio = true;
-        }
-        if (other.CompareTag("Suelo") || other.CompareTag("Player"))
-        {
-            isFalling = false;
         }
     }
 
