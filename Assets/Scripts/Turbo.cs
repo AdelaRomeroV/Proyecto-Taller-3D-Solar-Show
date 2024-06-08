@@ -13,6 +13,7 @@ public class Turbo : MonoBehaviour
     public bool TurboActive = false;
     [SerializeField] [Range(0,100)] public float CurrentEnergy = 100;
     public bool Charging;
+    [NonSerialized] public bool canUseTurbo = true;
 
     [Header("SideKick Variables")]
     [SerializeField] GameObject RightBox;
@@ -21,8 +22,8 @@ public class Turbo : MonoBehaviour
 
     public bool RightAtacking;
     public bool LeftAttaking;
-    public bool CanAttackRight = true;
-    public bool CanAttackLeft = true;
+    [NonSerialized] public bool CanAttackRight = true;
+    [NonSerialized] public bool CanAttackLeft = true;
 
     private void Start()
     {
@@ -68,23 +69,26 @@ public class Turbo : MonoBehaviour
 
     void UsingTurbo()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (canUseTurbo)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.W))
             {
-                TurboActive = true;
-            }
-            else if (Input.GetKey(KeyCode.Space))
-            {
-                GestionarEnergia(0.25f);
-                if (CurrentEnergy <= 0)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    CurrentEnergy = 0;
+                    TurboActive = true;
+                }
+                else if (Input.GetKey(KeyCode.Space))
+                {
+                    GestionarEnergia(0.25f);
+                    if (CurrentEnergy <= 0)
+                    {
+                        CurrentEnergy = 0;
+                    }
                 }
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) || !canUseTurbo)
         {
             TurboActive = false;
         }
@@ -92,14 +96,14 @@ public class Turbo : MonoBehaviour
 
     void ReloadBar() //Delay para recargar la barra
     {
-        if (!TurboActive && CurrentEnergy < 100 && !LifeControl.GetDamage) 
+        if (!TurboActive && CurrentEnergy < 100 && LifeControl != null && !LifeControl.GetDamage) 
         {
             if (Charging)
             {
                 CurrentEnergy += 0.15f;
             }
         }
-        else if (LifeControl.GetDamage)
+        else if (LifeControl != null && LifeControl.GetDamage)
         {
             CurrentEnergy -= 0.08f;
         }

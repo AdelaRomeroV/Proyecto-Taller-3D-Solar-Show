@@ -72,9 +72,25 @@ public class PlayerAnimations : MonoBehaviour
 
     void GetDamage()
     {
-        if (life.GetDamage)
+        if(life != null)
         {
-            anim.Play("GetDamage");
+            if (life.GetDamage)
+            {
+                anim.Play("GetDamage");
+            }
+
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(life == null)
+        {
+            if (collision.collider.CompareTag("Pared"))
+            {
+                anim.Play("GetDamage");
+            }
+        }
+        
     }
 }

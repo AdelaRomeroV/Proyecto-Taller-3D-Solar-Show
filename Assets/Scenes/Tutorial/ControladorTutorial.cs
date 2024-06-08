@@ -24,6 +24,7 @@ public class ControladorTutorial : MonoBehaviour
 
     [Header("Scrips")]
     [SerializeField] Turbo turboScript;
+    [SerializeField] GameObject BarraDeEnergía;
 
     [Header("Objetivos por fase")] 
 
@@ -54,6 +55,7 @@ public class ControladorTutorial : MonoBehaviour
     {
         turboScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Turbo>();
         turboScript.enabled = false;
+        BarraDeEnergía.SetActive(false);
 
         StartCoroutine(StartDelay());
     }
@@ -62,14 +64,10 @@ public class ControladorTutorial : MonoBehaviour
     {
         MovimientoBasico();
         Derrape();
-
-        if (Completo_Derrape)
-        {
-            turboScript.enabled = true;
-        }
-
         Turbo();
         SideAttack();
+        EnergyCharge();
+        Final();
     }
 
 
@@ -94,7 +92,7 @@ public class ControladorTutorial : MonoBehaviour
         if(movimientoBasico == 3 && dialogo == 0)
         {
             Completo_MovimientoBasico = true;
-            Debug.Log("Basic COmplete");
+            Debug.Log("Basic Complete");
         }
     }
 
@@ -102,7 +100,7 @@ public class ControladorTutorial : MonoBehaviour
     {
         if (derrape == 5)
         {
-            if (!Completo_Derrape) Debug.Log("Drift COmplete");
+            if (!Completo_Derrape) Debug.Log("Drift Complete");
 
             Completo_Derrape = true;
         }
@@ -110,13 +108,17 @@ public class ControladorTutorial : MonoBehaviour
 
     void Turbo()
     {
+        if (Completo_Derrape)
+        {
+            turboScript.enabled = true;
+            BarraDeEnergía.SetActive(true);
+        }
 
-        //Poner la energía necesaria para pasar a la siguiente fase
-
-        if(!Completo_Turbo && Completo_Derrape)
+        if (!Completo_Turbo && turboScript.CurrentEnergy < TurboGoal)
         {
             Completo_Turbo = true;
-            Debug.Log("TUrbo COmplete");
+            Debug.Log("TUrbo Complete");
+            turboScript.canUseTurbo = false;
         }
     }
 
@@ -128,20 +130,44 @@ public class ControladorTutorial : MonoBehaviour
             {
                 LeftClick_Pressed = true;
                 sideAttack++;
+                Invoke("DisableLeft", 0.5f);
+                
             }
 
             if (Input.GetKeyDown(KeyCode.Mouse1) && !RightClick_Pressed)
             {
                 RightClick_Pressed = true;
                 sideAttack++;
+                Invoke("DisableRight", 0.5f);
             }
         }
 
-        if(sideAttack >= 2 && dialogo == 2)
+        if(sideAttack >= 2 && dialogo == 3)
         {
             Completo_SideAttack = true;
-            Debug.Log("SideAttack COmplete");
+            Debug.Log("SideAttack Complete");
         }
+    }
+
+    void EnergyCharge()
+    {
+        if (Completo_SideAttack)
+        {
+            if(turboScript.CurrentEnergy == 100)
+            {
+                Completo_RecargaEnergia = true;
+                Debug.Log("EnergyCharge Complete");
+            }
+        }
+    }
+
+    void Final()
+    {
+        if (Completo_RecargaEnergia)
+        {
+            Debug.Log("Fin del tutorial");
+        }
+        
     }
 
     IEnumerator StartDelay()
@@ -151,5 +177,14 @@ public class ControladorTutorial : MonoBehaviour
         dialogo = 0;
     }
 
+    void DisableLeft()
+    {
+        turboScript.CanAttackLeft = false;
+    }
+
+    void DisableRight()
+    {
+        turboScript.CanAttackRight = false;
+    }
     
 }
