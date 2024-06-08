@@ -24,6 +24,7 @@ public class ControladorTutorial : MonoBehaviour
 
     [Header("Scrips")]
     [SerializeField] Turbo turboScript;
+    [SerializeField] GameObject BarraDeEnergía;
 
     [Header("Objetivos por fase")] 
 
@@ -113,7 +114,7 @@ public class ControladorTutorial : MonoBehaviour
 
         //Poner la energía necesaria para pasar a la siguiente fase
 
-        if(!Completo_Turbo && Completo_Derrape)
+        if(!Completo_Turbo && turboScript.CurrentEnergy < 50)
         {
             Completo_Turbo = true;
             Debug.Log("TUrbo COmplete");
@@ -128,12 +129,14 @@ public class ControladorTutorial : MonoBehaviour
             {
                 LeftClick_Pressed = true;
                 sideAttack++;
+                turboScript.CanAttackLeft = false;
             }
 
             if (Input.GetKeyDown(KeyCode.Mouse1) && !RightClick_Pressed)
             {
                 RightClick_Pressed = true;
                 sideAttack++;
+                turboScript.CanAttackRight = false;
             }
         }
 

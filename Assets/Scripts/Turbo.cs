@@ -13,6 +13,7 @@ public class Turbo : MonoBehaviour
     public bool TurboActive = false;
     [SerializeField] [Range(0,100)] public float CurrentEnergy = 100;
     public bool Charging;
+    public bool canUseTurbo;
 
     [Header("SideKick Variables")]
     [SerializeField] GameObject RightBox;
@@ -68,25 +69,28 @@ public class Turbo : MonoBehaviour
 
     void UsingTurbo()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (canUseTurbo)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.W))
             {
-                TurboActive = true;
-            }
-            else if (Input.GetKey(KeyCode.Space))
-            {
-                GestionarEnergia(0.25f);
-                if (CurrentEnergy <= 0)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    CurrentEnergy = 0;
+                    TurboActive = true;
+                }
+                else if (Input.GetKey(KeyCode.Space))
+                {
+                    GestionarEnergia(0.25f);
+                    if (CurrentEnergy <= 0)
+                    {
+                        CurrentEnergy = 0;
+                    }
                 }
             }
-        }
 
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            TurboActive = false;
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                TurboActive = false;
+            }
         }
     }
 
