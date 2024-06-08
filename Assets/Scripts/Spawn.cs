@@ -6,8 +6,7 @@ public class Spawn : MonoBehaviour
 {
     // pendiente de revision: 0
     public GameObject meteorPrefab; 
-    public float spawnInterval = 2f; 
-    public Vector3 spawnSize = new Vector3(30f, 5f, 30f);
+    public Vector3 spawnSize;
 
     private void Start()
     {

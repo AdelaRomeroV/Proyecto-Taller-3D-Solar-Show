@@ -45,5 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteorPrefab: {fileID: 4684217220475641037, guid: 08a7c54b7ebb49a44bae6d7faad8a91d, type: 3}
-  spawnInterval: 1
   spawnSize: {x: 30, y: 5, z: 30}

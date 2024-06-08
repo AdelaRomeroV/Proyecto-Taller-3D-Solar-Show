@@ -8,6 +8,7 @@ public class Meteorito : MonoBehaviour
 {
     private Mov player;
     private Rigidbody meteorRb;
+    public float mixSpeed = 50;
     public float maxSpeed = 250;
 
     private void Awake()
@@ -16,7 +17,7 @@ public class Meteorito : MonoBehaviour
     }
     private void Start()
     {
-        meteorRb.velocity += Vector3.down * Random.Range(50, maxSpeed); 
+        meteorRb.velocity += Vector3.down * Random.Range(mixSpeed, maxSpeed); 
     }
 
     private void OnCollisionEnter(Collision collision)

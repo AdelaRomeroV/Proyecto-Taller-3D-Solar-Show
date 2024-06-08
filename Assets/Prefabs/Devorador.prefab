@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5791748485046384160}
   - component: {fileID: 2764879123989103135}
   - component: {fileID: 4869676030779922280}
-  - component: {fileID: 8198319592022044518}
+  - component: {fileID: 6792866231147542340}
   m_Layer: 0
   m_Name: Devorador
   m_TagString: Untagged
@@ -106,7 +106,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8198319592022044518
+--- !u!114 &6792866231147542340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,9 +119,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
-  speed: 50
+  speedActual: 0
+  speedmin: 25
+  speedMax: 50
   reachedEnd: 0
   checkRadius: 50
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
+  shakje: {fileID: 0}
+  prefabMetoritos: {fileID: 1897350231243955247, guid: 43e326c3475ae4849abbc718adc3385c, type: 3}
+  player: {fileID: 0}
+  intervalAtack: 5
+  intervalAnti: 1.5

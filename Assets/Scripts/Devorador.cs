@@ -1,13 +1,15 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class Devorador : MonoBehaviour
 {
-    public List<Transform> waypoints = new List<Transform>();
-    public float speed; 
+    [SerializeField] public List<Transform> waypoints = new List<Transform>();
+    public float speedActual;
+    public float speedmin;
+    public float speedMax;
+
     private int currentWaypointIndex = 0;
     public bool reachedEnd = false;
 
@@ -18,7 +20,10 @@ public class Devorador : MonoBehaviour
     public GameObject prefabMetoritos;
     public Transform player;
 
-    private void Awake()
+    public float intervalAtack;
+    public float intervalAnti;
+
+    private void Start()
     {
         StartCoroutine(Ataque());
     }
@@ -31,11 +36,11 @@ public class Devorador : MonoBehaviour
         }
         if (detection())
         {
-            speed = 20;
+            speedActual = speedmin;
         }
         else
         {
-            speed = 50;
+            speedActual = speedMax;
         }
     }
 
@@ -43,7 +48,7 @@ public class Devorador : MonoBehaviour
     {
         if (waypoints == null || waypoints.Count == 0) return;
 
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speedActual * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
         {
@@ -57,25 +62,25 @@ public class Devorador : MonoBehaviour
     }
     IEnumerator Ataque()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(intervalAtack);
         while (true)
         {
-            shakje.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 1;
-            shakje.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 1;
+            shakje.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 2;
+            shakje.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 2;
 
-            yield return new WaitForSeconds(2f);
-            if(player != null) { Instantiate(prefabMetoritos, new Vector3(player.position.x, player.position.y + 10, player.position.z), Quaternion.identity); }         
+            yield return new WaitForSeconds(intervalAnti);
+            if (player != null) { Instantiate(prefabMetoritos, new Vector3(player.position.x, player.position.y + 20, player.position.z), Quaternion.identity); }
 
             shakje.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
             shakje.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
 
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(intervalAtack);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player")) 
+        if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
         }
@@ -91,5 +96,5 @@ public class Devorador : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, checkRadius);
-    }
+    }    
 }
