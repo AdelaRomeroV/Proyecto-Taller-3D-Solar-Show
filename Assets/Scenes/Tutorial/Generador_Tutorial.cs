@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Generador_Tutorial : GeneradorDePista
@@ -36,7 +37,7 @@ public class Generador_Tutorial : GeneradorDePista
         {
             if (Controlador.dialogo == 0)
             {
-                Debug.Log("Dialogo-Derrape");
+                Debug.Log("DERRAPA EN LAS ESQUINAS 5 VECES");
                 GenerarDialogo(0, 1);
                 Destroy(this);
             }
@@ -50,7 +51,7 @@ public class Generador_Tutorial : GeneradorDePista
         {
             if (Controlador.dialogo == 1)
             {
-                Debug.Log("Dialogo-Turbo");
+                Debug.Log("USA EL TURBO HASTA PASAR A LA SIGUIENTE FASE");
                 GenerarDialogo(1, 2);
                 Destroy(this);
             }
@@ -63,9 +64,10 @@ public class Generador_Tutorial : GeneradorDePista
         {
             if (Controlador.dialogo == 2)
             {
-                Debug.Log("Dialogo-SideAttack");
-                GenerarDialogo(2, 3);
-                Destroy(this);
+                Debug.Log("USA EL SIDE ATTACK HACIA AMBOS LADOS");
+                Instantiate(Dialogos[2], Jugador.position, Jugador.rotation);
+                Controlador.dialogo = 3;
+
             }
             else
             {
@@ -76,7 +78,7 @@ public class Generador_Tutorial : GeneradorDePista
         {
             if (Controlador.dialogo == 3)
             {
-                Debug.Log("Dialogo-Recarga");
+                Debug.Log("RECARGA ENERGIA USANDO LOS BUMPERS");
                 GenerarDialogo(3, 4);
                 Destroy(this);
             }
@@ -85,11 +87,16 @@ public class Generador_Tutorial : GeneradorDePista
                 GenerarPista(Zonas[3]);
             }
         }
+        else
+        {
+            Debug.Log("Tutorial Terminado");
+            GenerarPista(PistaRecta);
+        }
     }
 
-    void GenerarDialogo(int actual, int next)
+    void GenerarDialogo(int DialogoIndex, int next)
     {
-        Instantiate(Dialogos[actual], transform.position, transform.rotation);
+        Instantiate(Dialogos[DialogoIndex], transform.position, transform.rotation);
         Controlador.dialogo = next;
 
     }
