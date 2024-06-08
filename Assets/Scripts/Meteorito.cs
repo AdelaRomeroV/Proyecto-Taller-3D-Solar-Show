@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Meteorito : MonoBehaviour
 {
     private Mov player;
     private Rigidbody meteorRb;
+    public float maxSpeed = 250;
 
     private void Awake()
     {
@@ -14,7 +16,7 @@ public class Meteorito : MonoBehaviour
     }
     private void Start()
     {
-        meteorRb.velocity += Vector3.down * Random.Range(50, 250); 
+        meteorRb.velocity += Vector3.down * Random.Range(50, maxSpeed); 
     }
 
     private void OnCollisionEnter(Collision collision)

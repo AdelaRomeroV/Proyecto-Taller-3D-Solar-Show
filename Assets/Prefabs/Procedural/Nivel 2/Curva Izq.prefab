@@ -29,7 +29,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4362044489889762847}
   - {fileID: 5767425088275198134}
   - {fileID: 4722984253664468005}
   - {fileID: 3452577635899454211}
@@ -81,50 +80,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Jugador: {fileID: 0}
   LineaDeMeta: {fileID: 3938004179760518277, guid: 32ae60c7af0f58e45a68916b6f1789de, type: 3}
---- !u!1 &8525952919542863619
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4362044489889762847}
-  - component: {fileID: 6794355147415573575}
-  m_Layer: 0
-  m_Name: WayPoints
-  m_TagString: WayPoints
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4362044489889762847
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8525952919542863619}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 14.62986, z: -31.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1167821895229942183}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6794355147415573575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8525952919542863619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886a5fcac121dbb439f7cf148a5c096c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &652847129112837512
 PrefabInstance:
   m_ObjectHideFlags: 0

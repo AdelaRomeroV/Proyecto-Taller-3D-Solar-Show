@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9683468a2cd4534aad1afd1f8871cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteorPrefab: {fileID: 4684217220475641037, guid: 0522d1abbb672754f8d1a1cbc85a14b1, type: 3}
+  meteorPrefab: {fileID: 4684217220475641037, guid: 08a7c54b7ebb49a44bae6d7faad8a91d, type: 3}
   spawnInterval: 1
-  spawnSize: {x: 50, y: 5, z: 10}
+  spawnSize: {x: 30, y: 5, z: 30}
