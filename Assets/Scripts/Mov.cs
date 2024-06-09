@@ -59,7 +59,7 @@ public class Mov : MonoBehaviour
             GestionarBoost();
             AplicarVelocidad();
             GestionarTurbo();
-            ColorChanges();
+            //ColorChanges();
         }
     }
 
@@ -223,21 +223,21 @@ public class Mov : MonoBehaviour
 
     }
 
-    void ColorChanges()
-    {
-        if (boostActivado || turbo.TurboActive)
-        {
-            cocheRenderer.material.color = colorListoBoost;
-        }
-        else if (tiempoBoostPresionado > 0)
-        {
-            cocheRenderer.material.color = colorPreparacionBoost;
-        }
-        else
-        {
-            cocheRenderer.material.color = colorOriginal;
-        }
-    }
+    //void ColorChanges()
+    //{
+    //    if (boostActivado || turbo.TurboActive)
+    //    {
+    //        cocheRenderer.material.color = colorListoBoost;
+    //    }
+    //    else if (tiempoBoostPresionado > 0)
+    //    {
+    //        cocheRenderer.material.color = colorPreparacionBoost;
+    //    }
+    //    else
+    //    {
+    //        cocheRenderer.material.color = colorOriginal;
+    //    }
+    //}
 
     public void Boost()
     {
