@@ -71,7 +71,7 @@ public class Generador_Tutorial : GeneradorDePista
             }
             else
             {
-                GenerarPista(PistaRecta);
+                GenerarPista(Zonas[4]);
             }
         }
         else if (!Controlador.Completo_RecargaEnergia) //4
