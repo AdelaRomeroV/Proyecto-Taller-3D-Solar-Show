@@ -8,8 +8,6 @@ public class BottonBlock : MonoBehaviour
 {
     public Button button;
 
-    [SerializeField] public int levels;
-
     // Start is called before the first frame update
     void Awake()
     {
