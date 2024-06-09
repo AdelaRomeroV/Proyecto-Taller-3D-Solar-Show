@@ -13,7 +13,7 @@ public class Unlock_Level1 : BottonBlock
     }
     void ChooseLevel1()
     {
-        if (true )//gameManager.levels >= 1)
+        if (gameManager.levels >= 1)
         {
             SceneManager.LoadScene("Level_01");
         }

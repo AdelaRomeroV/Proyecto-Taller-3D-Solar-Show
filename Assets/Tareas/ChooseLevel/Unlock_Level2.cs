@@ -17,7 +17,7 @@ public class Unlock_Level2 : BottonBlock
     void ChooseLevel2()
     {
         
-        if (true)//gameManager.levels ==2)
+        if (gameManager.levels ==2)
         {
             SceneManager.LoadScene("Level_02");
         }

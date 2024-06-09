@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int levels;
+
     void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
-
-    // Update is called once per frame
+    void FinishRace()
+    {
+        levels++;
+    }
     void Update()
     {
-        
+
     }
 }
