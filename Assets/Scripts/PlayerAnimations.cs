@@ -127,6 +127,7 @@ public class PlayerAnimations : MonoBehaviour
         {
             if (collision.collider.CompareTag("Pared"))
             {
+                GameObject obj = Instantiate(Explosiones, transform.position, transform.rotation);
                 anim.Play("GetDamage");
             }
         }
