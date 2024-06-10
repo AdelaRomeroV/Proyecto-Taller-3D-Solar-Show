@@ -1,22 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ParedPuasA : MonoBehaviour
 {
-    public Transform startPoint;
+    public Transform target;
+    public Transform targetregreso;
+
     public float moveSpeed;
-    private Rigidbody rb;
-    private bool isFalling = true;
+    public bool isFalling = true;
     private Mov player;
     public bool inicio;
-    public bool anguloDeGiro;
     public float moveSpeedDePrevencion;
     public float moveSpeedDeCaida;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null) { player = playerObject.GetComponent<Mov>(); }
     }
@@ -26,83 +27,48 @@ public class ParedPuasA : MonoBehaviour
         StartCoroutine(CrushRoutine());
     }
 
+    private void Update()
+    {
+        if (transform.position == targetregreso.position) { inicio=true; }
+        if (transform.position == target.position) { isFalling = false; }
+    }
+
     private IEnumerator CrushRoutine()
     {
-
-
-        if (anguloDeGiro)
+        yield return new WaitForSeconds(1f);
+        isFalling = true;
+        float timeFalling = 0f;
+        while (isFalling)
         {
-            yield return new WaitForSeconds(1f);
-            isFalling = true;
-            float timeFalling = 0f;
-            while (isFalling)
+            if (timeFalling >= 1f)
             {
-                if (timeFalling >= 1f)
-                {
-                    RightCrushed(moveSpeedDeCaida);
-                }
-                else
-                {
-                    RightCrushed(moveSpeedDePrevencion);
-                }
-
-                inicio = false;
-                timeFalling += Time.deltaTime;
-                yield return null;
+                Forward(moveSpeedDeCaida);
+            }
+            else
+            {
+                Forward(moveSpeedDePrevencion);
             }
 
-            while (!inicio)
-            {
-                LeftCrusher();
-                yield return null;
-            }
+            inicio = false;
+            timeFalling += Time.deltaTime;
+            yield return null;
         }
-        else
-        {
-            yield return new WaitForSeconds(1f);
-            isFalling = true;
-            float timeFalling = 0f;
-            while (isFalling)
-            {
-                if (timeFalling >= 1f)
-                {
-                    MoveBackward(moveSpeedDeCaida);
-                }
-                else
-                {
-                    MoveBackward(moveSpeedDePrevencion);
-                }
-                inicio = false;
-                timeFalling += Time.deltaTime;
-                yield return null;
-            }
 
-            while (!inicio)
-            {
-                MoveForward();
-                yield return null;
-            }
+        while (!inicio)
+        {
+            Backward();
+            yield return null;
         }
     }
 
-    private void LeftCrusher()
+    private void Backward()
     {
-        rb.MovePosition(transform.position + Vector3.left * moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetregreso.position, moveSpeed * Time.deltaTime);
     }
 
-    private void RightCrushed(float move)
+    private void Forward(float move)
     {
-        rb.MovePosition(transform.position + Vector3.right * move * Time.deltaTime);
-    }
-
-    private void MoveForward()
-    {
-        rb.MovePosition(transform.position + Vector3.forward * moveSpeed * Time.deltaTime);
-    }
-
-    private void MoveBackward(float move)
-    {
-        rb.MovePosition(transform.position + Vector3.back * move * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.position, move * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -119,15 +85,12 @@ public class ParedPuasA : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Point"))
-        {
-            inicio = true;
-        }
         if (other.CompareTag("Hazards") || other.CompareTag("Player"))
         {
             isFalling = false;
         }
     }
+
     private IEnumerator DesactivarColision()
     {
         Collider collider = GetComponent<Collider>();

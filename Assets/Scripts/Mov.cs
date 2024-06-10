@@ -216,6 +216,7 @@ public class Mov : MonoBehaviour
     public void ReiniciarVelocidad()
     {
         boostActivado = false;
+        boostOn = false;
         StartCoroutine(ReducirVelocidadMaxima());
     }
 

@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class ParedPuasB : MonoBehaviour
 {
-    public Transform startPoint;
+    public Transform target;
+    public Transform targetregreso;
+
     public float moveSpeed;
-    private Rigidbody rb;
-    private bool isFalling = true;
+    public bool isFalling = true;
     private Mov player;
     public bool inicio;
-    public bool anguloDeGiro;
     public float moveSpeedDePrevcion;
     public float moveSpeedDeCaida;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null) { player = playerObject.GetComponent<Mov>(); }
+    }
+
+    private void Update()
+    {
+        if (transform.position == targetregreso.position) { inicio = true; }
+        if (transform.position == target.position) { isFalling = false; }
     }
 
     public void IniciarCorutina()
@@ -28,81 +33,40 @@ public class ParedPuasB : MonoBehaviour
 
     private IEnumerator CrushRoutine()
     {
-        if (anguloDeGiro)
+        yield return new WaitForSeconds(1f);
+        isFalling = true;
+        float timeFalling = 0f;
+        while (isFalling)
         {
-            yield return new WaitForSeconds(1f);
-            isFalling = true;
-            float timeFalling = 0f;
-            while (isFalling)
+            if (timeFalling >= 1f)
             {
-                if (timeFalling >= 1f)
-                {
-                    LeftCrusher(moveSpeedDeCaida);
-                }
-                else
-                {
-                    LeftCrusher(moveSpeedDePrevcion);
-                }
-
-                inicio = false;
-                timeFalling += Time.deltaTime;
-                yield return null;
+                Forward(moveSpeedDeCaida);
+            }
+            else
+            {
+                Forward(moveSpeedDePrevcion);
             }
 
-            while (!inicio)
-            {
-                RightCrushed();
-                yield return null;
-            }
-        }
-        else
-        {
-            yield return new WaitForSeconds(1f);
-            isFalling = true;
-
-            float timeFalling = 0f;
-            while (isFalling)
-            {
-                if (timeFalling >= 1f)
-                {
-                    MoveForward(moveSpeedDeCaida);
-                }
-                else
-                {
-                    MoveForward(moveSpeedDePrevcion);
-                }
-
-                inicio = false;
-                timeFalling += Time.deltaTime;
-                yield return null;
-            }
-
-            while (!inicio)
-            {
-                MoveBackward();
-                yield return null;
-            }
+            inicio = false;
+            timeFalling += Time.deltaTime;
+            yield return null;
         }
 
+        while (!inicio)
+        {
+            Backward();
+            yield return null;
+        }        
     }
 
-    private void LeftCrusher(float move)
+    private void Forward(float move)
     {
-        rb.MovePosition(transform.position + Vector3.left * move * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.position, move * Time.deltaTime);
     }
 
-    private void RightCrushed()
+    private void Backward()
     {
-        rb.MovePosition(transform.position + Vector3.right * moveSpeed * Time.deltaTime);
-    }
-    private void MoveForward(float move)
-    {
-        rb.MovePosition(transform.position + Vector3.forward * move * Time.deltaTime);
-    }
-
-    private void MoveBackward()
-    {
-        rb.MovePosition(transform.position + Vector3.back * moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetregreso.position, moveSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -118,11 +82,7 @@ public class ParedPuasB : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Point"))
-        {
-            inicio = true;
-        }
+    { 
         if (other.CompareTag("Hazards") || other.CompareTag("Player"))
         {
             isFalling = false;
