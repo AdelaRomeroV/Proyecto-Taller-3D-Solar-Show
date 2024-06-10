@@ -29,7 +29,7 @@ public class ControlDeVida : MonoBehaviour
     void ApagarAudio()
     {
         audioSource.Pause();
-        audioSource.clip = null; // Esto no se si es necesario o sobra, pero el metodo era por el audio me parecio un poco largo
+        audioSource.clip = null; // Esto no se si es necesario o sobra, pero el metodo era por el audio me parecio un poco largo //aqui se ponia el clip del audio y se reproduce en el unity pero te complicaste la vida no lo sabes :v
     }
     private void OnCollisionEnter(Collision collision)
     {
