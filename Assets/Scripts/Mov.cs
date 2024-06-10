@@ -34,12 +34,15 @@ public class Mov : MonoBehaviour
     [SerializeField] Renderer cocheRenderer;
     private Color colorOriginal;
 
-    
+    [Header("Audio")]
+    public AudioClip audioAcelerador;
+    private AudioSource audioSource;
+
 
     void Start()
     {
         turbo = GetComponent<Turbo>();
-        
+        audioSource = GetComponent<AudioSource>();
 
         colorOriginal = cocheRenderer.material.color;
            
@@ -70,16 +73,28 @@ public class Mov : MonoBehaviour
 
     void GestionarAceleracion()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) )
         {
+            if(!audioSource.isPlaying)
+            {
+                audioSource.clip = audioAcelerador;
+                audioSource.Play();
+            }
+
             velocidadActual += aceleracion * Time.deltaTime;
         }
+
         else if (Input.GetKey(KeyCode.S))
         {
             velocidadActual -= fuerzaFreno * Time.deltaTime;
         }
         else
         {
+            if (audioSource.isPlaying && audioSource.clip == audioAcelerador)
+            {
+                audioSource.Stop();
+            }
+
             if (velocidadActual > 0)
             {
                 velocidadActual -= fuerzaFreno * Time.deltaTime * 0.75f;
@@ -188,6 +203,7 @@ public class Mov : MonoBehaviour
 
     void AplicarVelocidad()
     {
+        
         Vector3 velocidad = transform.forward * velocidadActual;
         rb.velocity = new Vector3(velocidad.x, rb.velocity.y, velocidad.z);
 

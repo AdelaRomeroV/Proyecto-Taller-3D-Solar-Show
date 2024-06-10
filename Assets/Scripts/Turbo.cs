@@ -25,6 +25,12 @@ public class Turbo : MonoBehaviour
     [NonSerialized] public bool CanAttackRight = true;
     [NonSerialized] public bool CanAttackLeft = true;
 
+    [Header("Audio")]
+    public AudioClip audioTurbo;
+    public AudioClip audioExplosion;
+    public AudioClip audioAtaque;
+    private AudioSource audioSource;
+
     private void Start()
     {
         LifeControl = GetComponent<ControlDeVida>();
@@ -33,6 +39,8 @@ public class Turbo : MonoBehaviour
         {
             EnergyBar.fillAmount = CurrentEnergy / 100;
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -55,7 +63,14 @@ public class Turbo : MonoBehaviour
         if (CurrentEnergy <= 0) 
         {
             if(EnergyBar != null) { EnergyBar.fillAmount = 0; }
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = audioExplosion;
+                audioSource.Play();
+            }
             CurrentEnergy = 0;
+
             //Instantiate(efecto, transform.position);
             Destroy(gameObject);
         }
@@ -75,6 +90,9 @@ public class Turbo : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
+                    audioSource.clip = audioTurbo;
+                    audioSource.Play();
+
                     TurboActive = true;
                 }
                 else if (Input.GetKey(KeyCode.Space))
@@ -90,7 +108,9 @@ public class Turbo : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space) || !canUseTurbo)
         {
+
             TurboActive = false;
+
         }
     }
 
@@ -113,6 +133,7 @@ public class Turbo : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && !isKicking && CurrentEnergy > 20 && CanAttackLeft)
         {
+            audioSource.clip = audioAtaque; audioSource.Play();
             RightBox.SetActive(true);
             isKicking = true;
             CurrentEnergy -= 10;
@@ -122,6 +143,7 @@ public class Turbo : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Mouse1) && !isKicking && CurrentEnergy > 20 && CanAttackRight)
         {
+            audioSource.clip = audioAtaque; audioSource.Play();
             LeftBox.SetActive(true);
             isKicking = true;
             CurrentEnergy -= 10;

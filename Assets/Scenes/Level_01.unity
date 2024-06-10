@@ -846,8 +846,10 @@ MonoBehaviour:
   RightBox: {fileID: 1555343540}
   LeftBox: {fileID: 1215054592}
   isKicking: 0
-  RightAtack: 0
-  LeftAtack: 0
+  RightAtacking: 0
+  LeftAttaking: 0
+  audioTurbo: {fileID: 8300000, guid: 648fb8a39ce13064ba3711bf8cd8eca7, type: 3}
+  audioExplosion: {fileID: 8300000, guid: aa946111d86c4974e8e8bc1bcdd4f62b, type: 3}
 --- !u!114 &246642859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,6 +878,7 @@ MonoBehaviour:
   tiempoBoostPresionado: 0
   boostOn: 0
   cocheRenderer: {fileID: 721031378}
+  audioAcelerador: {fileID: 8300000, guid: 71ef0b14322a8c340af76cab5975db51, type: 3}
 --- !u!114 &246642860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5208,7 +5211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595042341}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0018402492, y: 0.98754394, z: -0.15690604, w: -0.011582265}
+  m_LocalRotation: {x: -0.0018402443, y: 0.98754394, z: -0.15690605, w: -0.011582231}
   m_LocalPosition: {x: 0.23454466, y: 7.6540003, z: 9.99726}
   m_LocalScale: {x: 1.2511902, y: 1.9424587, z: 0.40040955}
   m_ConstrainProportionsScale: 0
@@ -6011,7 +6014,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794131864}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0018402492, y: 0.98754394, z: -0.15690604, w: -0.011582265}
+  m_LocalRotation: {x: -0.0018402443, y: 0.98754394, z: -0.15690605, w: -0.011582231}
   m_LocalPosition: {x: 0.23454466, y: 7.6540003, z: 9.99726}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
