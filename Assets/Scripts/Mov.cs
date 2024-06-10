@@ -36,13 +36,13 @@ public class Mov : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip audioAcelerador;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
 
     void Start()
     {
         turbo = GetComponent<Turbo>();
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>(); //se pone en el unity para que no se escuche al iniciar el juego
 
         colorOriginal = cocheRenderer.material.color;
            
@@ -105,6 +105,7 @@ public class Mov : MonoBehaviour
             }
         }
         velocidadActual = Mathf.Clamp(velocidadActual, -velocidadMaxima, velocidadMaxima);
+        audioSource.volume = Mathf.Abs(velocidadActual) / velocidadMaxima; //dependera el sonido de la velocidad actual que tenga, asi iniciara de menor a mayor sonido
     }
 
     void GestionarGiro()

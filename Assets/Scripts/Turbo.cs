@@ -133,8 +133,11 @@ public class Turbo : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && !isKicking && CurrentEnergy > 20 && CanAttackLeft)
         {
-            audioSource.clip = audioAtaque; audioSource.Play();
+            audioSource.clip = audioAtaque; 
+            audioSource.Play();
+
             RightBox.SetActive(true);
+
             isKicking = true;
             CurrentEnergy -= 10;
             RightAtacking = true;
@@ -143,8 +146,11 @@ public class Turbo : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Mouse1) && !isKicking && CurrentEnergy > 20 && CanAttackRight)
         {
-            audioSource.clip = audioAtaque; audioSource.Play();
+            audioSource.clip = audioAtaque; 
+            audioSource.Play();
+
             LeftBox.SetActive(true);
+
             isKicking = true;
             CurrentEnergy -= 10;
             LeftAttaking = true;
