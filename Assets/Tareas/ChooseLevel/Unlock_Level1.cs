@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Unlock_Level1 : BottonBlock
 {
+    public GameManager gameManager;
     private void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>();
         button.onClick.AddListener(ChooseLevel1);
     }
     void ChooseLevel1()
     {
-        if (levels >= 1)
+        if (gameManager.levels >= 1)
         {
             SceneManager.LoadScene("Level_01");
         }
