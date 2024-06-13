@@ -23,9 +23,6 @@ public class Mov : MonoBehaviour
     public float tiempoBoostNecesario = 2f;
     public float aumentoVelocidadBoost = 5f;
 
-    private Color colorPreparacionBoost = Color.yellow;
-    private Color colorListoBoost = Color.red;
-
     [SerializeField] public Rigidbody rb;
     public float velocidadActual = 0f;
     public bool estaGirando = false;
@@ -33,7 +30,6 @@ public class Mov : MonoBehaviour
     public float tiempoBoostPresionado = 0f;
     public bool boostOn;
     [SerializeField] Renderer cocheRenderer;
-    private Color colorOriginal;
 
     [Header("Audio")]
     public AudioClip audioAcelerador;
@@ -49,10 +45,6 @@ public class Mov : MonoBehaviour
     void Start()
     {
         turbo = GetComponent<Turbo>();
-        //audioSource = GetComponent<AudioSource>(); //se pone en el unity para que no se escuche al iniciar el juego
-
-        colorOriginal = cocheRenderer.material.color;
-
     }
 
     private void Update()
@@ -71,7 +63,6 @@ public class Mov : MonoBehaviour
             GestionarBoost();
             AplicarVelocidad();
             GestionarTurbo();
-            //ColorChanges();
         }
     }
 
@@ -175,7 +166,7 @@ public class Mov : MonoBehaviour
 
     void GestionarBoost()
     {
-        if (estaGirando && Input.GetKey(KeyCode.LeftShift))
+        if (estaGirando)
         {
             tiempoBoostPresionado += Time.deltaTime;
             if (tiempoBoostPresionado >= tiempoBoostNecesario)
@@ -253,22 +244,6 @@ public class Mov : MonoBehaviour
         }
 
     }
-
-    //void ColorChanges()
-    //{
-    //    if (boostActivado || turbo.TurboActive)
-    //    {
-    //        cocheRenderer.material.color = colorListoBoost;
-    //    }
-    //    else if (tiempoBoostPresionado > 0)
-    //    {
-    //        cocheRenderer.material.color = colorPreparacionBoost;
-    //    }
-    //    else
-    //    {
-    //        cocheRenderer.material.color = colorOriginal;
-    //    }
-    //}
 
     public void Boost()
     {
