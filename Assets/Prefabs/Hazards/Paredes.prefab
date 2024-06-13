@@ -148,10 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b195a6aaca9ff4e8cc2561e99f8ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {fileID: 17757855731564078}
+  target: {fileID: 8270343642859342698}
+  targetregreso: {fileID: 17757855731564078}
   moveSpeed: 30
+  isFalling: 1
   inicio: 1
-  anguloDeGiro: 1
   moveSpeedDePrevcion: 20
   moveSpeedDeCaida: 120
 --- !u!114 &5605849654726802044
@@ -589,10 +590,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a574cd5d5f0c1c743a1899340df44d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {fileID: 786414344112564547}
+  target: {fileID: 4623321481518888078}
+  targetregreso: {fileID: 786414344112564547}
   moveSpeed: 30
+  isFalling: 1
   inicio: 1
-  anguloDeGiro: 1
   moveSpeedDePrevencion: 20
   moveSpeedDeCaida: 120
 --- !u!114 &4855503666416246244
