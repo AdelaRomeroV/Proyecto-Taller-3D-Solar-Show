@@ -433,7 +433,7 @@ MonoBehaviour:
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 5, z: -10}
   m_XDamping: 1
-  m_YDamping: 0.8
+  m_YDamping: 0.3
   m_ZDamping: 0.2
   m_AngularDampingMode: 0
   m_PitchDamping: 0
@@ -5313,6 +5313,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1535811908677372835, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
+      propertyPath: m_Pitch
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246483417583607026, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 738564e1022c61d44918dfc70134350c, type: 3}
     - target: {fileID: 3467041261178739535, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
       propertyPath: EnergyBar
       value: 

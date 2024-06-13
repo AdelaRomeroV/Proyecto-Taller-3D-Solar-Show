@@ -48,7 +48,7 @@ public class PlayerAnimations : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         if (horizontalInput == 1 || horizontalInput == -1)
         {
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (mov.Drifiting)
             {
                 Instantiate(Humo, Posiciones[1].position, Posiciones[1].rotation);
 

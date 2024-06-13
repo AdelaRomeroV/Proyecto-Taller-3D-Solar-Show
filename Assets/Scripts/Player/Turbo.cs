@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class Turbo : MonoBehaviour
     [Header("Componentes")]
     [SerializeField] Image EnergyBar;
     ControlDeVida LifeControl;
-
+    Mov mov;
     
     [Header("Enegy Bar")]
     public bool TurboActive = false;
@@ -31,9 +32,13 @@ public class Turbo : MonoBehaviour
     public AudioClip audioAtaque;
     private AudioSource audioSource;
 
+    [Header("Queues")]
+    Queue<KeyCode> Turbo_Buffer = new Queue<KeyCode>();
+
     private void Start()
     {
         LifeControl = GetComponent<ControlDeVida>();
+        mov = GetComponent<Mov>();
 
         if(EnergyBar  != null)
         {
@@ -50,6 +55,7 @@ public class Turbo : MonoBehaviour
         ReloadBar();
         SideKick();
         Energia();
+        InputBuffer();
     }
 
     private void BarSmoothness()
@@ -86,27 +92,28 @@ public class Turbo : MonoBehaviour
     {
         if (canUseTurbo)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (TurboActive)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    audioSource.clip = audioTurbo;
-                    audioSource.Play();
+                audioSource.clip = audioTurbo;
+                audioSource.Play();
 
-                    TurboActive = true;
-                }
-                else if (Input.GetKey(KeyCode.Space))
+                GestionarEnergia(0.25f);
+                if (CurrentEnergy <= 0)
                 {
-                    GestionarEnergia(0.25f);
-                    if (CurrentEnergy <= 0)
-                    {
-                        CurrentEnergy = 0;
-                    }
+                    CurrentEnergy = 0;
                 }
+            }
+            /*else if (Input.GetKey(KeyCode.W) && TurboActive)*/
+            {
+                //GestionarEnergia(0.25f);
+                //if (CurrentEnergy <= 0)
+                //{
+                //    CurrentEnergy = 0;
+                //}
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) || !canUseTurbo)
+        if (Input.GetKeyUp(KeyCode.W) || !canUseTurbo)
         {
 
             TurboActive = false;
@@ -131,7 +138,7 @@ public class Turbo : MonoBehaviour
 
     public void SideKick()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isKicking && CurrentEnergy > 20 && CanAttackLeft)
+        if (Input.GetKeyDown(KeyCode.A) && !isKicking && CurrentEnergy > 20 && CanAttackLeft)
         {
             audioSource.clip = audioAtaque; 
             audioSource.Play();
@@ -144,7 +151,7 @@ public class Turbo : MonoBehaviour
 
             Invoke("DisableKicking", 0.55f);
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse1) && !isKicking && CurrentEnergy > 20 && CanAttackRight)
+        else if (Input.GetKeyDown(KeyCode.D) && !isKicking && CurrentEnergy > 20 && CanAttackRight)
         {
             audioSource.clip = audioAtaque; 
             audioSource.Play();
@@ -186,5 +193,24 @@ public class Turbo : MonoBehaviour
             CountPeligro turbo = other.GetComponent<CountPeligro>();
             if (turbo != null) { CurrentEnergy += turbo.count; }
         }
+    }
+
+    void InputBuffer()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Turbo_Buffer.Enqueue(KeyCode.W);
+            Invoke("TurboDequeue", 0.5f);
+        }
+
+        if(Turbo_Buffer.Count == 2 && !mov.Drifiting && !LifeControl.GetDamage)
+        {
+            TurboActive = true;
+        }
+    }
+
+    void TurboDequeue()
+    {
+        Turbo_Buffer.Dequeue();
     }
 }

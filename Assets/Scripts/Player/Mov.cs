@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Mov : MonoBehaviour
@@ -27,7 +28,7 @@ public class Mov : MonoBehaviour
 
     [SerializeField] public Rigidbody rb;
     public float velocidadActual = 0f;
-    public bool estaDerrapando = false;
+    public bool estaGirando = false;
     public bool boostActivado = false;
     public float tiempoBoostPresionado = 0f;
     public bool boostOn;
@@ -38,6 +39,12 @@ public class Mov : MonoBehaviour
     public AudioClip audioAcelerador;
     public AudioSource audioSource;
 
+    [Header("Queues")]
+    Queue<KeyCode> RightDrift_Buffer = new Queue<KeyCode>();
+    Queue<KeyCode> LeftDrift_Buffer = new Queue<KeyCode>();
+    public bool RightDrifting = false;
+    public bool LeftDrifting = false;
+    public bool Drifiting = false;
 
     void Start()
     {
@@ -45,12 +52,14 @@ public class Mov : MonoBehaviour
         //audioSource = GetComponent<AudioSource>(); //se pone en el unity para que no se escuche al iniciar el juego
 
         colorOriginal = cocheRenderer.material.color;
-           
+
     }
 
     private void Update()
     {
          if(velocidadActual < 0.5f && !Input.GetKey(KeyCode.S)) { velocidadActual = 0; }
+
+         InputsBuffer();
     }
 
     void FixedUpdate()
@@ -73,13 +82,17 @@ public class Mov : MonoBehaviour
 
     void GestionarAceleracion()
     {
-        if (Input.GetKey(KeyCode.W) )
+        if (Input.GetKey(KeyCode.W))
         {
-            if(!audioSource.isPlaying)
+            if (!turbo.TurboActive)
             {
-                audioSource.clip = audioAcelerador;
-                audioSource.Play();
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.clip = audioAcelerador;
+                    audioSource.Play();
+                }
             }
+            
 
             velocidadActual += aceleracion * Time.deltaTime;
         }
@@ -112,16 +125,16 @@ public class Mov : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
 
-        float modificadorGiroDrift = estaDerrapando ? 1.5f : 1f;
+        float modificadorGiroDrift = estaGirando ? 1.5f : 1f;
         float anguloGiro = horizontalInput * velocidadGiro * modificadorGiroDrift;
 
-        if (estaDerrapando && !turbo.TurboActive)
+        if (estaGirando && !turbo.TurboActive)
         {
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Drifiting)
             {
-                if (Input.GetKey(KeyCode.D))
+                if (LeftDrifting)
                 {
-                    if (Input.GetKey(KeyCode.A))
+                    if (Input.GetKey(KeyCode.RightArrow))
                     {
                         anguloGiro *= 0.2f;
                     }
@@ -130,9 +143,9 @@ public class Mov : MonoBehaviour
                         anguloGiro *= 1.5f;
                     }
                 }
-                else if (Input.GetKey(KeyCode.A))
+                else if (RightDrifting)
                 {
-                    if (Input.GetKey(KeyCode.D))
+                    if (Input.GetKey(KeyCode.LeftArrow))
                     {
                         anguloGiro *= 0.2f;
                     }
@@ -152,17 +165,17 @@ public class Mov : MonoBehaviour
 
         if (Mathf.Abs(horizontalInput) > umbralDrift && velocidadActual > 0)
         {
-            estaDerrapando = true;
+            estaGirando = true;
         }
         else
         {
-            estaDerrapando = false;
+            estaGirando = false;
         }
     }
 
     void GestionarBoost()
     {
-        if (estaDerrapando && Input.GetKey(KeyCode.LeftShift))
+        if (estaGirando && Input.GetKey(KeyCode.LeftShift))
         {
             tiempoBoostPresionado += Time.deltaTime;
             if (tiempoBoostPresionado >= tiempoBoostNecesario)
@@ -193,7 +206,7 @@ public class Mov : MonoBehaviour
 
     void GestionarTurbo()
     {
-        if (turbo.TurboActive && !estaDerrapando && !boostOn)
+        if (turbo.TurboActive && !estaGirando && !boostOn)
         {
             velocidadMaxima = 150;
             velocidadActual += fuerzaBoostDrift * Time.deltaTime;
@@ -265,4 +278,54 @@ public class Mov : MonoBehaviour
         boostOn = true;
     }
     
+
+    void InputsBuffer()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            RightDrift_Buffer.Enqueue(KeyCode.RightArrow);
+            Invoke("RightDequeue", 0.5f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            LeftDrift_Buffer.Enqueue(KeyCode.LeftArrow);
+            Invoke("LeftDequeue", 0.5f);
+        }
+
+
+        if (RightDrift_Buffer.Count == 2 && !LeftDrifting)
+        {
+            RightDrifting = true;
+            Drifiting = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            RightDrifting = false;
+            Drifiting = false;
+        }
+
+
+        if (LeftDrift_Buffer.Count == 2 && !RightDrifting)
+        {
+            LeftDrifting = true;
+            Drifiting = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            LeftDrifting = false;
+            Drifiting = false;
+        }
+    }
+
+    void LeftDequeue()
+    {
+        LeftDrift_Buffer.Dequeue();
+    }
+
+    void RightDequeue()
+    {
+        RightDrift_Buffer.Dequeue();
+    }
+
 }

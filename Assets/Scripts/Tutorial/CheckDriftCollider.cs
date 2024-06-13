@@ -12,7 +12,7 @@ public class CheckDriftCollider : MonoBehaviour
         {
             Mov mov = other.GetComponent<Mov>();
 
-            if (Input.GetKey(KeyCode.LeftShift) && mov.estaDerrapando)
+            if (mov.RightDrifting || mov.LeftDrifting)
             {
                 GameObject.Find("Controlador").GetComponent<ControladorTutorial>().derrape++;
             }

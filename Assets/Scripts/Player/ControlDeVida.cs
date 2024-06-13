@@ -37,12 +37,14 @@ public class ControlDeVida : MonoBehaviour
         {
             turboPlayer.GestionarEnergia(20);
             GetDamage = true;
+            turboPlayer.TurboActive = false;
         }
         if (collision.gameObject.CompareTag("Hazards"))
         {
             CountPeligro turbo = collision.gameObject.GetComponent<CountPeligro>();
             if(turbo != null) { turboPlayer.GestionarEnergia(turbo.count); }
             GetDamage = true;
+            turboPlayer.TurboActive = false;
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -51,12 +53,14 @@ public class ControlDeVida : MonoBehaviour
         {
             turboPlayer.GestionarEnergia(2);
             GetDamage = true;
+            turboPlayer.TurboActive = false;
         }
         if (other.CompareTag("Hazards"))
         {
             CountPeligro turbo = other.gameObject.GetComponent<CountPeligro>();
             if (turbo != null) { turboPlayer.GestionarEnergia(turbo.count); }
             GetDamage = true;
+            turboPlayer.TurboActive = false;
         }
     }
 }

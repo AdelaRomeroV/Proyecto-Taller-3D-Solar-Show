@@ -35,16 +35,16 @@ public class ControladorTutorial : MonoBehaviour
 
     /*[NonSerialized]*/ public int movimientoBasico = 0; //Necesita llegar al valor de 3
     [NonSerialized] public bool W_pressed;
-    [NonSerialized] public bool A_pressed;
-    [NonSerialized] public bool D_pressed;
+    [NonSerialized] public bool Left_pressed;
+    [NonSerialized] public bool Right_pressed;
 
     /*[NonSerialized]*/ public int derrape = 0; //Necesita llegar a 5 esquinas derrapando para continuar
 
     [SerializeField] [Range(0, 100)] float TurboGoal;
 
     public int sideAttack = 0;
-    public bool RightClick_Pressed;
-    public bool LeftClick_Pressed;
+    public bool D_Pressed;
+    public bool A_Pressed;
 
     //0: Derrape
     //1: Turbo
@@ -78,14 +78,14 @@ public class ControladorTutorial : MonoBehaviour
             W_pressed = true;
             movimientoBasico++;
         }
-        if (Input.GetKeyDown(KeyCode.A) && !A_pressed)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && !Left_pressed)
         {
-            A_pressed = true;
+            Left_pressed = true;
             movimientoBasico++;
         }
-        if (Input.GetKeyDown(KeyCode.D) && !D_pressed)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && !Right_pressed)
         {
-            D_pressed = true;
+            Right_pressed = true;
             movimientoBasico++;
         }
 
@@ -126,17 +126,17 @@ public class ControladorTutorial : MonoBehaviour
     {
         if (Completo_Turbo)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !LeftClick_Pressed)
+            if (Input.GetKeyDown(KeyCode.A) && !A_Pressed)
             {
-                LeftClick_Pressed = true;
+                A_Pressed = true;
                 sideAttack++;
                 Invoke("DisableLeft", 0.5f);
                 
             }
 
-            if (Input.GetKeyDown(KeyCode.Mouse1) && !RightClick_Pressed)
+            if (Input.GetKeyDown(KeyCode.D) && !D_Pressed)
             {
-                RightClick_Pressed = true;
+                D_Pressed = true;
                 sideAttack++;
                 Invoke("DisableRight", 0.5f);
             }
