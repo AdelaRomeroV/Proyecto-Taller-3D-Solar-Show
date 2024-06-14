@@ -33,6 +33,7 @@ public class Dialogo : MonoBehaviour
 
     public bool FinalDialogue = false;
     public bool turboDialogue = false;
+    public bool startDialogue = false;
     void Update()
     {
         if (didDialogueStart)
@@ -97,6 +98,12 @@ public class Dialogo : MonoBehaviour
         yield return new WaitForSecondsRealtime(2.5f);
         dialoguePanel.SetActive(false);
         Time.timeScale = 1f;
+
+        if (startDialogue)
+        {
+            Mov mov = GameObject.FindGameObjectWithTag("Player").GetComponent<Mov>();
+            mov.enabled = true;
+        }
 
         if (turboDialogue)
         {
