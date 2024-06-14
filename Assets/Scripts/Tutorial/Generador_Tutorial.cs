@@ -4,7 +4,7 @@ using UnityEngine;
 public class Generador_Tutorial : GeneradorDePista
 {
     [Header("Zonas de pista")]
-    GameObject PistaRecta;
+    List<GameObject> pistaRecta = new List<GameObject>();
     List<GameObject> Zonas = new List<GameObject>();
     List<GameObject> Dialogos = new List<GameObject>();
 
@@ -16,7 +16,7 @@ public class Generador_Tutorial : GeneradorDePista
         Controlador = GameObject.Find("Controlador").GetComponent<ControladorTutorial>();
         Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        PistaRecta = Controlador.PistaRecta;
+        pistaRecta = Controlador.PistaRecta;
         Zonas = Controlador.Zonas;
         Dialogos = Controlador.Dialogos;
     }
@@ -30,7 +30,7 @@ public class Generador_Tutorial : GeneradorDePista
     {
         if (!Controlador.Completo_MovimientoBasico) //0
         {
-            GenerarPista(PistaRecta);
+            GenerarPista(PistaRecta());
         }
         else if (!Controlador.Completo_Derrape) //1
         {
@@ -53,7 +53,7 @@ public class Generador_Tutorial : GeneradorDePista
             }
             else
             {
-                GenerarPista(PistaRecta);
+                GenerarPista(PistaRecta());
             }
 
         }else if (!Controlador.Completo_SideAttack) //3
@@ -86,16 +86,23 @@ public class Generador_Tutorial : GeneradorDePista
             {
                 GenerarDialogo();
             }
-            GenerarPista(PistaRecta);
+            GenerarPista(PistaRecta());
         }
     }
 
     void GenerarDialogo()
     {
-        Instantiate(PistaRecta, transform.position, transform.rotation);
+        Instantiate(PistaRecta(), transform.position, transform.rotation);
         Instantiate(Dialogos[Controlador.dialogo], transform.position, transform.rotation);
         Controlador.dialogo++;
         Destroy(this);
 
+    }
+
+    GameObject PistaRecta()
+    {
+        int num = Random.Range(0, pistaRecta.Count);
+
+        return pistaRecta[num];
     }
 }

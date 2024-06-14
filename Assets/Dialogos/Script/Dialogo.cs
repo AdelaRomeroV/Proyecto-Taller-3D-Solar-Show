@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct Dialogue
 {
     public Sprite sprite;
-    //public string name;
+    public string CharName;
     [TextArea(4, 6)] public string line;
 }
 public class Dialogo : MonoBehaviour
@@ -16,21 +18,21 @@ public class Dialogo : MonoBehaviour
     private bool didDialogueStart;
     private int lineaIndex;
 
-    private float typingTime = 0.05f;
+    private float typingTime = 0.02f;
 
-    [SerializeField] ControladorTutorial controlador;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private TMP_Text NameText;
+    [SerializeField] private Image Imagen;
     [SerializeField] bool CanStopTime;
     [SerializeField] private Dialogue[] dialogueLine;
     [SerializeField] GameObject LastInstructions;
     [SerializeField] GameObject CurrentInstructions;
+    [SerializeField] UnityEvent OntriggerEnter;
 
-    private void Start()
-    {
-        controlador = GameObject.Find("Controlador").GetComponent<ControladorTutorial>();
-    }
 
+    public bool FinalDialogue = false;
+    public bool turboDialogue = false;
     void Update()
     {
         if (didDialogueStart)
@@ -54,7 +56,7 @@ public class Dialogo : MonoBehaviour
         dialoguePanel.SetActive(true);
         lineaIndex = 0;
         LastInstructions.SetActive(false);
-        if (CanStopTime) Time.timeScale = 0f; //afecta en el movimiento del player
+        if (CanStopTime) Time.timeScale = 0.8f; //afecta en el movimiento del player
 
         StartCoroutine(ShowLine());
 
@@ -76,7 +78,10 @@ public class Dialogo : MonoBehaviour
 
     private IEnumerator ShowLine()
     {
-        yield return new WaitForSecondsRealtime(0.2f);
+
+        yield return new WaitForSecondsRealtime(1f);
+        Imagen.sprite = dialogueLine[lineaIndex].sprite;
+        NameText.text = dialogueLine[lineaIndex].CharName;
         dialogueText.text = string.Empty;
 
         foreach (char ch in dialogueLine[lineaIndex].line)
@@ -89,9 +94,21 @@ public class Dialogo : MonoBehaviour
     private IEnumerator LastDialogue()
     {
         didDialogueStart = false;
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(2.5f);
         dialoguePanel.SetActive(false);
         Time.timeScale = 1f;
+
+        if (turboDialogue)
+        {
+            Turbo turbo = GameObject.FindGameObjectWithTag("Player").GetComponent<Turbo>();
+            turbo.enabled = true;
+        }
+
+        if (FinalDialogue)
+        {
+            ControladorTutorial controlador = GameObject.Find("Controlador").GetComponent<ControladorTutorial>();
+            controlador.PasarEscena = true;
+        }
 
         if(CurrentInstructions != null) CurrentInstructions.SetActive(true);
         Destroy(this);
@@ -105,6 +122,9 @@ public class Dialogo : MonoBehaviour
             if (!didDialogueStart)
             {
                 StartDialogue();
+
+                if(OntriggerEnter != null)
+                OntriggerEnter.Invoke();
             }
         }
     }
