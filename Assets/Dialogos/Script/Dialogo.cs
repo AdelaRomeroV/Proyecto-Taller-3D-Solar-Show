@@ -20,6 +20,9 @@ public class Dialogo : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private Dialogue[] dialogueLine;
+    [SerializeField] List<GameObject> Instrucciones = new List<GameObject>();
+
+    int CurrentIns = -1;
 
     void Update()
     {
@@ -44,6 +47,9 @@ public class Dialogo : MonoBehaviour
         dialoguePanel.SetActive(true);
         lineaIndex = 0;
         Time.timeScale = 0f; //afecta en el movimiento del player
+
+        CurrentIns++;
+
         StartCoroutine(ShowLine());
     }
 
@@ -78,7 +84,9 @@ public class Dialogo : MonoBehaviour
         didDialogueStart = false;
         yield return new WaitForSecondsRealtime(1);
         dialoguePanel.SetActive(false);
+        Instrucciones[CurrentIns].SetActive(true);
         Time.timeScale = 1f;
+        Destroy(this);
 
     }
 

@@ -38,7 +38,9 @@ public class Generador_Tutorial : GeneradorDePista
             if (Controlador.dialogo == 0)
             {
                 Debug.Log("DERRAPA EN LAS ESQUINAS 5 VECES");
-                GenerarDialogo(0, 1);
+                Instantiate(PistaRecta, transform.position, transform.rotation);
+                Instantiate(Dialogos[Controlador.dialogo], transform.position, transform.rotation);
+                Controlador.dialogo++;
                 Destroy(this);
             }
             else
