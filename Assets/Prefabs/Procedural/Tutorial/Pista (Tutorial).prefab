@@ -215,8 +215,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6103582774257457126}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 79.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 84.35722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -402,6 +402,10 @@ PrefabInstance:
     - target: {fileID: 798503820437531229, guid: fe3397b5138a447469615170c3059b8f, type: 3}
       propertyPath: m_Name
       value: Particula Spawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 798503820437531229, guid: fe3397b5138a447469615170c3059b8f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2329492745569665317, guid: fe3397b5138a447469615170c3059b8f, type: 3}
       propertyPath: m_LocalPosition.x
