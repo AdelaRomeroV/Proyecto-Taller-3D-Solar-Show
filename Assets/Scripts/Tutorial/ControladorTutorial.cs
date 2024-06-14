@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControladorTutorial : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ControladorTutorial : MonoBehaviour
     //----------------------------------------------------------
 
     [Header("Zonas de pista")]
-    public GameObject PistaRecta;
+    public List<GameObject> PistaRecta;
     public List<GameObject> Zonas = new List<GameObject>();
     public List<GameObject> Dialogos = new List<GameObject>();
 
@@ -21,16 +22,13 @@ public class ControladorTutorial : MonoBehaviour
     [NonSerialized] public bool Completo_Turbo;
     [NonSerialized] public bool Completo_SideAttack;
     [NonSerialized] public bool Completo_RecargaEnergia;
+    public bool PasarEscena;
 
     [Header("Scrips")]
     [SerializeField] Turbo turboScript;
     [SerializeField] GameObject BarraDeEnergía;
 
     [Header("Objetivos por fase")] 
-
-    //--------------------------------------------------------------------------------
-    //Estas variables se pueden usar para el UI para aclarar los objetivos al jugador
-    //--------------------------------------------------------------------------------
     public int dialogo = -1;
 
     /*[NonSerialized]*/ public int movimientoBasico = 0; //Necesita llegar al valor de 3
@@ -45,6 +43,9 @@ public class ControladorTutorial : MonoBehaviour
     public int sideAttack = 0;
     public bool D_Pressed;
     public bool A_Pressed;
+
+    [Header("Cambio de escena")]
+    [SerializeField] string NombreDeEscena;
 
     //0: Derrape
     //1: Turbo
@@ -67,7 +68,11 @@ public class ControladorTutorial : MonoBehaviour
         Turbo();
         SideAttack();
         EnergyCharge();
-        Final();
+
+        if (PasarEscena)
+        {
+            StartCoroutine(NextScene());
+        }
     }
 
 
@@ -92,7 +97,6 @@ public class ControladorTutorial : MonoBehaviour
         if(movimientoBasico == 3 && dialogo == 0)
         {
             Completo_MovimientoBasico = true;
-            Debug.Log("Basic Complete");
         }
     }
 
@@ -100,7 +104,7 @@ public class ControladorTutorial : MonoBehaviour
     {
         if (derrape == 5)
         {
-            if (!Completo_Derrape) Debug.Log("Drift Complete");
+            if (!Completo_Derrape)
 
             Completo_Derrape = true;
         }
@@ -108,16 +112,9 @@ public class ControladorTutorial : MonoBehaviour
 
     void Turbo()
     {
-        if (Completo_Derrape)
-        {
-            turboScript.enabled = true;
-            BarraDeEnergía.SetActive(true);
-        }
-
-        if (!Completo_Turbo && turboScript.CurrentEnergy < TurboGoal)
+        if (!Completo_Turbo && turboScript.CurrentEnergy < TurboGoal && !Completo_SideAttack)
         {
             Completo_Turbo = true;
-            Debug.Log("TUrbo Complete");
             turboScript.canUseTurbo = false;
         }
     }
@@ -145,7 +142,6 @@ public class ControladorTutorial : MonoBehaviour
         if(sideAttack >= 2 && dialogo == 3)
         {
             Completo_SideAttack = true;
-            Debug.Log("SideAttack Complete");
         }
     }
 
@@ -156,18 +152,15 @@ public class ControladorTutorial : MonoBehaviour
             if(turboScript.CurrentEnergy == 100)
             {
                 Completo_RecargaEnergia = true;
-                Debug.Log("EnergyCharge Complete");
+            }
+
+            if (turboScript.CurrentEnergy > 30)
+            {
+                turboScript.canUseTurbo = true;
+                turboScript.CanAttackLeft = true;
+                turboScript.CanAttackRight = true;
             }
         }
-    }
-
-    void Final()
-    {
-        if (Completo_RecargaEnergia)
-        {
-            Debug.Log("Fin del tutorial");
-        }
-        
     }
 
     IEnumerator StartDelay()
@@ -185,6 +178,12 @@ public class ControladorTutorial : MonoBehaviour
     void DisableRight()
     {
         turboScript.CanAttackRight = false;
+    }
+
+    IEnumerator NextScene()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(NombreDeEscena);
     }
     
 }
