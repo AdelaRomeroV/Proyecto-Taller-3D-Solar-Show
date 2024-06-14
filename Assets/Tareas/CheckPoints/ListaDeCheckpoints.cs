@@ -6,8 +6,8 @@ using TMPro;
 public class ListaDeCheckpoints : MonoBehaviour
 { 
     private static ListaDeCheckpoints instance;
-    [SerializeField] private Material next;
-    [SerializeField] private Material normal;
+    //[SerializeField] private Material next;
+    //[SerializeField] private Material normal;
     [SerializeField] private List<GameObject> Aros;
     [SerializeField] private int count;
     [SerializeField] public int laps;
@@ -24,7 +24,7 @@ public class ListaDeCheckpoints : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        Aros[0].GetComponent<MeshRenderer>().material = next;
+      //  Aros[0].GetComponent<MeshRenderer>().material = next;
     }
 
     public GameObject GetCurrentCheckpoint()
@@ -37,8 +37,8 @@ public class ListaDeCheckpoints : MonoBehaviour
         if (obj == Aros[0])
         {
             Aros.Remove(obj);
-            obj.GetComponent<MeshRenderer>().material = normal;
-            Aros[0].GetComponent<MeshRenderer>().material = next;
+           // obj.GetComponent<MeshRenderer>().material = normal;
+            //Aros[0].GetComponent<MeshRenderer>().material = next;
             Aros.Add(obj);
             count++;
             if(Aros.Count == count) 
