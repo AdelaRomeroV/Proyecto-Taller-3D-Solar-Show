@@ -7,6 +7,7 @@ using UnityEngine;
 public struct Dialogue
 {
     public Sprite sprite;
+    //public string name;
     [TextArea(4, 6)] public string line;
 }
 public class Dialogo : MonoBehaviour
@@ -17,12 +18,18 @@ public class Dialogo : MonoBehaviour
 
     private float typingTime = 0.05f;
 
+    [SerializeField] ControladorTutorial controlador;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] bool CanStopTime;
     [SerializeField] private Dialogue[] dialogueLine;
-    [SerializeField] List<GameObject> Instrucciones = new List<GameObject>();
+    [SerializeField] GameObject LastInstructions;
+    [SerializeField] GameObject CurrentInstructions;
 
-    int CurrentIns = -1;
+    private void Start()
+    {
+        controlador = GameObject.Find("Controlador").GetComponent<ControladorTutorial>();
+    }
 
     void Update()
     {
@@ -46,11 +53,11 @@ public class Dialogo : MonoBehaviour
         didDialogueStart = true;
         dialoguePanel.SetActive(true);
         lineaIndex = 0;
-        Time.timeScale = 0f; //afecta en el movimiento del player
-
-        CurrentIns++;
+        LastInstructions.SetActive(false);
+        if (CanStopTime) Time.timeScale = 0f; //afecta en el movimiento del player
 
         StartCoroutine(ShowLine());
+
     }
 
     private void NextDialogueLine()
@@ -69,7 +76,7 @@ public class Dialogo : MonoBehaviour
 
     private IEnumerator ShowLine()
     {
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.2f);
         dialogueText.text = string.Empty;
 
         foreach (char ch in dialogueLine[lineaIndex].line)
@@ -82,10 +89,11 @@ public class Dialogo : MonoBehaviour
     private IEnumerator LastDialogue()
     {
         didDialogueStart = false;
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(2);
         dialoguePanel.SetActive(false);
-        Instrucciones[CurrentIns].SetActive(true);
         Time.timeScale = 1f;
+
+        if(CurrentInstructions != null) CurrentInstructions.SetActive(true);
         Destroy(this);
 
     }

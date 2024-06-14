@@ -67,7 +67,6 @@ public class ControladorTutorial : MonoBehaviour
         Turbo();
         SideAttack();
         EnergyCharge();
-        Final();
     }
 
 
@@ -92,7 +91,6 @@ public class ControladorTutorial : MonoBehaviour
         if(movimientoBasico == 3 && dialogo == 0)
         {
             Completo_MovimientoBasico = true;
-            Debug.Log("Basic Complete");
         }
     }
 
@@ -100,7 +98,7 @@ public class ControladorTutorial : MonoBehaviour
     {
         if (derrape == 5)
         {
-            if (!Completo_Derrape) Debug.Log("Drift Complete");
+            if (!Completo_Derrape)
 
             Completo_Derrape = true;
         }
@@ -117,7 +115,6 @@ public class ControladorTutorial : MonoBehaviour
         if (!Completo_Turbo && turboScript.CurrentEnergy < TurboGoal)
         {
             Completo_Turbo = true;
-            Debug.Log("TUrbo Complete");
             turboScript.canUseTurbo = false;
         }
     }
@@ -145,7 +142,6 @@ public class ControladorTutorial : MonoBehaviour
         if(sideAttack >= 2 && dialogo == 3)
         {
             Completo_SideAttack = true;
-            Debug.Log("SideAttack Complete");
         }
     }
 
@@ -156,18 +152,8 @@ public class ControladorTutorial : MonoBehaviour
             if(turboScript.CurrentEnergy == 100)
             {
                 Completo_RecargaEnergia = true;
-                Debug.Log("EnergyCharge Complete");
             }
         }
-    }
-
-    void Final()
-    {
-        if (Completo_RecargaEnergia)
-        {
-            Debug.Log("Fin del tutorial");
-        }
-        
     }
 
     IEnumerator StartDelay()

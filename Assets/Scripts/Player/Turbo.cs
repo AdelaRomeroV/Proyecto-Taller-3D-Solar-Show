@@ -203,9 +203,19 @@ public class Turbo : MonoBehaviour
             Invoke("TurboDequeue", 0.5f);
         }
 
-        if(Turbo_Buffer.Count == 2 && !mov.Drifiting && !LifeControl.GetDamage)
+        if(LifeControl != null)
         {
-            TurboActive = true;
+            if(Turbo_Buffer.Count == 2 && !mov.Drifiting && !LifeControl.GetDamage)
+            {
+                TurboActive = true;
+            }
+        }
+        else
+        {
+            if (Turbo_Buffer.Count == 2 && !mov.Drifiting)
+            {
+                TurboActive = true;
+            }
         }
     }
 
