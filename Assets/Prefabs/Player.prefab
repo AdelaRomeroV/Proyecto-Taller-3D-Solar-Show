@@ -33,6 +33,39 @@ Transform:
   - {fileID: 7829175162112777733}
   m_Father: {fileID: 8908328720814793504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &711068655692591283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4262580224949283311}
+  m_Layer: 6
+  m_Name: EnemyDestination
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4262580224949283311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711068655692591283}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9157636741119808981}
+  - {fileID: 5398712391697170029}
+  m_Father: {fileID: 8908328720814793504}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2366727128739714998
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,7 +78,7 @@ GameObject:
   - component: {fileID: 2399905109627399491}
   - component: {fileID: 4757247443692825778}
   m_Layer: 0
-  m_Name: Left
+  m_Name: K-Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,7 +333,7 @@ GameObject:
   - component: {fileID: 2961156634474628512}
   - component: {fileID: 8147773546945999488}
   m_Layer: 0
-  m_Name: Right
+  m_Name: K-Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -512,6 +545,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &5645825292631174950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5398712391697170029}
+  m_Layer: 6
+  m_Name: E-Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5398712391697170029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5645825292631174950}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.31, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4262580224949283311}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8154431395512229974
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +767,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &9055682539409420552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9157636741119808981}
+  m_Layer: 6
+  m_Name: E-Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9157636741119808981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9055682539409420552}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.31, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4262580224949283311}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9093722986890388696
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +839,7 @@ Transform:
   m_Children:
   - {fileID: 3906926530011623181}
   - {fileID: 1914009726656732270}
+  - {fileID: 4262580224949283311}
   - {fileID: 7812607138437059151}
   - {fileID: 2221914886892147982}
   - {fileID: 2524171628870930648}
@@ -862,13 +958,16 @@ MonoBehaviour:
   aumentoVelocidadBoost: 3
   rb: {fileID: 538997533029095733}
   velocidadActual: 0
-  estaDerrapando: 0
+  estaGirando: 0
   boostActivado: 0
   tiempoBoostPresionado: 0
   boostOn: 0
   cocheRenderer: {fileID: 404099849623186709}
   audioAcelerador: {fileID: 8300000, guid: 71ef0b14322a8c340af76cab5975db51, type: 3}
   audioSource: {fileID: 3430002423237726762}
+  RightDrifting: 0
+  LeftDrifting: 0
+  Drifiting: 0
 --- !u!114 &3467041261178739535
 MonoBehaviour:
   m_ObjectHideFlags: 0
