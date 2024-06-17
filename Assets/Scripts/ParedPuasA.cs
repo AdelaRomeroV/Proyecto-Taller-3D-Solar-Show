@@ -16,6 +16,8 @@ public class ParedPuasA : MonoBehaviour
     public float moveSpeedDePrevencion;
     public float moveSpeedDeCaida;
 
+    [SerializeField] ParticleSystem Particulas;
+
     private void Start()
     {
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -88,6 +90,7 @@ public class ParedPuasA : MonoBehaviour
         if (other.CompareTag("Hazards") || other.CompareTag("Player"))
         {
             isFalling = false;
+            Particulas.Play();
         }
     }
 
