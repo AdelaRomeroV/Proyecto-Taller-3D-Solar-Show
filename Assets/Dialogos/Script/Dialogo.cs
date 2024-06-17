@@ -30,6 +30,8 @@ public class Dialogo : MonoBehaviour
     [SerializeField] GameObject CurrentInstructions;
     [SerializeField] UnityEvent OntriggerEnter;
 
+    public AudioClip niftyVoice;
+    public AudioSource Robotvoice;
 
     public bool FinalDialogue = false;
     public bool turboDialogue = false;
@@ -83,6 +85,19 @@ public class Dialogo : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         Imagen.sprite = dialogueLine[lineaIndex].sprite;
         NameText.text = dialogueLine[lineaIndex].CharName;
+
+        if(dialogueLine[lineaIndex].CharName == "Nifty")
+        {
+            Robotvoice.clip = niftyVoice;
+
+            Robotvoice.Play();
+        }
+
+        if(dialogueLine[lineaIndex].CharName == "Qwark")
+        {
+            Robotvoice.clip = null; //Agregar voz, y agregar Robotvoice.Play();
+        }
+
         dialogueText.text = string.Empty;
 
         foreach (char ch in dialogueLine[lineaIndex].line)
