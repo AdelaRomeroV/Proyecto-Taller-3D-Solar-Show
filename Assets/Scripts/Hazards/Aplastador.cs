@@ -15,8 +15,13 @@ public class Aplastador : MonoBehaviour
 
     public GameObject luz;
 
+     private AudioSource audio;
+
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
+
+
         rb = GetComponent<Rigidbody>();
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null) { player = playerObject.GetComponent<Mov>(); }
@@ -43,6 +48,8 @@ public class Aplastador : MonoBehaviour
                     DowCrusher(moveSpeedDePrevcion);
                 }
                 luz.SetActive(true);
+                audio.Play();
+
                 inicio = false;
                 timeFalling += Time.deltaTime;
                 yield return null;
