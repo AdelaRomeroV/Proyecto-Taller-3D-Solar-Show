@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.012584263, g: 0.010142468, b: 0.07904371, a: 1}
+  m_IndirectSpecularColor: {r: 0.012562204, g: 0.010124475, b: 0.0790237, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1471,7 +1471,7 @@ PlayableDirector:
   - key: {fileID: -6087244385638980123, guid: b10df8594f4c9664cacc821444febbe8, type: 2}
     value: {fileID: 1595042347}
   - key: {fileID: 321940517412824543, guid: b10df8594f4c9664cacc821444febbe8, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1415993234}
   - key: {fileID: 5120067073389549327, guid: b10df8594f4c9664cacc821444febbe8, type: 2}
     value: {fileID: 299566828}
   - key: {fileID: -3723407443414115862, guid: b10df8594f4c9664cacc821444febbe8, type: 2}
@@ -7324,6 +7324,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1753472178524064759, guid: 21dbbac4f3f847347a57112acdb3dc27, type: 3}
   m_PrefabInstance: {fileID: 1415949561}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1415993223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9093722986890388696, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
+  m_PrefabInstance: {fileID: 1764238760}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1415993234
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415993223}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1420853386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9220,7 +9246,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9093722986890388696, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1415993234}
   m_SourcePrefab: {fileID: 100100000, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
 --- !u!1001 &1771612732
 PrefabInstance:
