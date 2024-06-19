@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.012562204, g: 0.010124475, b: 0.0790237, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -944,10 +944,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 810057881}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.6, y: 0.85}
-  m_AnchorMax: {x: 0.98, y: 0.95}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -150, y: -40.5}
+  m_SizeDelta: {x: 250, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &299566830
 MonoBehaviour:
@@ -2859,7 +2859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -5390,8 +5390,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595042341}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000006393293, y: 0.973249, z: -0.22975294, w: 0.000000027082415}
-  m_LocalPosition: {x: 0.000000029866875, y: 11.173313, z: -548.5367}
+  m_LocalRotation: {x: -0.000000008719923, y: 0.973249, z: -0.22975291, w: -0.000000036938186}
+  m_LocalPosition: {x: -0.000000040735948, y: 11.173313, z: -548.5367}
   m_LocalScale: {x: 1.2511902, y: 1.9424587, z: 0.40040955}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6780,7 +6780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794131864}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000006393293, y: 0.973249, z: -0.22975294, w: 0.000000027082415}
+  m_LocalRotation: {x: -0.000000008719923, y: 0.973249, z: -0.22975291, w: -0.000000036938186}
   m_LocalPosition: {x: 0, y: 10.1, z: -548}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
