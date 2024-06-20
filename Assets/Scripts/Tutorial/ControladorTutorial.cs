@@ -180,6 +180,10 @@ public class ControladorTutorial : MonoBehaviour
         turboScript.CanAttackRight = false;
     }
 
+    public void ChangeScene()
+    {
+        StartCoroutine(NextScene());
+    }
     IEnumerator NextScene()
     {
         yield return new WaitForSeconds(3);
