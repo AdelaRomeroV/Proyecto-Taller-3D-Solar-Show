@@ -54,7 +54,6 @@ public class ControladorTutorial : MonoBehaviour
     //4: Final
     private void Start()
     {
-        turboScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Turbo>();
         turboScript.enabled = false;
         BarraDeEnergía.SetActive(false);
 
