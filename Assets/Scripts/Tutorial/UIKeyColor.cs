@@ -31,12 +31,12 @@ public class UIKeyColor : MonoBehaviour
         if (mov.enabled)
         {
             if (controlador.W_pressed) W.color = ImageGray;
-            if (controlador.Right_pressed) Right.color = ImageGray;
-            if (controlador.Left_pressed) Left.color = ImageGray;
+            if (controlador.D_pressed) Right.color = ImageGray;
+            if (controlador.A_pressed) Left.color = ImageGray;
 
         }
         if (turbo.TurboActive) Turbo.SetActive(false);
-        if (controlador.A_Pressed) A.SetActive(false);
-        if (controlador.D_Pressed) D.SetActive(false);
+        if (controlador.Left_Pressed) A.SetActive(false);
+        if (controlador.Right_Pressed) D.SetActive(false);
     }
 }

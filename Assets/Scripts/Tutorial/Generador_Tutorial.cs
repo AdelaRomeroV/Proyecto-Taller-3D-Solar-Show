@@ -5,20 +5,22 @@ public class Generador_Tutorial : GeneradorDePista
 {
     [Header("Zonas de pista")]
     List<GameObject> pistaRecta = new List<GameObject>();
-    List<GameObject> Zonas = new List<GameObject>();
+    List<GameObject> DriftZone = new List<GameObject>();
     List<GameObject> Dialogos = new List<GameObject>();
+    List<GameObject> HazardZone = new List<GameObject>();
 
     [Header("Dependencias")]
     ControladorTutorial Controlador;
-    
+
     private void Start()
     {
         Controlador = GameObject.Find("Controlador").GetComponent<ControladorTutorial>();
         Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         pistaRecta = Controlador.PistaRecta;
-        Zonas = Controlador.Zonas;
+        DriftZone = Controlador.ZonaDeCurvas;
         Dialogos = Controlador.Dialogos;
+        HazardZone = Controlador.ZonaDeHazards;
     }
 
     private void Update()
@@ -40,7 +42,7 @@ public class Generador_Tutorial : GeneradorDePista
             }
             else
             {
-                GenerarPista(Zonas[0]);
+                GenerarPista(DriftZone[0]);
             }
 
         }
@@ -66,7 +68,7 @@ public class Generador_Tutorial : GeneradorDePista
             }
             else
             {
-                GenerarPista(Zonas[4]);
+                GenerarPista(DriftZone[4]);
             }
         }
         else if (!Controlador.Completo_RecargaEnergia) //4
@@ -77,7 +79,7 @@ public class Generador_Tutorial : GeneradorDePista
             }
             else
             {
-                GenerarPista(Zonas[3]);
+                GenerarPista(DriftZone[3]);
             }
         }
         else
