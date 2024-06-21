@@ -1874,11 +1874,8 @@ MonoBehaviour:
       pista\r\n"
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: Es momento de que uses el Derrape
-  - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
-    CharName: Nifty
-    line: Presiona dos veces las flechas Izquierda o Derecha para derrapar en las
-      curvas de la pista
+    line: "M\xE1s adelante te esperan unas curvas para que te adecues al G5, deberas
+      pasar derrapando por ellas."
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Nifty
     line: "\xA1Mu\xE9vete como un cometa y siente la gravedad cero en tus circuitos!\r\n"
@@ -5004,14 +5001,12 @@ MonoBehaviour:
     line: "\xA1Definitivamente, Qwark! Pasemos al siguiente nivel, el Turbo Cu\xE1ntico\r\n"
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: "Ten cuidado de no gastar toda tu energ\xEDa o tu nave explotar\xE1 en
-      una supernova."
+    line: "Ten en cuenta que gastar\xE1 tu BARRA DE ENERG\xCDA, si se acaba tambien
+      acabar\xE1 tu VIDA, y no queremos eso \xBFVerdad?"
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Nifty
-    line: "No queremos explosiones innecesarias \xBFCierto, Qwark?\r\n"
-  - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
-    CharName: Qwark
-    line: Presiona dos veces la tecla W para activar el turbo
+    line: "\xA1Y terminar\xE1s explotando en una hermosa supernova! Aunque no estaras
+      aqui para verla"
   LastInstructions: {fileID: 1412827338}
   CurrentInstructions: {fileID: 1205819257}
   OntriggerEnter:
@@ -6523,13 +6518,10 @@ MonoBehaviour:
     line: "\xA1Hey, hey, hey, tranquilo \u2018Meteoro\u2019! \r\n"
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Nifty
-    line: "\xA1Ahora impacta a tus enemigos como tal! \xA1Veamos esos movimientos!\r"
+    line: "\xA1Veamos si puedes impactar a tus enemigos como tal!\r"
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
     line: Estoy seguro que puede hacerlo mejor que eso, Nifty
-  - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
-    CharName: Qwark
-    line: "\xA1Usa las teclas A y D para atacar hacia los lados!\r"
   LastInstructions: {fileID: 1205819257}
   CurrentInstructions: {fileID: 207353409}
   OntriggerEnter:
@@ -7047,23 +7039,15 @@ MonoBehaviour:
   dialogueLine:
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: "\xA1Excelente trabajo, piloto!"
-  - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
-    CharName: Qwark
-    line: "Recuerda que tambi\xE9n puedes recargar energ\xEDa pasando cerca de cualquier
-      obst\xE1culo en la pista.\r\n"
-  - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
-    CharName: Qwark
-    line: "Ahora est\xE1s listo para el espect\xE1culo estelar"
+    line: "\xA1Excelente trabajo, piloto! Ahora est\xE1s listo para el espect\xE1culo
+      estelar"
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
     line: "\xA1Que la suerte del cosmos est\xE9 de tu lado!\r"
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: 'Nifty '
-    line: "\xA1Buena suerte! Espero que tu planeta no sea devorado por el jefe\r\n"
-  - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
-    CharName: 'Nifty '
-    line: "\xA1Nos vemos en la pista, estrella brillante! "
+    line: "\xA1Buena suerte! Espero que tu planeta no sea devorado por el jefe \xA1Nos
+      vemos en la pista, estrella brillante! "
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: 'Nifty '
     line: "\xA1QUE EMPIECE EL SHOW!\r\n"
@@ -7975,14 +7959,12 @@ MonoBehaviour:
     line: "Por \xFAltimo pero no menos importante..."
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Nifty
-    line: "Necesitas reponer esa energ\xEDa, pasa cerca de los bumpers para recargarla"
+    line: "Necesitas reponer esa energ\xEDa, \xA1Pasa cerca de los obstaculos de
+      la pista para recargarla!"
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: "Tranquilo, aqui a\xFAn no te quitar\xE1n energ\xEDa cuando choques con
-      ellos\r\n"
-  - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
-    CharName: Nifty
-    line: "\xA1Recarga y prep\xE1rate para la batalla c\xF3smica!"
+    line: "Aqui no te quitar\xE1n energ\xEDa cuando choques con ellos, pero cuando
+      empiece el show no tendr\xE1s la misma suerte\r\n"
   LastInstructions: {fileID: 207353409}
   CurrentInstructions: {fileID: 407113484}
   OntriggerEnter:
