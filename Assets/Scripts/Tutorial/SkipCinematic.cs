@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SkipCinematic : MonoBehaviour
 {
     [SerializeField] List<GameObject> TurnOffObjects = new List<GameObject>();
     [SerializeField] List<GameObject> TurnOnObjects = new List<GameObject>();
+    [SerializeField] UnityEvent SkipEvent;
     [SerializeField] GameObject player;
     [SerializeField] Transform StartPoint;
 
@@ -28,6 +30,8 @@ public class SkipCinematic : MonoBehaviour
             {
                 g.SetActive(true);
             }
+
+            if(SkipEvent != null) SkipEvent.Invoke();
 
             if (StartPoint != null && player != null) player.transform.position = StartPoint.position;
 
