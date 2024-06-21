@@ -138,7 +138,7 @@ public class Turbo : MonoBehaviour
 
     public void SideKick()
     {
-        if (Input.GetKeyDown(KeyCode.A) && !isKicking && CurrentEnergy > 20 && CanAttackLeft)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && !isKicking && CurrentEnergy > 20 && CanAttackLeft)
         {
             audioSource.clip = audioAtaque; 
             audioSource.Play();
@@ -151,7 +151,7 @@ public class Turbo : MonoBehaviour
 
             Invoke("DisableKicking", 0.55f);
         }
-        else if (Input.GetKeyDown(KeyCode.D) && !isKicking && CurrentEnergy > 20 && CanAttackRight)
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && !isKicking && CurrentEnergy > 20 && CanAttackRight)
         {
             audioSource.clip = audioAtaque; 
             audioSource.Play();
@@ -205,14 +205,14 @@ public class Turbo : MonoBehaviour
 
         if(LifeControl != null)
         {
-            if(Turbo_Buffer.Count == 2 && !mov.Drifiting && !LifeControl.GetDamage)
+            if(Turbo_Buffer.Count >= 2 && !mov.Drifiting && !LifeControl.GetDamage)
             {
                 TurboActive = true;
             }
         }
         else
         {
-            if (Turbo_Buffer.Count == 2 && !mov.Drifiting)
+            if (Turbo_Buffer.Count >= 2 && !mov.Drifiting)
             {
                 TurboActive = true;
             }
