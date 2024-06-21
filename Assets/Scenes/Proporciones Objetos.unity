@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44387916, g: 0.49325013, b: 0.5727451, a: 1}
+  m_IndirectSpecularColor: {r: 0.44387844, g: 0.49324888, b: 0.5727448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -274,6 +274,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 57.553, y: -36.801, z: -8.407}
+--- !u!1001 &755114941
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -83
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -102
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6067185528594298527, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 91d08ef7ea65d8d4dbabbe0d4f9fc499, type: 2}
+    - target: {fileID: 919132149155446097, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_Name
+      value: Tele gigante
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901893356585517859, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 91d08ef7ea65d8d4dbabbe0d4f9fc499, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 55b91c72db21edf40ab7e4e92ad6d0b2, type: 3}
 --- !u!1001 &756480434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1039,3 +1104,4 @@ SceneRoots:
   - {fileID: 358671298}
   - {fileID: 1836568903}
   - {fileID: 1825209255}
+  - {fileID: 755114941}
