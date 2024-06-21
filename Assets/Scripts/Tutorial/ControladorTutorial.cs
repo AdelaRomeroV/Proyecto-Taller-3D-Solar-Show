@@ -54,7 +54,6 @@ public class ControladorTutorial : MonoBehaviour
     //4: Final
     private void Start()
     {
-        turboScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Turbo>();
         turboScript.enabled = false;
         BarraDeEnergía.SetActive(false);
 
@@ -180,6 +179,10 @@ public class ControladorTutorial : MonoBehaviour
         turboScript.CanAttackRight = false;
     }
 
+    public void ChangeScene()
+    {
+        StartCoroutine(NextScene());
+    }
     IEnumerator NextScene()
     {
         yield return new WaitForSeconds(3);
