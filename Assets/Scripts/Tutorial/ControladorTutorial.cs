@@ -20,17 +20,19 @@ public class ControladorTutorial : MonoBehaviour
     public List<GameObject> ZonaDeHazards = new List<GameObject>();
     [NonSerialized][Range(0, 2)] public int ActualHazardZone = 0;
 
+    bool canChangeValue;
+
     public List<GameObject> Dialogos = new List<GameObject>();
 
     public GameObject ActualPiece;
     public bool GoingStraight;
 
     [Header("FASES")]
-    [NonSerialized] public bool Completo_MovimientoBasico;
-    [NonSerialized] public bool Completo_Derrape;
-    [NonSerialized] public bool Completo_Turbo;
-    [NonSerialized] public bool Completo_SideAttack;
-    [NonSerialized] public bool Completo_RecargaEnergia;
+    public bool Completo_MovimientoBasico;
+    public bool Completo_Derrape;
+    public bool Completo_Turbo;
+    public bool Completo_SideAttack;
+    public bool Completo_RecargaEnergia;
     public bool PasarEscena;
 
     [Header("Scrips")]
@@ -40,7 +42,7 @@ public class ControladorTutorial : MonoBehaviour
     [SerializeField] GameObject BarraDeEnergía;
 
     [Header("Objetivos por fase")] 
-    public int dialogo = -1;
+    public int dialogo = 0;
 
     /*[NonSerialized]*/ public int movimientoBasico = 0; //Necesita llegar al valor de 3
     [NonSerialized] public bool W_pressed;
@@ -76,12 +78,20 @@ public class ControladorTutorial : MonoBehaviour
     {
         FaseControl();
 
-
-        if (turboScript.CurrentEnergy > 15)
+        if(Completo_Turbo && Completo_SideAttack)
         {
-            turboScript.canUseTurbo = true;
-            turboScript.CanAttackLeft = true;
-            turboScript.CanAttackRight = true;
+            if (turboScript.CurrentEnergy > 15)
+            {
+                turboScript.canUseTurbo = true;
+                turboScript.CanAttackLeft = true;
+                turboScript.CanAttackRight = true;
+            }
+            else
+            {
+                turboScript.canUseTurbo = false;
+                turboScript.CanAttackLeft = false;
+                turboScript.CanAttackRight = false;
+            }
         }
 
         if (PasarEscena)
@@ -94,19 +104,51 @@ public class ControladorTutorial : MonoBehaviour
     {
         if (!Completo_MovimientoBasico) MovimientoBasico();
 
-        if (Completo_MovimientoBasico && !Completo_Derrape) Derrape();
+        else if (Completo_MovimientoBasico && !Completo_Derrape) Derrape();
 
-        if (Completo_Derrape && !Completo_Turbo) Turbo();
+        else if (Completo_Derrape && !Completo_Turbo) Turbo();
 
-        if (Completo_Turbo && !Completo_SideAttack) SideAttack();
+        else if (Completo_Turbo && !Completo_SideAttack) SideAttack();
 
-        if (Completo_SideAttack && !Completo_RecargaEnergia) EnergyCharge();
+        else if (Completo_SideAttack && !Completo_RecargaEnergia) EnergyCharge();
+
+        else dialogo = 4;
     }
 
     void SpawnStraightPieces()
     {
         int piece = UnityEngine.Random.Range(0, PistaRecta.Count);
         ActualPiece = PistaRecta[piece];
+    }
+
+    void SpawnDriftZone()
+    {
+        if (GoingStraight)
+        {
+            SpawnStraightPieces();
+        }
+        else
+        {
+            ActualPiece = ZonaDeCurvas[ActualDrifZone];
+
+            if (ActualDrifZone == 0) ActualDrifZone = 1;
+            else if (ActualDrifZone == 1) ActualDrifZone = 0;
+        }
+    }
+
+    void SpawnHazardZone()
+    {
+        if (GoingStraight)
+        {
+            SpawnStraightPieces();
+        }
+        else
+        {
+            ActualPiece = ZonaDeHazards[ActualHazardZone];
+
+            if (ActualHazardZone == 0) ActualHazardZone = 1;
+            else if (ActualHazardZone == 1) ActualHazardZone = 0;
+        }
     }
 
     void MovimientoBasico()
@@ -144,18 +186,8 @@ public class ControladorTutorial : MonoBehaviour
         { 
             Completo_Derrape = true;
         }
-
-        if (GoingStraight)
-        {
-            SpawnStraightPieces();
-        }
-        else
-        {
-            ActualPiece = ZonaDeCurvas[ActualDrifZone];
-
-            if(ActualDrifZone == 0) ActualDrifZone = 1;
-            else if (ActualDrifZone == 1) ActualDrifZone = 0;
-        }
+        
+        SpawnDriftZone();
     }
 
     void Turbo()
@@ -204,20 +236,20 @@ public class ControladorTutorial : MonoBehaviour
             Completo_RecargaEnergia = true;
         }
 
-
-        if (GoingStraight)
-        {
-            SpawnStraightPieces();
-        }
-        else
-        {
-            ActualPiece = ZonaDeHazards[ActualHazardZone];
-
-            if (ActualHazardZone == 0) ActualHazardZone = 1;
-            else if (ActualHazardZone == 1) ActualHazardZone = 0;
-        }
+        SpawnHazardZone();
     }
 
+    public void ActiveSA()
+    {
+        turboScript.CanAttackLeft = true;
+        turboScript.CanAttackRight = true;
+    }
+
+    public void DeactiveSA()
+    {
+        turboScript.CanAttackLeft = false;
+        turboScript.CanAttackRight = false;
+    }
     void DisableLeft()
     {
         turboScript.CanAttackLeft = false;
@@ -226,6 +258,11 @@ public class ControladorTutorial : MonoBehaviour
     void DisableRight()
     {
         turboScript.CanAttackRight = false;
+    }
+
+    public void GoingStraightFalse()
+    {
+        GoingStraight = false;
     }
 
     public void ChangeScene()

@@ -118,6 +118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasuraEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 4352014976737934530, guid: 600613952e651bc4e85e208668659297, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7151269802112893173, guid: 600613952e651bc4e85e208668659297, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.92

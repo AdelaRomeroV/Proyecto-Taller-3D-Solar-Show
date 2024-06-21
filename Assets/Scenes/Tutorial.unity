@@ -1889,7 +1889,19 @@ MonoBehaviour:
       m_Calls: []
   DialogueEndEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1748706872}
+        m_TargetAssemblyTypeName: ControladorTutorial, Assembly-CSharp
+        m_MethodName: GoingStraightFalse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   niftyVoice: {fileID: 8300000, guid: 151f0ccd8da0d9c43bc39ca066e78747, type: 3}
   Robotvoice: {fileID: 438541440}
 --- !u!65 &370932581
@@ -4788,7 +4800,7 @@ Transform:
   m_GameObject: {fileID: 870019487}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: 0, y: -0.039337635, z: 6.21}
+  m_LocalPosition: {x: 0, y: 0.33, z: 6.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5024,6 +5036,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1748706872}
+        m_TargetAssemblyTypeName: ControladorTutorial, Assembly-CSharp
+        m_MethodName: GoingStraightFalse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1748706872}
+        m_TargetAssemblyTypeName: ControladorTutorial, Assembly-CSharp
+        m_MethodName: DeactiveSA
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6502,13 +6538,25 @@ MonoBehaviour:
   DialogueEndEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1179576655}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 1748706872}
+        m_TargetAssemblyTypeName: ControladorTutorial, Assembly-CSharp
+        m_MethodName: GoingStraightFalse
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1748706872}
+        m_TargetAssemblyTypeName: ControladorTutorial, Assembly-CSharp
+        m_MethodName: ActiveSA
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7942,7 +7990,19 @@ MonoBehaviour:
       m_Calls: []
   DialogueEndEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1748706872}
+        m_TargetAssemblyTypeName: ControladorTutorial, Assembly-CSharp
+        m_MethodName: GoingStraightFalse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   niftyVoice: {fileID: 8300000, guid: 151f0ccd8da0d9c43bc39ca066e78747, type: 3}
   Robotvoice: {fileID: 438541440}
 --- !u!65 &1698749730
@@ -8418,8 +8478,12 @@ MonoBehaviour:
   - {fileID: 4228522655770486883, guid: 1edf61a5316eefe49b4ae0e7bf4edd59, type: 3}
   - {fileID: 4228522655770486883, guid: 1edf61a5316eefe49b4ae0e7bf4edd59, type: 3}
   - {fileID: 525393149118417077, guid: 3f4296d2dbc533d4b9f5983825f9540e, type: 3}
-  ZonaDeCurvas: []
-  ZonaDeHazards: []
+  ZonaDeCurvas:
+  - {fileID: 8218145597248771903, guid: 23530e5518554d648bf2be3d6863bd01, type: 3}
+  - {fileID: 5980584879668180816, guid: ab35946f01c3acc449fa9f82c089a2bd, type: 3}
+  ZonaDeHazards:
+  - {fileID: 8037182637834985829, guid: d9800c71d2648c249b3b8ef5a59c0f60, type: 3}
+  - {fileID: 8037182637834985829, guid: d9800c71d2648c249b3b8ef5a59c0f60, type: 3}
   Dialogos:
   - {fileID: 370932578}
   - {fileID: 930667598}
@@ -8428,10 +8492,15 @@ MonoBehaviour:
   - {fileID: 1515111198}
   ActualPiece: {fileID: 0}
   GoingStraight: 0
+  Completo_MovimientoBasico: 0
+  Completo_Derrape: 0
+  Completo_Turbo: 0
+  Completo_SideAttack: 0
+  Completo_RecargaEnergia: 0
   PasarEscena: 0
-  Player: {fileID: 0}
+  Player: {fileID: 1918865576}
   "BarraDeEnerg\xEDa": {fileID: 887928826}
-  dialogo: -1
+  dialogo: 0
   movimientoBasico: 0
   derrape: 0
   TurboGoal: 60
