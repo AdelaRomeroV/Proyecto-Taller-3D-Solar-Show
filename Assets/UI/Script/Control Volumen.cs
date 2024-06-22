@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ControlVolumen : MonoBehaviour
 {
     public Slider slider;
-    public int sliderValue;
+    public float sliderValue;
 
     void Start()
     {
@@ -22,10 +22,9 @@ public class ControlVolumen : MonoBehaviour
         AudioListener.volume = slider.value;
     }
 
-    public void ChangeSlider(int val)
+    public void ChangeSlider()
     {
-        sliderValue = val;
-        PlayerPrefs.SetFloat("volumenAudio", sliderValue);
+        PlayerPrefs.SetFloat("VolumenAudio", slider.value);
      
         // AudioListener captura todos los sonidos emitidos por los AudioSource en la escena y los envía al sistema de audio del dispositivo del usuario.
         AudioListener.volume = slider.value;
