@@ -33,6 +33,7 @@ public class Dialogo : MonoBehaviour
     [SerializeField] UnityEvent DialogueEndEvent;
 
     public AudioClip niftyVoice;
+    public AudioClip Qwarkvoice;
     public AudioSource Robotvoice;
     void Update()
     {
@@ -94,7 +95,9 @@ public class Dialogo : MonoBehaviour
 
         if(dialogueLine[lineaIndex].CharName == "Qwark")
         {
-            Robotvoice.clip = null; //Agregar voz, y agregar Robotvoice.Play();
+            Robotvoice.clip = Qwarkvoice;
+
+            Robotvoice.Play();
         }
 
         dialogueText.text = string.Empty;

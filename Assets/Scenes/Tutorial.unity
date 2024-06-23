@@ -797,6 +797,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   niftyVoice: {fileID: 8300000, guid: 151f0ccd8da0d9c43bc39ca066e78747, type: 3}
+  Qwarkvoice: {fileID: 8300000, guid: 1c179be96737cf94f806b0b3b18fd4c6, type: 3}
   Robotvoice: {fileID: 438541440}
 --- !u!65 &222914870
 BoxCollider:
@@ -1703,6 +1704,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   niftyVoice: {fileID: 8300000, guid: 151f0ccd8da0d9c43bc39ca066e78747, type: 3}
+  Qwarkvoice: {fileID: 8300000, guid: 1c179be96737cf94f806b0b3b18fd4c6, type: 3}
   Robotvoice: {fileID: 438541440}
 --- !u!65 &370932581
 BoxCollider:
@@ -2866,10 +2868,10 @@ MonoBehaviour:
   TimeScale: 0.8
   dialogueLine:
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
-    CharName: Presentador
+    CharName: Qwark
     line: "\xA1BIENVENIDO A SOLAR SLAUGHTER SHOW!"
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
-    CharName: Presentador
+    CharName: Qwark
     line: El show donde jugaran por sus VIDAS y la de su planeta, organizado por
       nuestro jefe "EL DEVORADOR DE MUNDOS"
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
@@ -2913,6 +2915,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   niftyVoice: {fileID: 8300000, guid: 151f0ccd8da0d9c43bc39ca066e78747, type: 3}
+  Qwarkvoice: {fileID: 8300000, guid: 1c179be96737cf94f806b0b3b18fd4c6, type: 3}
   Robotvoice: {fileID: 438541440}
 --- !u!65 &588331080
 BoxCollider:
@@ -4817,6 +4820,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   niftyVoice: {fileID: 8300000, guid: 151f0ccd8da0d9c43bc39ca066e78747, type: 3}
+  Qwarkvoice: {fileID: 8300000, guid: 1c179be96737cf94f806b0b3b18fd4c6, type: 3}
   Robotvoice: {fileID: 438541440}
 --- !u!65 &930667601
 BoxCollider:
@@ -6273,6 +6277,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   niftyVoice: {fileID: 8300000, guid: 151f0ccd8da0d9c43bc39ca066e78747, type: 3}
+  Qwarkvoice: {fileID: 8300000, guid: 1c179be96737cf94f806b0b3b18fd4c6, type: 3}
   Robotvoice: {fileID: 438541440}
 --- !u!65 &1382803932
 BoxCollider:
@@ -6712,6 +6717,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   niftyVoice: {fileID: 8300000, guid: 151f0ccd8da0d9c43bc39ca066e78747, type: 3}
+  Qwarkvoice: {fileID: 8300000, guid: 1c179be96737cf94f806b0b3b18fd4c6, type: 3}
   Robotvoice: {fileID: 438541440}
 --- !u!65 &1515111201
 BoxCollider:
@@ -7265,6 +7271,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   niftyVoice: {fileID: 8300000, guid: 151f0ccd8da0d9c43bc39ca066e78747, type: 3}
+  Qwarkvoice: {fileID: 8300000, guid: 1c179be96737cf94f806b0b3b18fd4c6, type: 3}
   Robotvoice: {fileID: 438541440}
 --- !u!65 &1698749730
 BoxCollider:
