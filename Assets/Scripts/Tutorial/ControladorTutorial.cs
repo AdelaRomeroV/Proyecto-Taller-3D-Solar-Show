@@ -12,37 +12,50 @@ public class ControladorTutorial : MonoBehaviour
     //----------------------------------------------------------
 
     [Header("Zonas de pista")]
-    public List<GameObject> PistaRecta;
-    public List<GameObject> Zonas = new List<GameObject>();
+    public List<GameObject> PistaRecta = new List<GameObject>();
+
+    public List<GameObject> ZonaDeCurvas = new List<GameObject>();
+    [NonSerialized] [Range(0,2)] public int ActualDrifZone = 0;
+
+    public List<GameObject> ZonaDeHazards = new List<GameObject>();
+    [NonSerialized][Range(0, 2)] public int ActualHazardZone = 0;
+
+    bool canChangeValue;
+
     public List<GameObject> Dialogos = new List<GameObject>();
 
+    public GameObject ActualPiece;
+    public bool GoingStraight;
+
     [Header("FASES")]
-    [NonSerialized] public bool Completo_MovimientoBasico;
-    [NonSerialized] public bool Completo_Derrape;
-    [NonSerialized] public bool Completo_Turbo;
-    [NonSerialized] public bool Completo_SideAttack;
-    [NonSerialized] public bool Completo_RecargaEnergia;
+    public bool Completo_MovimientoBasico;
+    public bool Completo_Derrape;
+    public bool Completo_Turbo;
+    public bool Completo_SideAttack;
+    public bool Completo_RecargaEnergia;
     public bool PasarEscena;
 
     [Header("Scrips")]
-    [SerializeField] Turbo turboScript;
+    [SerializeField] GameObject Player;
+    Mov movScript;
+    Turbo turboScript;
     [SerializeField] GameObject BarraDeEnergía;
 
     [Header("Objetivos por fase")] 
-    public int dialogo = -1;
+    public int dialogo = 0;
 
     /*[NonSerialized]*/ public int movimientoBasico = 0; //Necesita llegar al valor de 3
     [NonSerialized] public bool W_pressed;
-    [NonSerialized] public bool Left_pressed;
-    [NonSerialized] public bool Right_pressed;
+    [NonSerialized] public bool A_pressed;
+    [NonSerialized] public bool D_pressed;
 
     /*[NonSerialized]*/ public int derrape = 0; //Necesita llegar a 5 esquinas derrapando para continuar
 
     [SerializeField] [Range(0, 100)] float TurboGoal;
 
     public int sideAttack = 0;
-    public bool D_Pressed;
-    public bool A_Pressed;
+    public bool Right_Pressed;
+    public bool Left_Pressed;
 
     [Header("Cambio de escena")]
     [SerializeField] string NombreDeEscena;
@@ -54,20 +67,32 @@ public class ControladorTutorial : MonoBehaviour
     //4: Final
     private void Start()
     {
-        turboScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Turbo>();
+        turboScript = Player.GetComponent<Turbo>();
+        movScript = Player.GetComponent<Mov>();
+
         turboScript.enabled = false;
         BarraDeEnergía.SetActive(false);
-
-        StartCoroutine(StartDelay());
     }
 
     private void Update()
     {
-        MovimientoBasico();
-        Derrape();
-        Turbo();
-        SideAttack();
-        EnergyCharge();
+        FaseControl();
+
+        if(Completo_Turbo && Completo_SideAttack)
+        {
+            if (turboScript.CurrentEnergy > 15)
+            {
+                turboScript.canUseTurbo = true;
+                turboScript.CanAttackLeft = true;
+                turboScript.CanAttackRight = true;
+            }
+            else
+            {
+                turboScript.canUseTurbo = false;
+                turboScript.CanAttackLeft = false;
+                turboScript.CanAttackRight = false;
+            }
+        }
 
         if (PasarEscena)
         {
@@ -75,65 +100,122 @@ public class ControladorTutorial : MonoBehaviour
         }
     }
 
+    void FaseControl()
+    {
+        if (!Completo_MovimientoBasico) MovimientoBasico();
+
+        else if (Completo_MovimientoBasico && !Completo_Derrape) Derrape();
+
+        else if (Completo_Derrape && !Completo_Turbo) Turbo();
+
+        else if (Completo_Turbo && !Completo_SideAttack) SideAttack();
+
+        else if (Completo_SideAttack && !Completo_RecargaEnergia) EnergyCharge();
+
+        else dialogo = 4;
+    }
+
+    void SpawnStraightPieces()
+    {
+        int piece = UnityEngine.Random.Range(0, PistaRecta.Count);
+        ActualPiece = PistaRecta[piece];
+    }
+
+    void SpawnDriftZone()
+    {
+        if (GoingStraight)
+        {
+            SpawnStraightPieces();
+        }
+        else
+        {
+            ActualPiece = ZonaDeCurvas[ActualDrifZone];
+
+            if (ActualDrifZone == 0) ActualDrifZone = 1;
+            else if (ActualDrifZone == 1) ActualDrifZone = 0;
+        }
+    }
+
+    void SpawnHazardZone()
+    {
+        if (GoingStraight)
+        {
+            SpawnStraightPieces();
+        }
+        else
+        {
+            ActualPiece = ZonaDeHazards[ActualHazardZone];
+
+            if (ActualHazardZone == 0) ActualHazardZone = 1;
+            else if (ActualHazardZone == 1) ActualHazardZone = 0;
+        }
+    }
 
     void MovimientoBasico()
     {
-        if (Input.GetKeyDown(KeyCode.W) && !W_pressed)
+        if(movScript.enabled == true)
         {
-            W_pressed = true;
-            movimientoBasico++;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && !Left_pressed)
-        {
-            Left_pressed = true;
-            movimientoBasico++;
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && !Right_pressed)
-        {
-            Right_pressed = true;
-            movimientoBasico++;
+            if (Input.GetKeyDown(KeyCode.W) && !W_pressed)
+            {
+                W_pressed = true;
+                movimientoBasico++;
+            }
+            if (Input.GetKeyDown(KeyCode.A) && !A_pressed)
+            {
+                A_pressed = true;
+                movimientoBasico++;
+            }
+            if (Input.GetKeyDown(KeyCode.D) && !D_pressed)
+            {
+                D_pressed = true;
+                movimientoBasico++;
+            }
         }
 
         if(movimientoBasico == 3 && dialogo == 0)
         {
             Completo_MovimientoBasico = true;
         }
+
+        SpawnStraightPieces();
     }
 
     void Derrape()
     {
         if (derrape == 5)
-        {
-            if (!Completo_Derrape)
-
+        { 
             Completo_Derrape = true;
         }
+        
+        SpawnDriftZone();
     }
 
     void Turbo()
     {
-        if (!Completo_Turbo && turboScript.CurrentEnergy < TurboGoal && !Completo_SideAttack)
+        if (turboScript.CurrentEnergy < TurboGoal)
         {
             Completo_Turbo = true;
             turboScript.canUseTurbo = false;
         }
+
+        SpawnStraightPieces();
     }
 
     void SideAttack()
     {
         if (Completo_Turbo)
         {
-            if (Input.GetKeyDown(KeyCode.A) && !A_Pressed)
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && !Left_Pressed)
             {
-                A_Pressed = true;
+                Left_Pressed = true;
                 sideAttack++;
                 Invoke("DisableLeft", 0.5f);
                 
             }
 
-            if (Input.GetKeyDown(KeyCode.D) && !D_Pressed)
+            if (Input.GetKeyDown(KeyCode.RightArrow) && !Right_Pressed)
             {
-                D_Pressed = true;
+                Right_Pressed = true;
                 sideAttack++;
                 Invoke("DisableRight", 0.5f);
             }
@@ -143,33 +225,31 @@ public class ControladorTutorial : MonoBehaviour
         {
             Completo_SideAttack = true;
         }
+
+        SpawnStraightPieces();
     }
 
     void EnergyCharge()
     {
-        if (Completo_SideAttack)
+        if(turboScript.CurrentEnergy == 100)
         {
-            if(turboScript.CurrentEnergy == 100)
-            {
-                Completo_RecargaEnergia = true;
-            }
-
-            if (turboScript.CurrentEnergy > 30)
-            {
-                turboScript.canUseTurbo = true;
-                turboScript.CanAttackLeft = true;
-                turboScript.CanAttackRight = true;
-            }
+            Completo_RecargaEnergia = true;
         }
+
+        SpawnHazardZone();
     }
 
-    IEnumerator StartDelay()
+    public void ActiveSA()
     {
-        yield return new WaitForSeconds(5);
-
-        dialogo = 0;
+        turboScript.CanAttackLeft = true;
+        turboScript.CanAttackRight = true;
     }
 
+    public void DeactiveSA()
+    {
+        turboScript.CanAttackLeft = false;
+        turboScript.CanAttackRight = false;
+    }
     void DisableLeft()
     {
         turboScript.CanAttackLeft = false;
@@ -180,6 +260,15 @@ public class ControladorTutorial : MonoBehaviour
         turboScript.CanAttackRight = false;
     }
 
+    public void GoingStraightFalse()
+    {
+        GoingStraight = false;
+    }
+
+    public void ChangeScene()
+    {
+        StartCoroutine(NextScene());
+    }
     IEnumerator NextScene()
     {
         yield return new WaitForSeconds(3);

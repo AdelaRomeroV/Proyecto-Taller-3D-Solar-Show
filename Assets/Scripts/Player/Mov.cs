@@ -125,7 +125,7 @@ public class Mov : MonoBehaviour
             {
                 if (LeftDrifting)
                 {
-                    if (Input.GetKey(KeyCode.RightArrow))
+                    if (Input.GetKey(KeyCode.D))
                     {
                         anguloGiro *= 0.2f;
                     }
@@ -136,7 +136,7 @@ public class Mov : MonoBehaviour
                 }
                 else if (RightDrifting)
                 {
-                    if (Input.GetKey(KeyCode.LeftArrow))
+                    if (Input.GetKey(KeyCode.A))
                     {
                         anguloGiro *= 0.2f;
                     }
@@ -256,37 +256,37 @@ public class Mov : MonoBehaviour
 
     void InputsBuffer()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            RightDrift_Buffer.Enqueue(KeyCode.RightArrow);
+            RightDrift_Buffer.Enqueue(KeyCode.D);
             Invoke("RightDequeue", 0.5f);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            LeftDrift_Buffer.Enqueue(KeyCode.LeftArrow);
+            LeftDrift_Buffer.Enqueue(KeyCode.A);
             Invoke("LeftDequeue", 0.5f);
         }
 
 
-        if (RightDrift_Buffer.Count == 2 && !LeftDrifting)
+        if (RightDrift_Buffer.Count >= 2 && !LeftDrifting)
         {
             RightDrifting = true;
             Drifiting = true;
         }
-        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        else if (Input.GetKeyUp(KeyCode.D))
         {
             RightDrifting = false;
             Drifiting = false;
         }
 
 
-        if (LeftDrift_Buffer.Count == 2 && !RightDrifting)
+        if (LeftDrift_Buffer.Count >= 2 && !RightDrifting)
         {
             LeftDrifting = true;
             Drifiting = true;
         }
-        else if (Input.GetKeyUp(KeyCode.LeftArrow))
+        else if (Input.GetKeyUp(KeyCode.A))
         {
             LeftDrifting = false;
             Drifiting = false;

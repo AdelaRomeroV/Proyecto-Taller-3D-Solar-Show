@@ -24,18 +24,16 @@ public class Dialogo : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text NameText;
     [SerializeField] private Image Imagen;
-    [SerializeField] bool CanStopTime;
+    [SerializeField] bool CanChangeTime;
+    [SerializeField] float TimeScale;
     [SerializeField] private Dialogue[] dialogueLine;
     [SerializeField] GameObject LastInstructions;
     [SerializeField] GameObject CurrentInstructions;
     [SerializeField] UnityEvent OntriggerEnter;
+    [SerializeField] UnityEvent DialogueEndEvent;
 
     public AudioClip niftyVoice;
     public AudioSource Robotvoice;
-
-    public bool FinalDialogue = false;
-    public bool turboDialogue = false;
-    public bool startDialogue = false;
     void Update()
     {
         if (didDialogueStart)
@@ -58,8 +56,9 @@ public class Dialogo : MonoBehaviour
         didDialogueStart = true;
         dialoguePanel.SetActive(true);
         lineaIndex = 0;
-        LastInstructions.SetActive(false);
-        if (CanStopTime) Time.timeScale = 0.8f; //afecta en el movimiento del player
+
+        if(LastInstructions != null) LastInstructions.SetActive(false);
+        if (CanChangeTime) Time.timeScale = TimeScale; //afecta en el movimiento del player
 
         StartCoroutine(ShowLine());
 
@@ -81,8 +80,8 @@ public class Dialogo : MonoBehaviour
 
     private IEnumerator ShowLine()
     {
+        if (lineaIndex != 0) yield return new WaitForSecondsRealtime(1f);
 
-        yield return new WaitForSecondsRealtime(1f);
         Imagen.sprite = dialogueLine[lineaIndex].sprite;
         NameText.text = dialogueLine[lineaIndex].CharName;
 
@@ -114,24 +113,7 @@ public class Dialogo : MonoBehaviour
         dialoguePanel.SetActive(false);
         Time.timeScale = 1f;
 
-        if (startDialogue)
-        {
-            Mov mov = GameObject.FindGameObjectWithTag("Player").GetComponent<Mov>();
-            mov.enabled = true;
-        }
-
-        if (turboDialogue)
-        {
-            Turbo turbo = GameObject.FindGameObjectWithTag("Player").GetComponent<Turbo>();
-            turbo.enabled = true;
-        }
-
-        if (FinalDialogue)
-        {
-            ControladorTutorial controlador = GameObject.Find("Controlador").GetComponent<ControladorTutorial>();
-            controlador.PasarEscena = true;
-        }
-
+        if (DialogueEndEvent != null) DialogueEndEvent.Invoke();
         if(CurrentInstructions != null) CurrentInstructions.SetActive(true);
         Destroy(this);
 

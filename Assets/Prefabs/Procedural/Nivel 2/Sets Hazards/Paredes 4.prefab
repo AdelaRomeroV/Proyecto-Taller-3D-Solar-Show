@@ -111,6 +111,10 @@ PrefabInstance:
       value: 124
       objectReference: {fileID: 0}
     - target: {fileID: 4628751052368033829, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
+      propertyPath: Particulas
+      value: 
+      objectReference: {fileID: 2581787049603455235}
+    - target: {fileID: 4628751052368033829, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
       propertyPath: anguloDeGiro
       value: 1
       objectReference: {fileID: 0}
@@ -139,6 +143,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
+--- !u!198 &2581787049603455235 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2588885871299044218, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
+  m_PrefabInstance: {fileID: 16264385288731257}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3678464797730195231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3689926258426330470, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
@@ -221,6 +230,10 @@ PrefabInstance:
       value: 124
       objectReference: {fileID: 0}
     - target: {fileID: 4628751052368033829, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
+      propertyPath: Particulas
+      value: 
+      objectReference: {fileID: 5301967556796447522}
+    - target: {fileID: 4628751052368033829, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
       propertyPath: anguloDeGiro
       value: 1
       objectReference: {fileID: 0}
@@ -249,6 +262,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
+--- !u!198 &5301967556796447522 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2588885871299044218, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
+  m_PrefabInstance: {fileID: 7672390614506395736}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6434675184536577342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3689926258426330470, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
@@ -331,6 +349,10 @@ PrefabInstance:
       value: 124
       objectReference: {fileID: 0}
     - target: {fileID: 4628751052368033829, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
+      propertyPath: Particulas
+      value: 
+      objectReference: {fileID: 5538100751108541805}
+    - target: {fileID: 4628751052368033829, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
       propertyPath: anguloDeGiro
       value: 1
       objectReference: {fileID: 0}
@@ -359,6 +381,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
+--- !u!198 &5538100751108541805 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2588885871299044218, guid: b89e50f498ce05d4fa351226facf0364, type: 3}
+  m_PrefabInstance: {fileID: 8013830842795732503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6630311097856136049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3689926258426330470, guid: b89e50f498ce05d4fa351226facf0364, type: 3}

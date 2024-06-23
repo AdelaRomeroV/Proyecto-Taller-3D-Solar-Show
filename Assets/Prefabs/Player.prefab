@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 2399905109627399491}
   - component: {fileID: 4757247443692825778}
   m_Layer: 0
-  m_Name: K-Left
+  m_Name: SK-Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 2961156634474628512}
   - component: {fileID: 8147773546945999488}
   m_Layer: 0
-  m_Name: K-Right
+  m_Name: SK-Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

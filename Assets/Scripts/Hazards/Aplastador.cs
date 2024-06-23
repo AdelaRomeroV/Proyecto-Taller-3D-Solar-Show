@@ -14,7 +14,7 @@ public class Aplastador : MonoBehaviour
     public bool inicio;
 
     public GameObject luz;
-
+    [SerializeField] ParticleSystem Particulas;
      private AudioSource audio;
 
     private void Start()
@@ -99,10 +99,12 @@ public class Aplastador : MonoBehaviour
         if (other.CompareTag("Suelo"))
         {
             isFalling = false;
+            Particulas.Play();
         }
         if (other.CompareTag("Player"))
         {
             isFalling = false;
+            Particulas.Play();
 
             player.velocidadActual = 0;
             player.rb.velocity = Vector3.zero;
