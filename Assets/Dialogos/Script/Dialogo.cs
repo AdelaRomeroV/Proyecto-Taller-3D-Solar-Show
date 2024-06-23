@@ -52,7 +52,7 @@ public class Dialogo : MonoBehaviour
         }
     }
 
-    private void StartDialogue()
+    public void StartDialogue()
     {
         didDialogueStart = true;
         dialoguePanel.SetActive(true);
