@@ -13,7 +13,10 @@ public class Follow : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
     }
-
+    private void Awake()
+    {
+       player= GameObject.FindGameObjectWithTag("Player").transform;
+    }
     void Update()
     {
         agent.SetDestination(player.position);

@@ -9,6 +9,7 @@ public class ExplosionSi : MonoBehaviour
 
     public GameObject fxExplosion;
 
+    [SerializeField] private GameObject fxExplosionPrefab;
     private void Update()
     {    
         if (detection())
@@ -31,6 +32,10 @@ public class ExplosionSi : MonoBehaviour
 
     public void Bomba()
     {
+        Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
+        SonidoExplosion a= fxExplosionPrefab.GetComponent<SonidoExplosion>();
+        a.Sonido();
+
         Instantiate(fxExplosion, transform.position, transform.rotation);
         Destroy(gameObject);
     }
