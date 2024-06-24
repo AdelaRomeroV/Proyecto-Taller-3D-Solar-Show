@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TemporizadorUI : MonoBehaviour
 {
-    public TMP_Text temporizadorText;
+    public TextMeshProUGUI temporizadorText;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,12 +14,12 @@ public class TemporizadorUI : MonoBehaviour
     }
     private void Awake()
     {
-        temporizadorText = GetComponent<TMP_Text>();
+        temporizadorText = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
-    public void UpdateText(int value)
+    public void UpdateText(float value)
     {
-        temporizadorText.text = ""+ value;
+        temporizadorText.text = value.ToString("0");
     }
 }

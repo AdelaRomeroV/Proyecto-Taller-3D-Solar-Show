@@ -9,14 +9,13 @@ public class Controlador : MonoBehaviour
     private float tiempoActual;
     private bool tiempoActivado = false;
 
-    //public TemporizadorUI temporizador;
-    // Start is called before the first frame update
+    public TemporizadorUI temporizador;
     void Start()
     {
         ActivarTemporizador();
 
-      //  temporizador= GameObject.Find("Temporizador").GetComponent<TemporizadorUI>();
-        //temporizador.UpdateText();
+        temporizador= GameObject.Find("Temporizador").GetComponent<TemporizadorUI>();
+        temporizador.UpdateText(limiteTiempo);
     }
 
     // Update is called once per frame
@@ -33,13 +32,14 @@ public class Controlador : MonoBehaviour
     {
         tiempoActual-= Time.deltaTime;
 
-       // temporizador.UpdateText(tiempoActual);
+        temporizador.UpdateText(tiempoActual);
+
 
         if(tiempoActual <= 0)
         {
 
             CambiarTemporizador(false);
-            SceneManager.LoadScene("Gameover");
+            SceneManager.LoadScene("Game Over");
         }
     }
     private void CambiarTemporizador(bool estado)

@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_02.unity
     guid: 41c412250f26092489d1b9a44d90fbcd
   - enabled: 1
+    path: Assets/Tareas/CheckPoints/CheckPoint_OppositeDirection.unity
+    guid: e89781aa1d3af154ab1fa0fedef969cd
+  - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: 6692c478aad7ffa41b4e2b9571a4a60b
   - enabled: 1

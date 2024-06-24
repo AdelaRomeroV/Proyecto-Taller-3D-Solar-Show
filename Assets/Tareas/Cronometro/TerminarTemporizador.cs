@@ -5,14 +5,18 @@ using UnityEngine;
 public class TerminarTemporizador : MonoBehaviour
 { 
     [SerializeField] private Controlador controlador;
-    protected ListaDeCheckpoints checkpoints;
+    public ListaDeCheckpoints checkpoints;
    
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || checkpoints.laps==3)
+        if (other.CompareTag("Player"))
         {
-            controlador.DesactivarTemporizador();
+            if(checkpoints.laps==3)
+            {  
+                controlador.DesactivarTemporizador();
+            }
+         
         }
     }
 }
