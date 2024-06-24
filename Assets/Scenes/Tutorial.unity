@@ -4395,6 +4395,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 359.8062
       objectReference: {fileID: 0}
+    - target: {fileID: 4957936585935387561, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8908328720814793504, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4569,7 +4573,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8908328720814793504, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
-      insertIndex: -1
+      insertIndex: 6
       addedObject: {fileID: 1467171605}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9093722986890388696, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
@@ -10714,7 +10718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fc1863f5d80b84c8064374310c5b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoalPiece: {fileID: 0}
+  GoalPiece: {fileID: 6923517290527723673, guid: b189aefcbd2e5b040a74ac824dfede00, type: 3}
   PistaRecta:
   - {fileID: 525393149118417077, guid: 3f4296d2dbc533d4b9f5983825f9540e, type: 3}
   - {fileID: 4228522655770486883, guid: 1edf61a5316eefe49b4ae0e7bf4edd59, type: 3}
