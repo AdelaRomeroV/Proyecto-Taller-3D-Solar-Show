@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bumpers : MonoBehaviour
@@ -24,6 +22,7 @@ public class Bumpers : MonoBehaviour
                 pushDirection.Normalize();
                 autoRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
 
+                player.velocidadActual = 0;
                 player.onStun = true;
                 Invoke("OffStun", 0.75f);
             }
