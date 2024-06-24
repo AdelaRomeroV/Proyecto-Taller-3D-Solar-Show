@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class Generador_Tutorial : GeneradorDePista
@@ -13,9 +15,14 @@ public class Generador_Tutorial : GeneradorDePista
 
     private void Update()
     {
-        if(Controlador.ActualPiece != null)
-        GenerarPista(Controlador.ActualPiece);
-
+        if(Controlador.ActualPiece != null && !Controlador.Completo_RecargaEnergia)
+        {
+            GenerarPista(Controlador.ActualPiece);
+        }
+        else if (Controlador.Completo_RecargaEnergia)
+        {
+            GenerarPista(Controlador.GoalPiece);
+        }
         DialogueControl();
     }
 
@@ -23,20 +30,20 @@ public class Generador_Tutorial : GeneradorDePista
     {
         if (Controlador.Completo_MovimientoBasico && Controlador.dialogo == 0) //Dialogo Derrape (0)
         {
-            GenerateDialogue();
-
+            Controlador.GoingStraight = true;
+            Controlador.dialogo++;
         }
-        else if (Controlador.Completo_Derrape && Controlador.dialogo == 1) //Dialogo Turbo (1)
+        else if (Controlador.Completo_Derrape && Controlador.dialogo == 1) //Dialogo SideAttack (1)
         {
             DriftDialogue();
 
         }
-        else if (Controlador.Completo_Turbo && Controlador.dialogo == 2) //Dialogo SD (2)
+        else if (Controlador.Completo_SideAttack && Controlador.dialogo == 2) //Dialogo Turbo (2)
         {
             GenerateDialogue();
 
         }
-        else if (Controlador.Completo_SideAttack && Controlador.dialogo == 3) //Dialogo Energia (3)
+        else if (Controlador.Completo_Turbo && Controlador.dialogo == 3) //Dialogo Energia (3)
         {
             GenerateDialogue();
 
@@ -62,6 +69,44 @@ public class Generador_Tutorial : GeneradorDePista
         Instantiate(Controlador.Dialogos[Controlador.dialogo], transform.position, transform.rotation);
         Controlador.dialogo++;
         Controlador.GoingStraight = true;
-        Destroy(this);
+        Destroy(gameObject);
     }
+
+    public void DriftPieces()
+    {
+        //Para alternar entre objetos de un arreglo
+        if (Vector3.Distance(Jugador.position, transform.position) <= 220)
+        {
+            Controlador.ActualPiece = Controlador.ZonaDeCurvas[Controlador.ActualDrifZone];
+            Controlador.ActualDrifZone++;
+
+            if (Controlador.ActualDrifZone >= Controlador.ZonaDeCurvas.Count)
+            {
+                Controlador.ActualDrifZone = 0;
+            }
+        }
+    }
+    public void TurboPieces()
+    {
+        //Para alternar entre objetos de un arreglo
+        if (Vector3.Distance(Jugador.position, transform.position) <= 220)
+        {
+            if(Controlador.Rampa != null)
+            {
+                Controlador.ActualPiece = Controlador.Rampa;
+                Controlador.Rampa = null;
+            }
+            else
+            {
+                Controlador.ActualPiece = Controlador.ZonaDeTurbo[Controlador.ActualTurboZone];
+                Controlador.ActualTurboZone++;
+
+                if (Controlador.ActualTurboZone >= Controlador.ZonaDeTurbo.Count)
+                {
+                    Controlador.ActualTurboZone = 0;
+                }
+            }
+        }
+    }
+    
 }
