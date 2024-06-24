@@ -28,7 +28,6 @@ public class Mov : MonoBehaviour
     public bool boostActivado = false;
     public float tiempoBoostPresionado = 0f;
     public bool boostOn;
-    [SerializeField] Renderer cocheRenderer;
 
     [Header("Audio")]
     public AudioClip audioAcelerador;
@@ -50,7 +49,7 @@ public class Mov : MonoBehaviour
     {
          if(velocidadActual < 0.5f && !Input.GetKey(KeyCode.S)) { velocidadActual = 0; }
 
-         InputsBuffer();
+        InputsBuffer();
     }
 
     void FixedUpdate()
@@ -300,6 +299,5 @@ public class Mov : MonoBehaviour
     void RightDequeue()
     {
         RightDrift_Buffer.Dequeue();
-    }
-
+    }           
 }

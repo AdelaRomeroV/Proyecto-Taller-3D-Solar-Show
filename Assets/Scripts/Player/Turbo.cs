@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,17 +36,25 @@ public class Turbo : MonoBehaviour
     [Header("Queues")]
     Queue<KeyCode> Turbo_Buffer = new Queue<KeyCode>();
 
+    [SerializeField] Renderer cocheRenderer;
+    private Color colorDungeon = Color.red;
+    private Color colorOriginal;
+    private bool activedParpate = true;
+    PlayerAnimations animated;
+
     private void Start()
     {
         LifeControl = GetComponent<ControlDeVida>();
         mov = GetComponent<Mov>();
+        animated = GetComponent<PlayerAnimations>();
 
-        if(EnergyBar  != null)
+        if (EnergyBar  != null)
         {
             EnergyBar.fillAmount = CurrentEnergy / 100;
         }
 
         audioSource = GetComponent<AudioSource>();
+        colorOriginal = cocheRenderer.material.color;
     }
 
     private void Update()
@@ -77,7 +86,7 @@ public class Turbo : MonoBehaviour
             }
             CurrentEnergy = 0;
 
-            //Instantiate(efecto, transform.position);
+            animated.Dead();
             Destroy(gameObject);
         }
         if (CurrentEnergy >= 100) { CurrentEnergy = 100; }
@@ -86,6 +95,8 @@ public class Turbo : MonoBehaviour
     public void GestionarEnergia(float a)
     {
         CurrentEnergy = CurrentEnergy - a;
+        if (CurrentEnergy < 25 && activedParpate) { StartCoroutine(Parpadeo()); }
+        else if (CurrentEnergy > 25) { activedParpate = true; }
     }
 
     void UsingTurbo()
@@ -232,5 +243,16 @@ public class Turbo : MonoBehaviour
         if(Turbo_Buffer.Count > 0) Turbo_Buffer.Clear();
 
         TurboActive = false;
+    }
+    IEnumerator Parpadeo()
+    {
+        cocheRenderer.material.color = colorDungeon;
+        yield return new WaitForSeconds(0.5F);
+        cocheRenderer.material.color = colorOriginal;
+        yield return new WaitForSeconds(0.5f);
+        cocheRenderer.material.color = colorDungeon;
+        yield return new WaitForSeconds(0.5f);
+        cocheRenderer.material.color = colorOriginal;
+        activedParpate = false;
     }
 }

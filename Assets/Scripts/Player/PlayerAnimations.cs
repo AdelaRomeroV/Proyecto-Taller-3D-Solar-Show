@@ -133,7 +133,7 @@ public class PlayerAnimations : MonoBehaviour
         
     }
 
-    void Dead()
+    public void Dead()
     {
         if(turbo.CurrentEnergy <= 0)
         {
