@@ -13,11 +13,11 @@ public class UIKeyColor : MonoBehaviour
     [SerializeField] Image Left;
 
     [Header("Turbo")]
-    [SerializeField] GameObject Turbo;
+    [SerializeField] Image Turbo;
 
     [Header("SideAttack")]
-    [SerializeField] GameObject A;
-    [SerializeField] GameObject D;
+    [SerializeField] Image A;
+    [SerializeField] Image D;
 
     Color ImageGray = Color.gray;
 
@@ -35,8 +35,8 @@ public class UIKeyColor : MonoBehaviour
             if (controlador.A_pressed) Left.color = ImageGray;
 
         }
-        if (turbo.TurboActive) Turbo.SetActive(false);
-        if (controlador.Left_Pressed) A.SetActive(false);
-        if (controlador.Right_Pressed) D.SetActive(false);
+        if (turbo.TurboActive) Turbo.color = ImageGray;
+        if (controlador.Left_Pressed) A.color = ImageGray;
+        if (controlador.Right_Pressed) D.color = ImageGray;
     }
 }

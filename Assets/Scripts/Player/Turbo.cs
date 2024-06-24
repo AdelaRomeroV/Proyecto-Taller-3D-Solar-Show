@@ -208,6 +208,7 @@ public class Turbo : MonoBehaviour
             if(Turbo_Buffer.Count >= 2 && !mov.Drifiting && !LifeControl.GetDamage)
             {
                 TurboActive = true;
+                Invoke("DeactiveTurbo", 1f);
             }
         }
         else
@@ -215,12 +216,21 @@ public class Turbo : MonoBehaviour
             if (Turbo_Buffer.Count >= 2 && !mov.Drifiting)
             {
                 TurboActive = true;
+                Invoke("DeactiveTurbo", 1f);
             }
         }
     }
 
     void TurboDequeue()
     {
+        if(Turbo_Buffer.Count > 0)
         Turbo_Buffer.Dequeue();
+    }
+
+    void DeactiveTurbo()
+    {
+        if(Turbo_Buffer.Count > 0) Turbo_Buffer.Clear();
+
+        TurboActive = false;
     }
 }
