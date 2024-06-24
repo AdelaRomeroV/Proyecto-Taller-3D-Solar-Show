@@ -321,7 +321,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015808642392645976}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -598,6 +598,7 @@ MonoBehaviour:
   inicio: 1
   moveSpeedDePrevencion: 20
   moveSpeedDeCaida: 120
+  Particulas: {fileID: 2588885871299044218}
 --- !u!114 &4855503666416246244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +775,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6c1ce8140bfa9b43afe0e49508beb0b, type: 3}
+--- !u!198 &2588885871299044218 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5320223886710008948, guid: f6c1ce8140bfa9b43afe0e49508beb0b, type: 3}
+  m_PrefabInstance: {fileID: 7654055120122629902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6240181696382132643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4368841991059615405, guid: f6c1ce8140bfa9b43afe0e49508beb0b, type: 3}

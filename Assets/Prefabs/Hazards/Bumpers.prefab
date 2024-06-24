@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 1781454918525297324}
   - component: {fileID: 7693265392671858731}
   - component: {fileID: 3299357242401713512}
-  - component: {fileID: 4436029442059089349}
+  - component: {fileID: 443500992712121505}
   m_Layer: 7
   m_Name: Bumpers
   m_TagString: Hazards
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a180d928cbf5a43abcc7642c0edb19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 15
+  pushForce: 20
 --- !u!114 &3299357242401713512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,8 +232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 20
---- !u!64 &4436029442059089349
-MeshCollider:
+--- !u!136 &443500992712121505
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -250,7 +250,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5546347261141537002, guid: b754c9617ecb8ef49843bcb0a37a3ab1, type: 3}
+  serializedVersion: 2
+  m_Radius: 2
+  m_Height: 8.7744875
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
