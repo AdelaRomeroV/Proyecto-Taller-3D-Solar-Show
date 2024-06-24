@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SonidoExplosion : MonoBehaviour
 { 
-    [SerializeField]private AudioSource audio;
+    [SerializeField]private AudioSource audioSource;
 
     public void Sonido()
     {
-        audio.Play();
+        audioSource.Play();
     }
 }
