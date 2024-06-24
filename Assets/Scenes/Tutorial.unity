@@ -4488,6 +4488,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3467041261178739535, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
+      propertyPath: cocheRenderer
+      value: 
+      objectReference: {fileID: 631745345}
     - target: {fileID: 3890542408533914347, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -4572,6 +4576,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1918865577}
   m_SourcePrefab: {fileID: 100100000, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
+--- !u!23 &631745345 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 404099849623186709, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
+  m_PrefabInstance: {fileID: 631745344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &634586591
 GameObject:
   m_ObjectHideFlags: 0
