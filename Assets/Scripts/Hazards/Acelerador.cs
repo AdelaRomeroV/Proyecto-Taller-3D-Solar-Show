@@ -23,8 +23,12 @@ public class Acelerador : MonoBehaviour
             playerMovement = other.gameObject.GetComponent<Mov>();
             if (playerMovement != null)
             {
-                playerMovement.ReiniciarVelocidad();
+                Invoke("ApagarTur", 2f);
             }
         }
+    }
+    private void ApagarTur()
+    {
+        playerMovement.ReiniciarVelocidad();
     }
 }
