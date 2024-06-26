@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 3910629811898127812}
   - component: {fileID: 1091081871780017670}
   - component: {fileID: 6972114341433493348}
-  - component: {fileID: 1435699017810416667}
+  - component: {fileID: 5125279406248282249}
   m_Layer: 0
   m_Name: Bordes
   m_TagString: Pared
@@ -245,7 +245,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.758423, y: 13, z: 84.35723}
   m_Center: {x: -40.1, y: 2.1038961, z: 0}
---- !u!114 &1435699017810416667
+--- !u!114 &5125279406248282249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

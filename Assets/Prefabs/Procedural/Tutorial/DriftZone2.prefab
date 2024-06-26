@@ -304,7 +304,9 @@ PrefabInstance:
       value: Pista Curva L
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4595275386675801156, guid: f6f35dd181850984fa93cafe9723fe07, type: 3}
+    - {fileID: 2235910658216448262, guid: f6f35dd181850984fa93cafe9723fe07, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6f35dd181850984fa93cafe9723fe07, type: 3}
@@ -498,7 +500,9 @@ PrefabInstance:
       value: Pista Curva (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1979052118410103828, guid: c46faf93c51df7f43b24213ffbc6c50d, type: 3}
+    - {fileID: 1941214317350446877, guid: c46faf93c51df7f43b24213ffbc6c50d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46faf93c51df7f43b24213ffbc6c50d, type: 3}
@@ -634,6 +638,10 @@ PrefabInstance:
     - target: {fileID: 7490867669983300822, guid: 3943d50b17a7c194a9d4c2f865b94e45, type: 3}
       propertyPath: m_Name
       value: Pista Recta
+      objectReference: {fileID: 0}
+    - target: {fileID: 9190116026222620631, guid: 3943d50b17a7c194a9d4c2f865b94e45, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

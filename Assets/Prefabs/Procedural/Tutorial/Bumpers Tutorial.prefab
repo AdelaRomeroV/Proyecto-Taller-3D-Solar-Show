@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 5479372060375523826}
   - component: {fileID: 6082878770595178324}
   - component: {fileID: 2743182353693582803}
-  - component: {fileID: 6997448277380753552}
   - component: {fileID: 8168883806000820285}
   - component: {fileID: 4574411174609852010}
   m_Layer: 7
@@ -220,19 +219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 15
---- !u!114 &6997448277380753552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2199930385060615454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2baf5ec391dee55428089ed790e25a66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  count: 20
 --- !u!64 &8168883806000820285
 MeshCollider:
   m_ObjectHideFlags: 0

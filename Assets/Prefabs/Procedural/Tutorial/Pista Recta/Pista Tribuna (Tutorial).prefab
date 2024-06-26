@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 5559938745153150152}
   - component: {fileID: 478321552326149454}
   - component: {fileID: 7891987969376536282}
-  - component: {fileID: 202741136900393180}
+  - component: {fileID: 7120055178935157248}
   m_Layer: 0
   m_Name: Bordes
   m_TagString: Pared
@@ -345,7 +345,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.758423, y: 13, z: 84.35723}
   m_Center: {x: -40.1, y: 2.1038961, z: 0}
---- !u!114 &202741136900393180
+--- !u!114 &7120055178935157248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013238c1360ad454b97f5d549c82016f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 15
+  pushForce: 1
 --- !u!1 &7438804067835054899
 GameObject:
   m_ObjectHideFlags: 0
