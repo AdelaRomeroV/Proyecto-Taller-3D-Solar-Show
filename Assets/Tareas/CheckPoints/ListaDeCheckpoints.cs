@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ListaDeCheckpoints : MonoBehaviour
 { 
@@ -13,6 +14,7 @@ public class ListaDeCheckpoints : MonoBehaviour
     [SerializeField] public int laps;
 
     private LapCounter lapcounter;
+    [SerializeField] private string sceneName;
 
     public static ListaDeCheckpoints Instance {  get { return instance; } }
     public void Start()
@@ -48,8 +50,7 @@ public class ListaDeCheckpoints : MonoBehaviour
                 count = 0;
                 if(laps==3)
                 {
-
-                    //Terminar el nivel
+                    SceneManager.LoadScene(sceneName);
                 }
             }
         }
