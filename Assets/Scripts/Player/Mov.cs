@@ -245,7 +245,7 @@ public class Mov : MonoBehaviour
 
     public void Boost()
     {
-        velocidadMaxima = 100;
+        velocidadMaxima = 130;
         velocidadActual += fuerzaBoostDrift * Time.deltaTime;
         tiempoBoostPresionado = 0f;
         boostOn = true;

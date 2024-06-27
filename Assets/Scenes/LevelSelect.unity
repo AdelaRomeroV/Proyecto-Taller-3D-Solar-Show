@@ -271,7 +271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3e8f261b770244d8c07ea45f025fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 2
+  levels: 0
+  sceneName: 
 --- !u!1 &701325504
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a81acd0fe21b37439505b5288e5e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   button: {fileID: 701325507}
   sceneName: Tutorial
 --- !u!1 &1108372467
