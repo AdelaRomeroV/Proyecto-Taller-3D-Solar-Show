@@ -4416,6 +4416,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3467041261178739535, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
+      propertyPath: metodo
+      value: 
+      objectReference: {fileID: 4934281635709360158, guid: 6130d37fe9b0c7c4ebd92d4c77880749, type: 3}
+    - target: {fileID: 3467041261178739535, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
       propertyPath: EnergyBar
       value: 
       objectReference: {fileID: 887928828}

@@ -37,10 +37,10 @@ public class Turbo : MonoBehaviour
     Queue<KeyCode> Turbo_Buffer = new Queue<KeyCode>();
 
     [SerializeField] Renderer cocheRenderer;
-    private Color colorDungeon = Color.red;
-    private Color colorOriginal;
     private bool activedParpate = true;
     PlayerAnimations animated;
+
+    [SerializeField] GameObject metodo;
 
     private void Start()
     {
@@ -54,7 +54,6 @@ public class Turbo : MonoBehaviour
         }
 
         audioSource = GetComponent<AudioSource>();
-        colorOriginal = cocheRenderer.material.color;
     }
 
     private void Update()
@@ -87,6 +86,7 @@ public class Turbo : MonoBehaviour
             CurrentEnergy = 0;
 
             animated.Dead();
+            Instantiate(metodo);
             Destroy(gameObject);
         }
         if (CurrentEnergy >= 100) { CurrentEnergy = 100; }
@@ -246,13 +246,14 @@ public class Turbo : MonoBehaviour
     }
     IEnumerator Parpadeo()
     {
-        cocheRenderer.material.color = colorDungeon;
+        cocheRenderer.material.EnableKeyword("_EMISSION");
         yield return new WaitForSeconds(0.5F);
-        cocheRenderer.material.color = colorOriginal;
+        cocheRenderer.material.DisableKeyword("_EMISSION");
         yield return new WaitForSeconds(0.5f);
-        cocheRenderer.material.color = colorDungeon;
+        cocheRenderer.material.EnableKeyword("_EMISSION");
         yield return new WaitForSeconds(0.5f);
-        cocheRenderer.material.color = colorOriginal;
+        cocheRenderer.material.DisableKeyword("_EMISSION");
         activedParpate = false;
     }
+
 }

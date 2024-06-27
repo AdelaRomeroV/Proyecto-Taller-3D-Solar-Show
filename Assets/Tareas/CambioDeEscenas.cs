@@ -6,18 +6,23 @@ using UnityEngine.UI;
 
 public class CambioDeEscenas : MonoBehaviour
 {
+    [SerializeField] GameManager gameManager;
     public Button button;
     public string sceneName;
-    // Start is called before the first frame update
+
     void Awake()
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(ChangeScene);
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
-    // Update is called once per frame
     void ChangeScene()
     {
+        if(gameManager != null) 
+        {            
+            SceneManager.LoadScene(gameManager.sceneName);
+        }
         SceneManager.LoadScene(sceneName);
     }
 }
