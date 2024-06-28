@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -822,8 +822,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 162.34698, y: 63.440002}
-  m_SizeDelta: {x: 325.45898, y: 61.023987}
+  m_AnchoredPosition: {x: 168.82336, y: 63.440002}
+  m_SizeDelta: {x: 338.4118, y: 61.024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1522023708
 MonoBehaviour:
@@ -837,6 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a81acd0fe21b37439505b5288e5e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   button: {fileID: 1522023709}
   sceneName: MainMenu
 --- !u!114 &1522023709
@@ -903,7 +904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 511541653, guid: ec633348afef04a4fa383a0a26f40789, type: 3}
+  m_Sprite: {fileID: 2028088052, guid: a39627303ed4aaf4bb42b5e6c9b8405f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1473,8 +1474,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2098835930}
-  - {fileID: 2117793616}
   - {fileID: 1522023707}
+  - {fileID: 2117793616}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
