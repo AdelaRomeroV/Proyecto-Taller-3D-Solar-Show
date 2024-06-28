@@ -1,8 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Acelerador : MonoBehaviour
 {
     private Mov playerMovement;
+
+    [SerializeField] List<GameObject> Effects = new List<GameObject>();
     private void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -28,5 +31,17 @@ public class Acelerador : MonoBehaviour
     private void ApagarTur()
     {
         playerMovement.ReiniciarVelocidad();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            foreach (GameObject obj in Effects)
+            {
+                GameObject a = Instantiate(obj, other.transform.position, other.transform.rotation);
+                a.transform.parent = other.transform;
+            }
+        }
     }
 }
