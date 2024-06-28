@@ -369,8 +369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a81acd0fe21b37439505b5288e5e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  sceneName: '*NombreDeLaEscena*'
+  button: {fileID: 395502514}
+  sceneName: Checkpoint_OppositeDirection
 --- !u!114 &395502514
 MonoBehaviour:
   m_ObjectHideFlags: 0
