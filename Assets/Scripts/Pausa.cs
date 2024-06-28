@@ -18,12 +18,12 @@ public class Pausa : MonoBehaviour
             if (!MenuActive && Input.GetKeyDown(KeyCode.Escape))
             {
                 Active();
-                MenuActive = true;
+                
             }
             else if (MenuActive && Input.GetKeyDown(KeyCode.Escape))
             {
                 Deactive();
-                MenuActive = false;
+                
             }
         }
     }
@@ -31,12 +31,14 @@ public class Pausa : MonoBehaviour
     void Active()
     {
         PausaUI.SetActive(true);
+        MenuActive = true;
         Time.timeScale = 0f;
     }
 
-    void Deactive()
+    public void Deactive()
     {
         PausaUI.SetActive(false);
+        MenuActive = false;
         Time.timeScale = 1.0f;
     }
 }

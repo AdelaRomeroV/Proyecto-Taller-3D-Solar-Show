@@ -24,5 +24,6 @@ public class CambioDeEscenas : MonoBehaviour
             SceneManager.LoadScene(gameManager.sceneName);
         }
         SceneManager.LoadScene(sceneName);
+        Time.timeScale = 1;
     }
 }
