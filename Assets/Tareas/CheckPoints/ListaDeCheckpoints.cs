@@ -33,6 +33,10 @@ public class ListaDeCheckpoints : MonoBehaviour
     {
         return Aros[0];
     }
+    public GameObject GetLastCheckpoint()
+    {
+        return Aros[Aros.Count - 1];
+    }
 
     public void Collected(GameObject obj)
     {
@@ -56,4 +60,5 @@ public class ListaDeCheckpoints : MonoBehaviour
         }
 
     }
+
 }
