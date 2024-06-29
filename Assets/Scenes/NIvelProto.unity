@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -760,8 +760,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830378325}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15780897, y: -0.00000001699078, z: 0.0000000027153215, w: 0.9874697}
-  m_LocalPosition: {x: 1.7999998, y: 8.004667, z: -29.18187}
+  m_LocalRotation: {x: 0.15780897, y: 0.000000016990779, z: -0.0000000027153213, w: 0.9874697}
+  m_LocalPosition: {x: 1.8000001, y: 8.004667, z: -29.18187}
   m_LocalScale: {x: 1.2511902, y: 1.9424587, z: 0.40040955}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -949,7 +949,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931492633}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15780897, y: -0.00000001699078, z: 0.0000000027153215, w: 0.9874697}
+  m_LocalRotation: {x: 0.15780897, y: 0.000000016990779, z: -0.0000000027153213, w: 0.9874697}
   m_LocalPosition: {x: 1.8, y: 7.674, z: -33.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1016,7 +1016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1274316210
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1147,6 +1147,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 384536626}
+  TurboEffect: {fileID: 0}
+  "Da\xF1os": {fileID: 0}
+  Humo: {fileID: 0}
+  Explosiones: {fileID: 0}
+  ExplosionGrande: {fileID: 0}
+  Posiciones: []
 --- !u!135 &1274316213
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1228,6 +1234,11 @@ MonoBehaviour:
   isKicking: 0
   RightAtacking: 0
   LeftAttaking: 0
+  audioTurbo: {fileID: 0}
+  audioExplosion: {fileID: 0}
+  audioAtaque: {fileID: 0}
+  cocheRenderer: {fileID: 0}
+  metodo: {fileID: 0}
 --- !u!114 &1274316216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1251,11 +1262,15 @@ MonoBehaviour:
   aumentoVelocidadBoost: 3
   rb: {fileID: 1274316218}
   velocidadActual: 0
-  estaDerrapando: 0
+  estaGirando: 0
   boostActivado: 0
   tiempoBoostPresionado: 0
   boostOn: 0
-  cocheRenderer: {fileID: 384536628}
+  audioAcelerador: {fileID: 0}
+  audioSource: {fileID: 0}
+  RightDrifting: 0
+  LeftDrifting: 0
+  Drifiting: 0
 --- !u!114 &1274316217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,7 +1671,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: acafacead4464b74485b74290641cadf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1726,7 +1741,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3610744426746625939}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 8180258627834821458, guid: ba4ccc9754a7d1f43a81bb55c031cecb, type: 3}
 --- !u!114 &6792866231214909243
 MonoBehaviour:
   m_ObjectHideFlags: 0

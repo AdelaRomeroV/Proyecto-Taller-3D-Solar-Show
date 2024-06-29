@@ -993,6 +993,7 @@ MonoBehaviour:
   audioExplosion: {fileID: 8300000, guid: aa946111d86c4974e8e8bc1bcdd4f62b, type: 3}
   audioAtaque: {fileID: 8300000, guid: ec630af4174e34b478e2914caff825ee, type: 3}
   cocheRenderer: {fileID: 404099849623186709}
+  metodo: {fileID: 4934281635709360158, guid: 6130d37fe9b0c7c4ebd92d4c77880749, type: 3}
 --- !u!146 &7825009610706636246
 WheelCollider:
   m_ObjectHideFlags: 0
