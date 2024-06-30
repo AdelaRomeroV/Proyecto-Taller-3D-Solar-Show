@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class DriftGoalText : MonoBehaviour
 {
-    ControladorTutorial controlador;
+    [SerializeField] ControladorTutorial controlador;
+    [SerializeField] EnemiesControllerTutorial enemiesController;
     TextMeshProUGUI text;
+    [SerializeField] bool isDrift;
 
     private void Start()
     {
-        controlador = GameObject.Find("Controlador").GetComponent<ControladorTutorial>();
         text = GetComponent<TextMeshProUGUI>();
     }
 
@@ -19,9 +20,24 @@ public class DriftGoalText : MonoBehaviour
 
     void UpdateText()
     {
-        if(controlador.derrape <= 5)
+        if (isDrift)
         {
-            text.text = $"{controlador.derrape}/5";
+            if(controlador.derrape <= 5)
+            {
+                text.text = $"Derrapes Existosos:{controlador.derrape}/5";
+            }
         }
+        else
+        {
+            if(enemiesController.navesDestruidas <= 6)
+            {
+                text.text = $"Naves Destruidas: {enemiesController.navesDestruidas}/6";
+            }
+        }
+    }
+
+    public void SAtext()
+    {
+        isDrift = false;
     }
 }

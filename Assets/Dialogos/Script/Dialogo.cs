@@ -14,24 +14,29 @@ public struct Dialogue
 }
 public class Dialogo : MonoBehaviour
 {
-    private bool isPlayerInRange;
     private bool didDialogueStart;
     private int lineaIndex;
 
-    private float typingTime = 0.02f;
-
+    [SerializeField] float typingTime = 0.02f;
+    [Header("Cuadro de Texto")]
     [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private TMP_Text NormalDialogueText;
     [SerializeField] private TMP_Text NameText;
     [SerializeField] private Image Imagen;
-    [SerializeField] bool CanChangeTime;
-    [SerializeField] float TimeScale;
+
+    [Header("Dialogos")]
     [SerializeField] private Dialogue[] dialogueLine;
-    [SerializeField] GameObject LastInstructions;
-    [SerializeField] GameObject CurrentInstructions;
+
+    [Header("Eventos")]
     [SerializeField] UnityEvent OntriggerEnter;
     [SerializeField] UnityEvent DialogueEndEvent;
 
+    [Header("Variables")]
+    [SerializeField] float TimeScale;
+    [SerializeField] bool CanChangeTime;
+    [SerializeField] bool canDisableCanva;
+
+    [Header("Sonidos")]
     public AudioClip niftyVoice;
     public AudioClip Qwarkvoice;
     public AudioSource Robotvoice;
@@ -40,7 +45,7 @@ public class Dialogo : MonoBehaviour
         if (didDialogueStart)
         {
 
-            if (dialogueText.text == dialogueLine[lineaIndex].line)
+            if (NormalDialogueText.text == dialogueLine[lineaIndex].line)
             {
                 NextDialogueLine();
             }
@@ -50,6 +55,8 @@ public class Dialogo : MonoBehaviour
             //    dialogueText.text = dialogueLine[lineaIndex].line;
             //}
         }
+
+        if (lineaIndex == dialogueLine.Length) DialogueEndEvent.Invoke();
     }
 
     public void StartDialogue()
@@ -58,7 +65,6 @@ public class Dialogo : MonoBehaviour
         dialoguePanel.SetActive(true);
         lineaIndex = 0;
 
-        if(LastInstructions != null) LastInstructions.SetActive(false);
         if (CanChangeTime) Time.timeScale = TimeScale; //afecta en el movimiento del player
 
         StartCoroutine(ShowLine());
@@ -100,11 +106,11 @@ public class Dialogo : MonoBehaviour
             Robotvoice.Play();
         }
 
-        dialogueText.text = string.Empty;
+        NormalDialogueText.text = string.Empty;
 
         foreach (char ch in dialogueLine[lineaIndex].line)
         {
-            dialogueText.text += ch;
+            NormalDialogueText.text += ch;
             yield return new WaitForSecondsRealtime(typingTime);
         }
     }
@@ -113,11 +119,12 @@ public class Dialogo : MonoBehaviour
     {
         didDialogueStart = false;
         yield return new WaitForSecondsRealtime(2.5f);
-        dialoguePanel.SetActive(false);
+
+        if(canDisableCanva) dialoguePanel.SetActive(false);
+
         Time.timeScale = 1f;
 
-        if (DialogueEndEvent != null) DialogueEndEvent.Invoke();
-        if(CurrentInstructions != null) CurrentInstructions.SetActive(true);
+        Robotvoice.Stop();
         Destroy(this);
 
     }

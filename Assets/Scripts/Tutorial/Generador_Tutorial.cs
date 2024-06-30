@@ -50,7 +50,7 @@ public class Generador_Tutorial : GeneradorDePista
         }
         else if (Controlador.Completo_RecargaEnergia && Controlador.dialogo == 4) //Dialogo Final (4)
         {
-            GenerateDialogue();
+            DriftDialogue();
 
         }
     }
