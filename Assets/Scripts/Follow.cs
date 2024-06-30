@@ -16,7 +16,7 @@ public class Follow : MonoBehaviour
     }
     private void Awake()
     {
-       //player= GameObject.FindGameObjectWithTag(enemyDestination).transform;
+       player= GameObject.FindGameObjectWithTag(enemyDestination).transform;
     }
     void Update()
     {
