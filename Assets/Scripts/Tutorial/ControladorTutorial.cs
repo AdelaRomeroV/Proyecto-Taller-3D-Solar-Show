@@ -35,6 +35,7 @@ public class ControladorTutorial : MonoBehaviour
 
     [Header("Scrips")]
     [SerializeField] GameObject Player;
+    [SerializeField] EnemiesControllerTutorial enemigos;
     Mov movScript;
     Turbo turboScript;
     [SerializeField] GameObject BarraDeEnergía;
@@ -78,27 +79,24 @@ public class ControladorTutorial : MonoBehaviour
     {
         FaseControl();
 
-        if (Completo_Turbo && Completo_SideAttack)
+        if (Completo_Turbo)
         {
-            if (!Completo_Turbo)
+            if (turboScript.CurrentEnergy > 15)
             {
-                turboScript.CurrentEnergy += 100 - turboScript.CurrentEnergy;
+                turboScript.canUseTurbo = true;
+                turboScript.CanAttackLeft = true;
+                turboScript.CanAttackRight = true;
             }
             else
             {
-                if (turboScript.CurrentEnergy > 15)
-                {
-                    turboScript.canUseTurbo = true;
-                    turboScript.CanAttackLeft = true;
-                    turboScript.CanAttackRight = true;
-                }
-                else
-                {
-                    turboScript.canUseTurbo = false;
-                    turboScript.CanAttackLeft = false;
-                    turboScript.CanAttackRight = false;
-                }
+                turboScript.canUseTurbo = false;
+                turboScript.CanAttackLeft = false;
+                turboScript.CanAttackRight = false;
             }
+        }
+        else
+        {
+            if (turboScript.CurrentEnergy < 30) turboScript.CurrentEnergy = 100;
         }
 
         if (PasarEscena)
@@ -217,24 +215,7 @@ public class ControladorTutorial : MonoBehaviour
     {
         turboScript.canUseTurbo = false;
 
-
-        if (turboScript.RightAtacking && !Left_Pressed)
-        {
-            Left_Pressed = true;
-            sideAttack++;
-            Invoke("DisableLeft", 0.5f);
-                
-        }
-
-        if (turboScript.LeftAttaking && !Right_Pressed)
-        {
-            Right_Pressed = true;
-            sideAttack++;
-            Invoke("DisableRight", 0.5f);
-        }
-
-
-        if(sideAttack >= 2 && dialogo == 2)
+        if(enemigos.navesDestruidas >= 6)
         {
             Completo_SideAttack = true;
         }
@@ -261,15 +242,6 @@ public class ControladorTutorial : MonoBehaviour
     public void DeactiveSA()
     {
         turboScript.CanAttackLeft = false;
-        turboScript.CanAttackRight = false;
-    }
-    void DisableLeft()
-    {
-        turboScript.CanAttackLeft = false;
-    }
-
-    void DisableRight()
-    {
         turboScript.CanAttackRight = false;
     }
 
