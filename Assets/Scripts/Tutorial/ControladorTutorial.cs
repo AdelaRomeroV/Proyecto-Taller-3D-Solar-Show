@@ -79,7 +79,7 @@ public class ControladorTutorial : MonoBehaviour
     {
         FaseControl();
 
-        if (Completo_Turbo)
+        if (Completo_SideAttack)
         {
             if (turboScript.CurrentEnergy > 15)
             {

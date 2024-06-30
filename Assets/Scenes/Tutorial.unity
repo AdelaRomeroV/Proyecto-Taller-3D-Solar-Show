@@ -182,9 +182,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 484216900}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -230,8 +230,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -293,37 +292,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9fe056edfe727c46b87c06dee7777fd, type: 3}
---- !u!1 &114711248
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 114711249}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &114711249
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114711248}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2070387949}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &127211902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -332,9 +300,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 677336427}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -380,8 +348,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (24)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -399,9 +366,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 677336427}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -447,8 +414,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (20)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -872,6 +838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 484216900}
     m_Modifications:
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -920,8 +890,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
@@ -1810,9 +1779,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 801732762}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1858,8 +1827,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1937,9 +1905,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 677336427}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1985,8 +1953,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2236,9 +2203,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1033881058}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2284,8 +2251,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2392,9 +2358,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 801732762}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2440,8 +2406,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (08)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2895,9 +2860,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1033881058}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2943,8 +2908,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3868,7 +3832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &647426994
 Transform:
   m_ObjectHideFlags: 0
@@ -3915,9 +3879,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 484216900}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3963,13 +3927,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 998878702}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
 --- !u!4 &652905401 stripped
@@ -3985,9 +3945,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 801732762}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4033,8 +3993,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (21)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4395,9 +4354,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 801732762}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4443,8 +4402,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5063,37 +5021,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
   m_PrefabInstance: {fileID: 452515162}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &998878701
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 998878702}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &998878702
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998878701}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1646943461}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1033881057
 GameObject:
   m_ObjectHideFlags: 0
@@ -5242,9 +5169,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 484216900}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5290,13 +5217,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1584953252}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
 --- !u!4 &1096125652 stripped
@@ -5695,9 +5618,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1033881058}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5743,8 +5666,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6205,9 +6127,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1033881058}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6253,8 +6175,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6564,9 +6485,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 484216900}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6612,13 +6533,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1593792282}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
 --- !u!1001 &1376043983
@@ -6629,9 +6546,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 677336427}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6677,8 +6594,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (23)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7315,9 +7231,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1033881058}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7363,8 +7279,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7741,68 +7656,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
   m_PrefabInstance: {fileID: 434756728}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1584953251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1584953252}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1584953252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584953251}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1708803962}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1593792281
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1593792282}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1593792282
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1593792281}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 233202742}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1600655414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8620927035366623778, guid: 3e2a0397544ddf446892840fffecc840, type: 3}
@@ -7816,9 +7669,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 801732762}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7864,8 +7717,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (18)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8077,9 +7929,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 801732762}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8125,8 +7977,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (22)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8154,9 +8005,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1033881058}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8202,8 +8053,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8316,9 +8166,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 801732762}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8364,8 +8214,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (25)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9129,9 +8978,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 484216900}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9177,13 +9026,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 114711249}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
 --- !u!1001 &1814162986
@@ -9359,10 +9204,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Right
       objectReference: {fileID: 0}
-    - target: {fileID: 441858248227267271, guid: cdfb20a6414563e4aa719dd754ca2a1d, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 1342911728156792124, guid: cdfb20a6414563e4aa719dd754ca2a1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9402,14 +9243,6 @@ PrefabInstance:
     - target: {fileID: 1342911728156792124, guid: cdfb20a6414563e4aa719dd754ca2a1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2711586009673069820, guid: cdfb20a6414563e4aa719dd754ca2a1d, type: 3}
-      propertyPath: IsRight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4770246459854162791, guid: cdfb20a6414563e4aa719dd754ca2a1d, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10051,9 +9884,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1033881058}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10099,8 +9932,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10399,6 +10231,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2711586009673069820, guid: cdfb20a6414563e4aa719dd754ca2a1d, type: 3}
+      propertyPath: IsRight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4770246459854162791, guid: cdfb20a6414563e4aa719dd754ca2a1d, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -10426,9 +10262,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 677336427}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10474,8 +10310,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10679,9 +10514,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 677336427}
     m_Modifications:
-    - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9423163
+    - target: {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+      propertyPath: pushForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4725290773635345868, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10727,8 +10562,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muro (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178895060373160459, guid: f715eefc70a62f14a9fad15dd8f381c3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
