@@ -15,14 +15,14 @@ public class Unlock_Level2 : BottonBlock
         Image = GetComponent<Image>();
         gameManager = FindObjectOfType<GameManager>();
         button.onClick.AddListener(ChooseLevel2);
+        if (gameManager.levels <= 2) { Image.sprite = miniatura; }
     }
 
     void ChooseLevel2()
     {
         
-        if (gameManager.levels <=2)
+        if (gameManager.levels >=2)
         {
-            miniatura=Image.sprite;
             SceneManager.LoadScene("Level_02");
         }
     }
