@@ -12,6 +12,7 @@ public class Explosion : MonoBehaviour
 
     public GameObject fxExplosion;
 
+    [SerializeField] private GameObject fxExplosionPrefab;
     private void Update()
     {
         if (TimeCounter <= 0)
@@ -39,6 +40,10 @@ public class Explosion : MonoBehaviour
 
     public void Bomba()
     {
+        Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
+        SonidoExplosion a = fxExplosionPrefab.GetComponent<SonidoExplosion>();
+        a.Sonido();
+
         Instantiate(fxExplosion, transform.position, transform.rotation);
         Destroy(gameObject);
     }

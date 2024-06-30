@@ -13,6 +13,8 @@ TagManager:
   - HazardsPeligro
   - Enemy
   - WayPoints
+  - EnemyLeft
+  - EnemyRight
   layers:
   - Default
   - TransparentFX

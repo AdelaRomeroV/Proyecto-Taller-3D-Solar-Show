@@ -9,13 +9,14 @@ public class Follow : MonoBehaviour
     public Transform player;
     private NavMeshAgent agent;
 
+    [SerializeField] string enemyDestination;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
     }
     private void Awake()
     {
-       player= GameObject.FindGameObjectWithTag("Player").transform;
+       //player= GameObject.FindGameObjectWithTag(enemyDestination).transform;
     }
     void Update()
     {
@@ -24,7 +25,7 @@ public class Follow : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.CompareTag("Player"))
+        if(collider.CompareTag(enemyDestination))
         {
             Explode();
         }
