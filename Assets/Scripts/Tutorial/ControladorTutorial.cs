@@ -165,11 +165,6 @@ public class ControladorTutorial : MonoBehaviour
     {
         if(movScript.enabled == true)
         {
-            if (Input.GetKeyDown(KeyCode.W) && !W_pressed)
-            {
-                W_pressed = true;
-                movimientoBasico++;
-            }
             if (Input.GetKeyDown(KeyCode.A) && !A_pressed)
             {
                 A_pressed = true;
@@ -182,7 +177,7 @@ public class ControladorTutorial : MonoBehaviour
             }
         }
 
-        if(movimientoBasico == 3 && dialogo == 0)
+        if(movimientoBasico == 2 && dialogo == 0)
         {
             Completo_MovimientoBasico = true;
         }

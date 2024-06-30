@@ -1547,7 +1547,7 @@ MonoBehaviour:
       pista\r\n"
   - sprite: {fileID: 21300000, guid: daac467ba80689140858055e6152f6b9, type: 3}
     CharName: Derrape
-    line: Presiona dos veces A o D para derrapar en las esquinas
+    line: Presiona dos veces y manten "A" o "D" para derrapar
   OntriggerEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -3092,6 +3092,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3229de13c49e0143bebbf5f9dd5655c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlador: {fileID: 1748706872}
+  enemiesController: {fileID: 647426995}
+  isDrift: 1
 --- !u!114 &567519430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3832,7 +3835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &647426994
 Transform:
   m_ObjectHideFlags: 0
@@ -4930,11 +4933,13 @@ MonoBehaviour:
   dialogueLine:
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: "\xA1No paran de llegar m\xE1s! Usa el Turbo Cuantico para dejarlos \xE1tras"
+    line: "\xA1Pronto llegar\xE1n m\xE1s! Usa el Turbo Cuantico para dejarlos \xE1tras"
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Nifty
-    line: "Esto consumir\xE1 tu energ\xEDa, presiona dos veces y manten W para usar
-      el Turbo"
+    line: "Esto te gastar\xE1 energ\xEDa"
+  - sprite: {fileID: 21300000, guid: 4eccf9c7e3120e342ad55543de29439c, type: 3}
+    CharName: Turbo Cuantico
+    line: Presiona dos veces y manten "W" para usar el Turbo
   OntriggerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -4942,6 +4947,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ControladorTutorial, Assembly-CSharp
         m_MethodName: DeactiveSA
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 567519427}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6821,8 +6838,7 @@ MonoBehaviour:
     line: Parece que tenemos invitados! Demuestrales que puedes hacer
   - sprite: {fileID: 21300000, guid: dfc47575e7d01ff428edf81061e88844, type: 3}
     CharName: Ataque Lateral
-    line: Usa las flechas "Izquierda" o "Derecha" para atacar a los lados y destruir
-      las naves enemigas
+    line: Usa las flechas "Izquierda" o "Derecha" para atacar a los lados
   OntriggerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -6917,6 +6933,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 567519427}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 567519429}
+        m_TargetAssemblyTypeName: DriftGoalText, Assembly-CSharp
+        m_MethodName: SAtext
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7337,18 +7377,13 @@ MonoBehaviour:
   dialogueLine:
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: "\xA1Excelente trabajo! Tambien puedes recargar energ\xEDa pasando cerca
-      de cualquier obstaculo de la pista"
-  - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
-    CharName: Qwark
     line: "Recuerda, piloto, los DA\xD1OS, TURBO y ATAQUE LATERAL consumen energ\xEDa\r"
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: 'Nifty '
-    line: "Si la barra de energ\xEDa se vac\xEDa, \xA1PUM! \xA1Explotar\xE1s!"
+    line: "Si la barra de energ\xEDa se vac\xEDa. . .       \n\xA1PUM! \xA1Explotar\xE1s!"
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: " \xA1Buena suerte! Espero que tu planeta no sea devorado por el jefe.
-      \xA1Nos vemos en la pista! \r\n"
+    line: " \xA1Buena suerte! Espero que tu planeta no sea devorado por el jefe\r\n"
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: 'Nifty '
     line: "\xA1QUE EMPIECE EL SHOW!\r\n"
