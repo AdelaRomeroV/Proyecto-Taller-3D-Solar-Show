@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3e8f261b770244d8c07ea45f025fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 0
+  levels: 2
   sceneName: 
 --- !u!1 &701325504
 GameObject:
@@ -909,6 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1194214491}
+  miniatura: {fileID: 21300000, guid: a5eaa61096bd9994c8a1e62c75596d23, type: 3}
   gameManager: {fileID: 258253222}
 --- !u!1 &1555341435
 GameObject:
