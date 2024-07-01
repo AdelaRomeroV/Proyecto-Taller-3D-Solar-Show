@@ -37,6 +37,8 @@ public class Controlador : MonoBehaviour
 
         if(tiempoActual <= 0)
         {
+            //other.GetComponent<ControlDeVida>().GetDamage = true;
+            //other.GetComponent<Turbo>().GestionarEnergia(100);
 
             CambiarTemporizador(false);
             SceneManager.LoadScene("Game Over");

@@ -303,14 +303,14 @@ RectTransform:
   m_GameObject: {fileID: 701325504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.72932804, y: 5.245533, z: 1}
+  m_LocalScale: {x: 1.0349962, y: 7.4439845, z: 1.4191092}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 84852894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: 35.667}
+  m_AnchoredPosition: {x: -500, y: 55}
   m_SizeDelta: {x: 504.05, y: 101.334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &701325507
@@ -804,14 +804,14 @@ RectTransform:
   m_GameObject: {fileID: 1194214489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7740273, y: 5.245533, z: 1}
+  m_LocalScale: {x: 1.0984292, y: 7.4439845, z: 1.4191092}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 84852894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 444, y: 35.669}
+  m_AnchoredPosition: {x: 444, y: 55.001995}
   m_SizeDelta: {x: 476.98, y: 101.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1194214491
@@ -1126,14 +1126,14 @@ RectTransform:
   m_GameObject: {fileID: 2098252120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.77257, y: 5.245533, z: 1}
+  m_LocalScale: {x: 1.0963613, y: 7.4439845, z: 1.4191092}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 84852894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22, y: 35.669}
+  m_AnchoredPosition: {x: -22, y: 55.001995}
   m_SizeDelta: {x: 476.98, y: 101.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2098252123
@@ -1231,6 +1231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 2098252123}
+  miniatura: {fileID: 21300000, guid: 92a5fcd9f9f1b374694ec7dc3be18efa, type: 3}
   gameManager: {fileID: 258253222}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
