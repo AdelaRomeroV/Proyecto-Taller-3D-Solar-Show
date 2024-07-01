@@ -23,7 +23,7 @@ public class Unlock_Level2 : BottonBlock
         
         if (gameManager.levels >=2)
         {
-            SceneManager.LoadScene("Level_02");
+            SceneManager.LoadScene("Level_Boss");
         }
     }
 }
