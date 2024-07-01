@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Jugador: {fileID: 0}
-  LineaDeMeta: {fileID: 7580882100843410992, guid: 0b73a1fb3745e894a9ca6d8d3e5544c0, type: 3}
+  LineaDeMeta: {fileID: 6835218851951160463, guid: 5abc2e7e01e77f144b3a157dc692a97f, type: 3}
 --- !u!1001 &701624186954122445
 PrefabInstance:
   m_ObjectHideFlags: 0
