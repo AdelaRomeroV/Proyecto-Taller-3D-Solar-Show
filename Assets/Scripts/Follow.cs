@@ -21,6 +21,7 @@ public class Follow : MonoBehaviour
     void Update()
     {
         agent.SetDestination(player.position);
+        transform.position = Vector3.MoveTowards(transform.position, player.position, 10 * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider collider)

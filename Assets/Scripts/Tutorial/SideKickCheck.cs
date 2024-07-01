@@ -4,6 +4,7 @@ public class SideKickCheck : MonoBehaviour
 {
     EnemiesTutorial e;
     [SerializeField] LayerMask enemigo;
+    private Explosion explosion;
 
     private void Update()
     {
@@ -12,9 +13,17 @@ public class SideKickCheck : MonoBehaviour
         if (collision.Length > 0)
         {
             e = collision[0].GetComponent<EnemiesTutorial>();
+            
             if (e != null)
             {
                 e.destroyShip();
+            }
+
+            explosion= collision[0].GetComponent<Explosion>();
+            if (explosion != null)
+            {
+                explosion.Bomba();
+
             }
         }
     }

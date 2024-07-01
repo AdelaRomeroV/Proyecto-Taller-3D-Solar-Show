@@ -8,6 +8,8 @@ public class Controlador : MonoBehaviour
     [SerializeField] private float limiteTiempo;
     private float tiempoActual;
     private bool tiempoActivado = false;
+    public ControlDeVida vida;
+    public Turbo turbo;
 
     public TemporizadorUI temporizador;
     void Start()
@@ -37,8 +39,8 @@ public class Controlador : MonoBehaviour
 
         if(tiempoActual <= 0)
         {
-            //other.GetComponent<ControlDeVida>().GetDamage = true;
-            //other.GetComponent<Turbo>().GestionarEnergia(100);
+            vida.GetComponent<ControlDeVida>().GetDamage = true;
+            turbo.GetComponent<Turbo>().GestionarEnergia(100);
 
             CambiarTemporizador(false);
             SceneManager.LoadScene("Game Over");

@@ -20,7 +20,11 @@ public class ListaDeCheckpoints : MonoBehaviour
     public void Start()
     {
         lapcounter = GameObject.Find("LapCounterText").GetComponent<LapCounter>();
+        if (lapcounter != null)
+        {
         lapcounter.UpdateText(laps);
+        }
+
     }
 
     private void Awake()

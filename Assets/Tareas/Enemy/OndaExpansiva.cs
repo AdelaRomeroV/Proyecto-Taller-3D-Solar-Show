@@ -5,6 +5,7 @@ public class OndaExpansiva : MonoBehaviour
     public float velocidadCrecimiento = 5f;
     public float duracionExplosion = 1f;
 
+    [SerializeField] float explosion;
     private float tiempoInicioExplosion;
 
     void Start()
@@ -15,8 +16,8 @@ public class OndaExpansiva : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //Turbo other = other.GetComponent<Turbo>();
-                 //Turbo.EnergiaActual -= 10;
+            Turbo a = other.GetComponent<Turbo>();
+                 a.GestionarEnergia(explosion);
         }
     }
 
