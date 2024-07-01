@@ -15,13 +15,19 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         enemyspawner = GameObject.FindWithTag("Enemy");
-        StartCoroutine(Spawner());
+       // StartCoroutine(Spawner());
     }
 
     void Update()
     {
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            StartCoroutine(Spawner());
+        }
+    }
     IEnumerator Spawner()
     {
         while (Counter < 5)
@@ -38,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
                 Instantiate(ItemSpawner[randomIndex], new Vector3(positionX, 1, positionZ), Quaternion.identity);
             }
 
-            yield return new WaitForSeconds(1);
+           yield return new WaitForSeconds(1);
             Counter++;
         }
 
