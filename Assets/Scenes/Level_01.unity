@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.012584263, g: 0.010142468, b: 0.07904371, a: 1}
+  m_IndirectSpecularColor: {r: 0.012563456, g: 0.010125639, b: 0.07902204, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1833,7 +1833,7 @@ MonoBehaviour:
   - {fileID: 1253976980}
   count: 0
   laps: 0
-  sceneName: Level_02
+  sceneName: Level_Boss
 --- !u!1001 &383874438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7256,7 +7256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096354103}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000008367746, y: 0.98460054, z: -0.17481948, w: -0.000000047127962}
+  m_LocalRotation: {x: 3.206903e-10, y: 0.98460054, z: -0.1748195, w: 0.0000000018061629}
   m_LocalPosition: {x: -11.625305, y: 8.200001, z: -41.46805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11894,8 +11894,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595042341}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000008367746, y: 0.98460054, z: -0.17481948, w: -0.000000047127962}
-  m_LocalPosition: {x: -11.625304, y: 11.642548, z: -32.079285}
+  m_LocalRotation: {x: 3.206903e-10, y: 0.98460054, z: -0.1748195, w: 0.0000000018061629}
+  m_LocalPosition: {x: -11.625305, y: 11.642549, z: -32.079285}
   m_LocalScale: {x: 1.2511902, y: 1.9424587, z: 0.40040955}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15238,7 +15238,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.5
+  m_fontSize: 17.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
