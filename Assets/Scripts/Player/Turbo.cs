@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Turbo : MonoBehaviour
@@ -95,7 +96,7 @@ public class Turbo : MonoBehaviour
     public void GestionarEnergia(float a)
     {
         CurrentEnergy = CurrentEnergy - a;
-        if (CurrentEnergy < 25 && activedParpate) { StartCoroutine(Parpadeo()); }
+        if (CurrentEnergy < 25 && activedParpate) { StartCoroutine(Parpadeo(Color.red, 0.5f)); }
         else if (CurrentEnergy > 25) { activedParpate = true; }
     }
 
@@ -139,6 +140,7 @@ public class Turbo : MonoBehaviour
             if (Charging)
             {
                 CurrentEnergy += 0.15f;
+                StartCoroutine(Parpadeo(Color.white, 1f));
             }
         }
         else if (LifeControl != null && LifeControl.GetDamage)
@@ -202,7 +204,11 @@ public class Turbo : MonoBehaviour
         if (other.CompareTag("HazardsPeligro"))
         {
             CountPeligro turbo = other.GetComponent<CountPeligro>();
-            if (turbo != null) { CurrentEnergy += turbo.count; }
+            if (turbo != null) 
+            { 
+                CurrentEnergy += turbo.count;
+                StartCoroutine(Parpadeo(Color.white, 1f));
+            }
         }
     }
 
@@ -244,14 +250,15 @@ public class Turbo : MonoBehaviour
 
         TurboActive = false;
     }
-    IEnumerator Parpadeo()
+    IEnumerator Parpadeo(Color emissionColor, float time)
     {
+        cocheRenderer.material.SetColor("_EmissionColor", emissionColor);
         cocheRenderer.material.EnableKeyword("_EMISSION");
-        yield return new WaitForSeconds(0.5F);
+        yield return new WaitForSeconds(time);
         cocheRenderer.material.DisableKeyword("_EMISSION");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(time);
         cocheRenderer.material.EnableKeyword("_EMISSION");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(time);
         cocheRenderer.material.DisableKeyword("_EMISSION");
         activedParpate = false;
     }
