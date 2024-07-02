@@ -31,7 +31,11 @@ public class Explosion : MonoBehaviour
         return Physics.CheckSphere(transform.position, checkRadius, whatIsPlayer);
 
     }
-
+    public void Muerte()
+    {
+        Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
@@ -41,8 +45,8 @@ public class Explosion : MonoBehaviour
     public void Bomba()
     {
         Instantiate(fxExplosionPrefab, transform.position, transform.rotation);
-        SonidoExplosion a = fxExplosionPrefab.GetComponent<SonidoExplosion>();
-        a.Sonido();
+       // SonidoExplosion a = fxExplosionPrefab.GetComponent<SonidoExplosion>();
+       // a.Sonido();
 
         Instantiate(fxExplosion, transform.position, transform.rotation);
         Destroy(gameObject);

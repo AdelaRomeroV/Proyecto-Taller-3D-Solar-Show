@@ -4,49 +4,54 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private GameObject enemyspawner;
     public int Counter;
 
-    public int positionX;
-    public int positionZ;
+    public GameObject[] EnemyPrefab;
+    public Vector3 spawnSize;
+    private BoxCollider boxCollider;
 
-    public GameObject[] ItemSpawner;
+    private void Awake()
+    {
+        boxCollider = GetComponent<BoxCollider>();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            boxCollider.enabled = false;
+            Invoke("Actived", 20f);
+        }
+    }
+
+    private void Actived()
+    {
+        boxCollider.enabled = true;
+    }
     // Start is called before the first frame update
-    void Start()
-    {
-        enemyspawner = GameObject.FindWithTag("Enemy");
-       // StartCoroutine(Spawner());
-    }
-
-    void Update()
-    {
-    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
-            StartCoroutine(Spawner());
+            SpawnEnemies();
         }
     }
-    IEnumerator Spawner()
+    private void SpawnEnemies()
     {
-        while (Counter < 5)
-        {
-            positionX = Random.Range(-5, 6);
-            positionZ = Random.Range(-4, 9);
-            int randomIndex = Random.Range(0, ItemSpawner.Length);
-            if (gameObject.CompareTag("Enemy"))
-            {
-                Instantiate(ItemSpawner[0], new Vector3(positionX, 1, positionZ), Quaternion.identity);
-            }
-            else
-            {
-                Instantiate(ItemSpawner[randomIndex], new Vector3(positionX, 1, positionZ), Quaternion.identity);
-            }
+        int randomIndex = Random.Range(0, EnemyPrefab.Length);
 
-           yield return new WaitForSeconds(1);
-            Counter++;
-        }
+        Vector3 spawnPosition = transform.position + new Vector3(
+            Random.Range(-spawnSize.x / 2f, spawnSize.x / 2f),
+            Random.Range(-spawnSize.y / 2f, spawnSize.y / 2f),
+            Random.Range(-spawnSize.z / 2f, spawnSize.z / 2f));
+        Instantiate(EnemyPrefab[randomIndex], spawnPosition, Quaternion.identity);
+        
+    }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Vector3 lowerCorner = transform.position - spawnSize / 2f;
+        Gizmos.DrawWireCube(lowerCorner + spawnSize / 2f, spawnSize);
     }
 }

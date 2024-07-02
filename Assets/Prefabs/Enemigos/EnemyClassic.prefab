@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2400474231208409633}
   - component: {fileID: 4048352130724162089}
   - component: {fileID: 8495573351341542556}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 984962336873673755}
   - component: {fileID: 3054549607434006876}
   - component: {fileID: 8179628761499635428}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: EnemyClassic
   m_TagString: Untagged
   m_Icon: {fileID: 0}

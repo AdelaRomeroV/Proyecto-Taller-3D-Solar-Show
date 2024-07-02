@@ -22,8 +22,8 @@ public class SideKickCheck : MonoBehaviour
             explosion= collision[0].GetComponent<Explosion>();
             if (explosion != null)
             {
-                explosion.Bomba();
-
+                explosion.Muerte();
+                Debug.Log("explotó");
             }
         }
     }

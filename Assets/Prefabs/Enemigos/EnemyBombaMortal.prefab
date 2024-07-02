@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 760498153344231280}
   - component: {fileID: 5680280139509986207}
   - component: {fileID: 9184331442095323787}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyBombaMortal
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 281747600116405861}
   - component: {fileID: 6142864334729309114}
   - component: {fileID: 3091667236730885951}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShipModel (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
