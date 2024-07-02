@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Aplastador : MonoBehaviour
 {
-    public Transform startPoint;
+    public Transform target;
+    public Transform targetregreso;
+
     public float moveSpeed;
     public float moveSpeedDePrevcion;
     public float moveSpeedDeCaida;
@@ -64,14 +66,14 @@ public class Aplastador : MonoBehaviour
         }
     }
 
-    private void DowCrusher(float move)
-    {
-        rb.MovePosition(transform.position + Vector3.down * move * Time.deltaTime);
-    }
-
     private void UpCrushed()
     {
-        rb.MovePosition(transform.position + Vector3.up * moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetregreso.position, moveSpeed * Time.deltaTime);
+    }
+
+    private void DowCrusher(float move)
+    {
+        transform.position = Vector3.MoveTowards(transform.position, target.position, move * Time.deltaTime);
     }
 
     /*private void OnCollisionEnter(Collision collision)
