@@ -14,7 +14,7 @@ public class Controlador : MonoBehaviour
     public TemporizadorUI temporizador;
     void Start()
     {
-        ActivarTemporizador();
+
 
         temporizador= GameObject.Find("Temporizador").GetComponent<TemporizadorUI>();
         temporizador.UpdateText(limiteTiempo);

@@ -12,7 +12,7 @@ public class TerminarTemporizador : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(checkpoints.laps<=3)
+            if(checkpoints.laps>=3)
             {  
                 controlador.DesactivarTemporizador();
             }

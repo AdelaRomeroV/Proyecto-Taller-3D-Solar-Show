@@ -11,6 +11,7 @@ public class CronometroIncio : MonoBehaviour
     [SerializeField] Turbo turbo;
     [SerializeField] ControlDeVida vida;
     [SerializeField] PlayerAnimations animations;
+    public Controlador temporizador;
 
     public float startTime = 3f; 
     private float currentTime;
@@ -36,6 +37,7 @@ public class CronometroIncio : MonoBehaviour
         }
 
         text.text = "Start";
+        temporizador.ActivarTemporizador();
         Active();
         StartCoroutine(AnimateFontSize(80, 160, 0.2f));
         yield return new WaitForSeconds(1f);
