@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Devorador : MonoBehaviour
 {
-    [SerializeField] public List<Transform> waypoints = new List<Transform>();
     public float speedActual;
     public float speedmin;
     public float speedMax;
@@ -15,7 +14,7 @@ public class Devorador : MonoBehaviour
 
     public float checkRadius;
     public LayerMask whatIsPlayer;
-    public CinemachineVirtualCamera shakje;
+    public CinemachineVirtualCamera shake;
 
     public GameObject prefabMetoritos;
     public Transform player;
@@ -23,6 +22,7 @@ public class Devorador : MonoBehaviour
     public float intervalAtack;
     public float intervalAnti;
 
+    public List<Transform> waypoints = new List<Transform>();
     private void Start()
     {
         StartCoroutine(Ataque());
@@ -50,6 +50,14 @@ public class Devorador : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speedActual * Time.deltaTime);
 
+        //Rotacion del Devorador
+        Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
+        direction.y = 0;
+
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 2.5f * Time.deltaTime);
+
+
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
         {
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Count;
@@ -65,14 +73,14 @@ public class Devorador : MonoBehaviour
         yield return new WaitForSeconds(intervalAtack);
         while (true)
         {
-            shakje.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 2;
-            shakje.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 2;
+            shake.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 2;
+            shake.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 2;
 
             yield return new WaitForSeconds(intervalAnti);
             if (player != null) { Instantiate(prefabMetoritos, new Vector3(player.position.x, player.position.y + 20, player.position.z), Quaternion.identity); }
 
-            shakje.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
-            shakje.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
+            shake.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+            shake.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;
 
             yield return new WaitForSeconds(intervalAtack);
         }

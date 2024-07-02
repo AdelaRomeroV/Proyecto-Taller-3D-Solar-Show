@@ -280,8 +280,8 @@ MonoBehaviour:
   Aros:
   - {fileID: 6083839529894757525}
   - {fileID: 1462543344468991428}
-  count: 4
-  laps: 20
+  count: 0
+  laps: 0
   sceneName: 
 --- !u!1 &5841649900470098880
 GameObject:

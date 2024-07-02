@@ -13,7 +13,11 @@ public class FallDetection : MonoBehaviour
 
             other.transform.forward=checkpoint.forward;
 
-            other.GetComponent<ControlDeVida>().GetDamage = true;
+            if(other.GetComponent<ControlDeVida>() != null)
+            {
+                other.GetComponent<ControlDeVida>().GetDamage = true;
+            }
+            
             other.GetComponent<Turbo>().GestionarEnergia(10);
         }
     }

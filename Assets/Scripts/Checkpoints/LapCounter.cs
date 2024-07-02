@@ -15,6 +15,6 @@ public class LapCounter : MonoBehaviour
     // Update is called once per frame
     public void UpdateText(int value)
     {
-        Laptext.text = "Lap: " + value;
+        Laptext.text = "Vuelta: " + value;
     }
 }
