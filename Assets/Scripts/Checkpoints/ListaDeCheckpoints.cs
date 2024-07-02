@@ -19,10 +19,14 @@ public class ListaDeCheckpoints : MonoBehaviour
     public static ListaDeCheckpoints Instance {  get { return instance; } }
     public void Start()
     {
-        lapcounter = GameObject.Find("LapCounterText").GetComponent<LapCounter>();
+        if(GameObject.Find("LapCounterText") != null)
+        {
+            lapcounter = GameObject.Find("LapCounterText").GetComponent<LapCounter>();
+        }
+
         if (lapcounter != null)
         {
-        lapcounter.UpdateText(laps);
+            lapcounter.UpdateText(laps);
         }
 
     }
@@ -54,7 +58,9 @@ public class ListaDeCheckpoints : MonoBehaviour
             if(Aros.Count == count) 
             {
                 laps++;
-                lapcounter.UpdateText(laps);
+
+                if(lapcounter != null) lapcounter.UpdateText(laps);
+
                 count = 0;
                 if(laps==3)
                 {

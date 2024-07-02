@@ -611,17 +611,17 @@ MonoBehaviour:
   dialogueLine:
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: "Bueno, Nifty, \xA1Es hora de preparar a nuestro peque\xF1o astronauta
+    line: "Bueno, Nifty, \xA1es hora de preparar a nuestro peque\xF1o astronauta
       para la acci\xF3n!"
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Nifty
     line: "\xA1\xBFListo para el tutorial, piloto?!"
   - sprite: {fileID: 21300000, guid: c52baa20ee6fc3a46adc54ea1039de2d, type: 3}
     CharName: Movimiento
-    line: 'Usa W y S para avanzar y retroceder
+    line: 'Usa W y S para avanzar y retroceder.
 
       Usa A y D para moverte a los
-      lados'
+      lados.'
   OntriggerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -1543,11 +1543,10 @@ MonoBehaviour:
   dialogueLine:
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: "\xA1Bien hecho! Ahora tienes que aprender a c\xF3mo maniobrar sobre la
-      pista\r\n"
+    line: "\xA1Bien hecho! Ahora tienes que aprender c\xF3mo maniobrar en la pista."
   - sprite: {fileID: 21300000, guid: daac467ba80689140858055e6152f6b9, type: 3}
     CharName: Derrape
-    line: Presiona dos veces y manten "A" o "D" para derrapar
+    line: "Presiona dos veces y mant\xE9n \"A\" o \"D\" para derrapar."
   OntriggerEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -2016,16 +2015,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Situnoviotedejasoladilequeyomesetusp
+  m_text: 'Queteparecesimessolitacreomamiquetu
 
-    osesfavoritasquemehagoelmaloyquees
+    cuerpomenecesitayhacemostoaslascos
 
-    otexitaytehagotoloquetunecesitasSola
+    asquetuquieresQueteparecesimeespera
 
-    solitacreomamiquetucuerpomenecesit'
+    ssolasolita'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bc95199ce109f614697b7edc6b920b2c, type: 2}
-  m_sharedMaterial: {fileID: 2361080317919352013, guid: bc95199ce109f614697b7edc6b920b2c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7125213d5be97b4191e3a9e37b69b48, type: 2}
+  m_sharedMaterial: {fileID: 232879362094061458, guid: f7125213d5be97b4191e3a9e37b69b48, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2049,12 +2048,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.2
+  m_fontSize: 20
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 30
+  m_fontSizeMin: 15
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -3075,8 +3074,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6830911198418769919}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.48400003, y: 0.20579998}
-  m_AnchorMax: {x: 0.95, y: 0.32020003}
+  m_AnchorMin: {x: 0.65, y: 0.1}
+  m_AnchorMax: {x: 0.95, y: 0.25}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3117,8 +3116,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Derrapes Exitosos 0/5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bc95199ce109f614697b7edc6b920b2c, type: 2}
-  m_sharedMaterial: {fileID: 2361080317919352013, guid: bc95199ce109f614697b7edc6b920b2c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7125213d5be97b4191e3a9e37b69b48, type: 2}
+  m_sharedMaterial: {fileID: 232879362094061458, guid: f7125213d5be97b4191e3a9e37b69b48, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3142,7 +3141,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.2
+  m_fontSize: 19.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3312,19 +3311,19 @@ MonoBehaviour:
     line: "\xA1BIENVENIDO A SOLAR SLAUGHTER SHOW!"
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Presentador
-    line: El show donde jugaran por sus VIDAS y la de su planeta, organizado por
-      nuestro jefe
+    line: "\xA1El show donde competir\xE1n por sus vidas y por la de su planeta,
+      organizado por nuestro jefe...!"
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Presentador
-    line: EL DEVORADOR DE MUNDOS!
+    line: "\xA1EL DEVORADOR DE MUNDOS!"
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: "\xA1Soy su presentador, Qwark! Y junto a m\xED, la alegr\xEDa estelar
-      de nuestra querida amiga, Nifty.\r\n"
+    line: "\xA1Soy su presentador, Qwark! Y conmigo est\xE1 la siempre alegre Nifty,
+      nuestra querida amiga estelar."
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Nifty
-    line: " \xA1Hola, universo! \xA1Estoy tan emocionada de estar aqu\xED, Qwark!
-      \xA1El espect\xE1culo de hoy va a ser gal\xE1ctico! \r\n"
+    line: "\xA1Hola, universo! \xA1Estoy tan emocionada de estar aqu\xED, Qwark!
+      \xA1El espect\xE1culo de hoy va a ser gal\xE1ctico!"
   OntriggerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -4937,13 +4936,14 @@ MonoBehaviour:
   dialogueLine:
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: "\xA1Pronto llegar\xE1n m\xE1s! Usa el Turbo Cuantico para dejarlos \xE1tras"
+    line: "\xA1Pronto llegar\xE1n m\xE1s! Usa el Turbo Cu\xE1ntico para dejarlos
+      atr\xE1s."
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Nifty
     line: "Esto te gastar\xE1 energ\xEDa"
   - sprite: {fileID: 21300000, guid: 4eccf9c7e3120e342ad55543de29439c, type: 3}
     CharName: Turbo Cuantico
-    line: Presiona dos veces y manten "W" para usar el Turbo
+    line: "Presiona dos veces y mant\xE9n \"W\" para activar el Turbo."
   OntriggerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -6839,10 +6839,10 @@ MonoBehaviour:
   dialogueLine:
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: NIfty
-    line: Parece que tenemos invitados! Demuestrales que puedes hacer
+    line: "Parece que tenemos invitados. \xA1Demu\xE9strales de lo que eres capaz!"
   - sprite: {fileID: 21300000, guid: dfc47575e7d01ff428edf81061e88844, type: 3}
     CharName: Ataque Lateral
-    line: Usa las flechas "Izquierda" o "Derecha" para atacar a los lados
+    line: Usa las flechas Izquierda o Derecha para atacar a los lados.
   OntriggerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -7381,13 +7381,13 @@ MonoBehaviour:
   dialogueLine:
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: "Recuerda, piloto, los DA\xD1OS, TURBO y ATAQUE LATERAL consumen energ\xEDa\r"
+    line: "Recuerda, piloto, los DA\xD1OS, TURBO y ATAQUE consumen energ\xEDa."
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: 'Nifty '
-    line: "Si la barra de energ\xEDa se vac\xEDa. . .       \n\xA1PUM! \xA1Explotar\xE1s!"
+    line: "Si la barra de energ\xEDa se vac\xEDa... \xA1PUM! \xA1Explotar\xE1s!"
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
-    line: " \xA1Buena suerte! Espero que tu planeta no sea devorado por el jefe\r\n"
+    line: "\xA1Buena suerte! Espero que tu planeta no sea devorado por el jefe."
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: 'Nifty '
     line: "\xA1QUE EMPIECE EL SHOW!\r\n"
@@ -8312,10 +8312,10 @@ MonoBehaviour:
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
     line: "\xA1Hey, hey, hey! Tienes poca energ\xEDa, ser\xE1 mejor que la recargues
-      antes de que vuelva muy inestable"
+      antes de que te vuelvas muy inestable."
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Nifty
-    line: "Pasa cerca de los bumpers para reponer tu energ\xEDa"
+    line: "Pasa cerca de los bumpers para recargar tu energ\xEDa."
   OntriggerEnter:
     m_PersistentCalls:
       m_Calls:

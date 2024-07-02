@@ -24,14 +24,14 @@ public class DriftGoalText : MonoBehaviour
         {
             if(controlador.derrape <= 5)
             {
-                text.text = $"Derrapes Existosos:{controlador.derrape}/5";
+                text.text = $"Derrapes Exitosos:{controlador.derrape}/5";
             }
         }
         else
         {
             if(enemiesController.navesDestruidas <= 6)
             {
-                text.text = $"Naves Destruidas: {enemiesController.navesDestruidas}/6";
+                text.text = $"Naves Destruídas: {enemiesController.navesDestruidas}/6";
             }
         }
     }
