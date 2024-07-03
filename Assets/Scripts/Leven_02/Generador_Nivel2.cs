@@ -1,20 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Generador_Nivel2 : GeneradorDePista
 {
-    [SerializeField] GameObject LineaDeMeta;
-
-    List<GameObject> Pistas = new List<GameObject>();
     Controlador_Nivel2 controlador;
 
     bool CanGoStraight;
 
-    private void Start()
+    private void Awake()
     {
         controlador = GameObject.Find("Controlador").GetComponent<Controlador_Nivel2>();
-        Pistas = controlador.Pistas;
+        //Pistas = controlador.Pistas;
 
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null) { Jugador = playerObject.GetComponent<Transform>(); }
@@ -30,7 +26,7 @@ public class Generador_Nivel2 : GeneradorDePista
         controlador.PistasGeneradas++;
     }
 
-    void Spawner()
+    void MainSpawner()
     {
         if (controlador.PistasGeneradas < controlador.MaxPistas)
         {
@@ -39,83 +35,90 @@ public class Generador_Nivel2 : GeneradorDePista
             {
                 case -1:
                     {
-                        int random = Random.Range(0, Pistas.Count);
-
-                        
-                        if (random == 2 || random == 3) //Diagonal derecha
-                        {
-                            Spawn_DiagonalPiece(Pistas[random], 1);
-                        }
-                        else if (CanGoStraight)
-                        {
-                            if (random != 4 || random != 5) Spawn_StraighPiece(Pistas[random]);
-                            else Spawner();
-
-                        }
-                        else
-                        {
-                            Spawner();
-                        }
-
+                        SpawnerIsLeft();
                         break;
                     }
                 case 0:
                     {
-                        int random = Random.Range(0, Pistas.Count);
-
-                        if (random == 2 || random == 3) //Diagonal derecha
-                        {
-                            Spawn_DiagonalPiece(Pistas[random], 1);
-                        }
-                        else if (random == 4 || random == 5) //Diagonal izquierda
-                        {
-                            Spawn_DiagonalPiece(Pistas[random], -1);
-                        }
-                        else if(CanGoStraight)
-                        {
-                            Spawn_StraighPiece(Pistas[random]);
-                        }
-                        else
-                        {
-                            Spawner();
-                        }
-
+                        SpawnerIsZero();
                         break;
                     }
                 case 1:
                     {
-                        int random = Random.Range(0, Pistas.Count);
-
-                        if (random == 4 || random == 5) //Diagonal izquierda
-                        {
-                            Spawn_DiagonalPiece(Pistas[random], -1);
-                        }
-                        else if (CanGoStraight)
-                        {
-                            if (random != 2 || random != 3) Spawn_StraighPiece(Pistas[random]);
-                            else Spawner();
-                            
-                        }
-                        else
-                        {
-                            Spawner();
-
-                        }
+                        SpawnerIsRight();
                         break;
                     }
             }
         }
         else if (controlador.PistasGeneradas == controlador.MaxPistas)
         {
-            GenerarPista(LineaDeMeta);
+            GenerarPista(controlador.MetaFinal);
         }
 
     }
 
+    void SpawnerIsZero()
+    {
+        if (controlador.pieceIndex == 1) // izquierda
+        {
+            Spawn_DiagonalPiece(controlador.CurrentPiece, -1);
+        }
+        else if (controlador.pieceIndex == 2) // derecha
+        {
+            Spawn_DiagonalPiece(controlador.CurrentPiece, 1);
+        }
+        else if (CanGoStraight)
+        {
+            Spawn_StraighPiece(controlador.CurrentPiece);
+        }
+        else
+        {
+            ReScript();
+        }
+    }
+
+    void SpawnerIsLeft()
+    {
+        if (controlador.pieceIndex == 2) //Derecha
+        {
+            Spawn_DiagonalPiece(controlador.CurrentPiece, 1);
+        }
+        else if (CanGoStraight && controlador.pieceIndex == 0) //Puede ir recto y es una pieza recta
+        {
+            Spawn_StraighPiece(controlador.CurrentPiece);
+        }
+        else if(controlador.pieceIndex == 1)
+        {
+            ReScript();
+        }
+    }
+
+    void SpawnerIsRight()
+    {
+        if (controlador.pieceIndex == 1) //Izquierda
+        {
+            Spawn_DiagonalPiece(controlador.CurrentPiece, -1);
+        }
+        else if (CanGoStraight && controlador.pieceIndex == 0) //Puede ir recto y es una pieza recta
+        {
+            Spawn_StraighPiece(controlador.CurrentPiece);
+        }
+        else if (controlador.pieceIndex == 2 )
+        {
+            ReScript();
+        }
+    }
+
+    void ReScript()
+    {
+        gameObject.AddComponent<Generador_Nivel2>();
+        Destroy(this);
+    }
     void Spawn_StraighPiece(GameObject obj)
     {
         GenerarPista(obj);
         controlador.Consecutive_Straight_Pieces++;
+        Destroy(this);
     }
 
     void Spawn_DiagonalPiece(GameObject obj, int valor)
@@ -123,6 +126,7 @@ public class Generador_Nivel2 : GeneradorDePista
         controlador.Consecutive_Straight_Pieces = 0;
         controlador.ActualDir += valor;
         GenerarPista(obj);
+        Destroy(this);
     }
 
     IEnumerator StartDelay()
@@ -138,10 +142,7 @@ public class Generador_Nivel2 : GeneradorDePista
 
         yield return new WaitForSecondsRealtime(0.05f);
 
-        Spawner();
-
-        Destroy(this);
+        MainSpawner();
     }
-
 
 }

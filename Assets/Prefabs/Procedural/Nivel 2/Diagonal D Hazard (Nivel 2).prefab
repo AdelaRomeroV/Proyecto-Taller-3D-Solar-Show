@@ -80,7 +80,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Jugador: {fileID: 0}
-  LineaDeMeta: {fileID: 6835218851951160463, guid: 5abc2e7e01e77f144b3a157dc692a97f, type: 3}
 --- !u!1001 &4944247342687740573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -154,6 +153,14 @@ PrefabInstance:
     - target: {fileID: 481953597731926572, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
       propertyPath: m_Name
       value: Pista Hazard (Nivel 2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087353131557696816, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087353131557696816, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -89.3
       objectReference: {fileID: 0}
     - target: {fileID: 2912340036103445852, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
       propertyPath: m_LocalPosition.x

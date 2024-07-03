@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &12514316
 Animator:
   serializedVersion: 5
@@ -647,6 +647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Devorador
       objectReference: {fileID: 0}
+    - target: {fileID: 3610744426813468652, guid: c98203c87396ae749a251f2a975ad97e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4869676030779922280, guid: c98203c87396ae749a251f2a975ad97e, type: 3}
       propertyPath: m_Radius
       value: 55
@@ -669,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6792866231147542340, guid: c98203c87396ae749a251f2a975ad97e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8898909517342930753, guid: c98203c87396ae749a251f2a975ad97e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -897,7 +901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &894688039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -914,7 +918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.85, y: 0.008883463}
   m_AnchorMax: {x: 0.99275, y: 0.09833009}
-  m_AnchoredPosition: {x: 0.000091552734, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0.000022888184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &894688040
@@ -1390,8 +1394,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098456071}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17481947, y: 0.00000005685374, z: -0.000000010094593, w: 0.98460054}
-  m_LocalPosition: {x: 50.8, y: 13.142548, z: -281.28876}
+  m_LocalRotation: {x: 0.1748195, y: -0.0000000018625845, z: 3.3070716e-10, w: 0.98460054}
+  m_LocalPosition: {x: 50.8, y: 13.142549, z: -281.28876}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1846,7 +1850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!320 &1494093635
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -2020,7 +2024,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774334562}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17481947, y: 0.00000005685374, z: -0.000000010094593, w: 0.98460054}
+  m_LocalRotation: {x: 0.1748195, y: -0.0000000018625845, z: 3.3070716e-10, w: 0.98460054}
   m_LocalPosition: {x: 50.8, y: 9.700001, z: -271.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2439,18 +2443,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15ab346b6ffcc24b917c27fc04f1389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxPistas: 30
+  MaxPistas: 35
   PistasGeneradas: 0
-  Pistas:
-  - {fileID: 3938004179760518277, guid: 32ae60c7af0f58e45a68916b6f1789de, type: 3}
-  - {fileID: 481953597731926572, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
-  - {fileID: 3005659474401128309, guid: 32358a0531869904db3db1864ccfee09, type: 3}
-  - {fileID: 1410013535533091254, guid: 202e833fa734c1440b32c7be41880d95, type: 3}
-  - {fileID: 939233211971711393, guid: 63767bbf19b108b4b8fa74688c54e404, type: 3}
-  - {fileID: 5410286856602988100, guid: 72cf90f57a7955d4091562de8223794c, type: 3}
-  - {fileID: 874995428243599002, guid: f4bab8c6233627340a3e9199ef067317, type: 3}
-  - {fileID: 3938004179760518277, guid: 32ae60c7af0f58e45a68916b6f1789de, type: 3}
-  - {fileID: 3938004179760518277, guid: 32ae60c7af0f58e45a68916b6f1789de, type: 3}
+  pieceIndex: 0
+  CurrentPiece: {fileID: 0}
+  MetaFinal: {fileID: 6835218851951160463, guid: 5abc2e7e01e77f144b3a157dc692a97f, type: 3}
+  Pieces:
+  - ListPieces:
+    - {fileID: 3938004179760518277, guid: 32ae60c7af0f58e45a68916b6f1789de, type: 3}
+    - {fileID: 481953597731926572, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
+    - {fileID: 874995428243599002, guid: f4bab8c6233627340a3e9199ef067317, type: 3}
+    - {fileID: 5788846961745200080, guid: e5a3b82d6d0671744810987bd89215ca, type: 3}
+    - {fileID: 172326353339229616, guid: fed4ba9571e05724a9f72173c1c74c4c, type: 3}
+    - {fileID: 172326353339229616, guid: fed4ba9571e05724a9f72173c1c74c4c, type: 3}
+    - {fileID: 172326353339229616, guid: fed4ba9571e05724a9f72173c1c74c4c, type: 3}
+    - {fileID: 1431251272068714501, guid: 50726317059df7c4787f3729e78bf4ce, type: 3}
+    - {fileID: 1431251272068714501, guid: 50726317059df7c4787f3729e78bf4ce, type: 3}
+    - {fileID: 1431251272068714501, guid: 50726317059df7c4787f3729e78bf4ce, type: 3}
+  - ListPieces:
+    - {fileID: 939233211971711393, guid: 63767bbf19b108b4b8fa74688c54e404, type: 3}
+    - {fileID: 5410286856602988100, guid: 72cf90f57a7955d4091562de8223794c, type: 3}
+  - ListPieces:
+    - {fileID: 3005659474401128309, guid: 32358a0531869904db3db1864ccfee09, type: 3}
+    - {fileID: 1410013535533091254, guid: 202e833fa734c1440b32c7be41880d95, type: 3}
   Hazards:
   - {fileID: 6432189462392678066, guid: d8725a43040cd8a4abced6fc264b8ec0, type: 3}
   - {fileID: 4514639731671905672, guid: b457aaaed360cd74faaf342bdae26e0e, type: 3}
@@ -2460,6 +2475,8 @@ MonoBehaviour:
   - {fileID: 4915253742111423612, guid: b497f75c7a4d2a840b13b4a840abaeba, type: 3}
   - {fileID: 6993850598211757104, guid: 7832b0ace21bb4e458a9c6c4047f1b27, type: 3}
   - {fileID: 576182385449157087, guid: 23d873e16bc58d24ea84a32b07f39751, type: 3}
+  - {fileID: 6770749225783799796, guid: 9bfe09180e7723a4a93586e0f7bcc7ad, type: 3}
+  - {fileID: 1226109591077829688, guid: 4859ed99493c3d74f8828de643eb2eb4, type: 3}
 --- !u!4 &2081522792
 Transform:
   m_ObjectHideFlags: 0
@@ -2772,6 +2789,10 @@ PrefabInstance:
     - target: {fileID: 7176198370640417238, guid: 472ae1c8a2f0f2e46b16247e7e55b680, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176198370640417238, guid: 472ae1c8a2f0f2e46b16247e7e55b680, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -80,7 +80,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Jugador: {fileID: 0}
-  LineaDeMeta: {fileID: 6835218851951160463, guid: 5abc2e7e01e77f144b3a157dc692a97f, type: 3}
 --- !u!1001 &701624186954122445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,6 +255,14 @@ PrefabInstance:
     - target: {fileID: 7490867669983300822, guid: 3943d50b17a7c194a9d4c2f865b94e45, type: 3}
       propertyPath: m_Name
       value: Pista Recta
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060696995719057244, guid: 3943d50b17a7c194a9d4c2f865b94e45, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060696995719057244, guid: 3943d50b17a7c194a9d4c2f865b94e45, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -89.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

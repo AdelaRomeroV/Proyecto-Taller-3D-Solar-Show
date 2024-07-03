@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Jugador: {fileID: 0}
-  LineaDeMeta: {fileID: 6835218851951160463, guid: 5abc2e7e01e77f144b3a157dc692a97f, type: 3}
 --- !u!1 &939233211971711393
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +219,14 @@ PrefabInstance:
     - target: {fileID: 1346951298427019431, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.6919187
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087353131557696816, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087353131557696816, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -87.5
       objectReference: {fileID: 0}
     - target: {fileID: 2912340036103445852, guid: 0052e1567c90aa64abcf4738f667e6aa, type: 3}
       propertyPath: m_LocalPosition.x
