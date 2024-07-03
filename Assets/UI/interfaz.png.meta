@@ -298,6 +298,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: interfaz_9
+      rect:
+        serializedVersion: 2
+        x: 2125
+        y: 511
+        width: 698
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573ec388e22d50947a648fa90bf6f6f5
+      internalID: 1504375508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: interfaz_10
+      rect:
+        serializedVersion: 2
+        x: 2164
+        y: 79
+        width: 626
+        height: 382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7b248b6f6f6e24e8cc93d2de833a97
+      internalID: -785011456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -311,6 +353,7 @@ TextureImporter:
     nameFileIdTable:
       interfaz_0: 2028088052
       interfaz_1: -1099830782
+      interfaz_10: -785011456
       interfaz_2: -1834521193
       interfaz_3: -1508393457
       interfaz_4: 1573037932
@@ -318,6 +361,7 @@ TextureImporter:
       interfaz_6: 1987144255
       interfaz_7: -1875188869
       interfaz_8: -1001762576
+      interfaz_9: 1504375508
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
