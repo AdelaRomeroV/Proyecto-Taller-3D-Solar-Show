@@ -2,6 +2,7 @@ using System.Collections;
 using System.ComponentModel.Design;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CronometroIncio : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class CronometroIncio : MonoBehaviour
 
     public float startTime = 3f; 
     private float currentTime;
+
+    [SerializeField] UnityEvent FinishEvent;
 
     private void Start()
     {
@@ -37,7 +40,13 @@ public class CronometroIncio : MonoBehaviour
         }
 
         text.text = "Start";
-        temporizador.ActivarTemporizador();
+
+        if(temporizador != null)
+        {
+            temporizador.ActivarTemporizador();
+        }
+
+        if (FinishEvent != null) FinishEvent.Invoke();
         Active();
         StartCoroutine(AnimateFontSize(80, 160, 0.2f));
         yield return new WaitForSeconds(1f);
