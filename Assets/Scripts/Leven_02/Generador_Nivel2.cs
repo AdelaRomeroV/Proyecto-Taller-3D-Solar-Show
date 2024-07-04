@@ -87,7 +87,7 @@ public class Generador_Nivel2 : GeneradorDePista
         {
             Spawn_StraighPiece(controlador.CurrentPiece);
         }
-        else if(controlador.pieceIndex == 1)
+        else
         {
             ReScript();
         }
@@ -103,7 +103,7 @@ public class Generador_Nivel2 : GeneradorDePista
         {
             Spawn_StraighPiece(controlador.CurrentPiece);
         }
-        else if (controlador.pieceIndex == 2 )
+        else
         {
             ReScript();
         }
