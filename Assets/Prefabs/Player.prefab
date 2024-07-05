@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1856d1ecb185c445befcb55f875f1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  e: {fileID: 0}
   enemigo:
     serializedVersion: 2
     m_Bits: 128
@@ -225,7 +224,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -447,7 +446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1856d1ecb185c445befcb55f875f1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  e: {fileID: 0}
   enemigo:
     serializedVersion: 2
     m_Bits: 128
