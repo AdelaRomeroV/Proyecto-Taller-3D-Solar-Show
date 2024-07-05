@@ -6,6 +6,7 @@ public class Meteorito : MonoBehaviour
     private Rigidbody meteorRb;
     public float mixSpeed = 50;
     public float maxSpeed = 250;
+    [SerializeField] private GameObject exit;
 
     private void Awake()
     {
@@ -32,5 +33,9 @@ public class Meteorito : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    private void OnDestroy()
+    {
+        Instantiate(exit,transform.position, transform.rotation);
     }
 }

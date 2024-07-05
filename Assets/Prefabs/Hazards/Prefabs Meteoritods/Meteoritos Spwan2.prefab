@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixSpeed: 100
   maxSpeed: 150
+  exit: {fileID: 8888038654837129376, guid: c668d88dda341d54eb3f6b8810e9d270, type: 3}
 --- !u!114 &8597455111658610904
 MonoBehaviour:
   m_ObjectHideFlags: 0

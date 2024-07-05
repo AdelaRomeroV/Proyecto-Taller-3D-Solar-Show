@@ -190,6 +190,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   fxExplosion: {fileID: 6409451932765839406, guid: e9b15c3d6530f5e4bb94c17a3c288b29, type: 3}
+  cocheRenderer: {fileID: 6142864334729309114}
   fxExplosionPrefab: {fileID: 9186500323137444737, guid: 200bee5ddc924004cabb9e7685375218, type: 3}
 --- !u!1 &7219709352193308277
 GameObject:

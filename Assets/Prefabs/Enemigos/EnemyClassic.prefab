@@ -159,6 +159,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   fxExplosion: {fileID: 6409451932765839406, guid: e9b15c3d6530f5e4bb94c17a3c288b29, type: 3}
+  cocheRenderer: {fileID: 8495573351341542556}
   fxExplosionPrefab: {fileID: 9186500323137444737, guid: 200bee5ddc924004cabb9e7685375218, type: 3}
 --- !u!135 &3054549607434006876
 SphereCollider:

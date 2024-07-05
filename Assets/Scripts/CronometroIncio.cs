@@ -39,7 +39,7 @@ public class CronometroIncio : MonoBehaviour
             currentTime--;
         }
 
-        text.text = "Start";
+        text.text = "¡Ya!";
 
         if(temporizador != null)
         {

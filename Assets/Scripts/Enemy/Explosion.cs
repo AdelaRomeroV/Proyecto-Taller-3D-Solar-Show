@@ -12,6 +12,13 @@ public class Explosion : MonoBehaviour
 
     public GameObject fxExplosion;
 
+    [SerializeField] private Renderer cocheRenderer;
+
+    private void Start()
+    {
+        Invoke("Bomba",20f);
+    }
+
     [SerializeField] private GameObject fxExplosionPrefab;
     private void Update()
     {
@@ -23,6 +30,7 @@ public class Explosion : MonoBehaviour
         if (detection())
         {
         TimeCounter -= Time.deltaTime;
+            StartCoroutine(Parpadeo());
         }
     }
 
@@ -50,5 +58,15 @@ public class Explosion : MonoBehaviour
 
         Instantiate(fxExplosion, transform.position, transform.rotation);
         Destroy(gameObject);
+    }
+    IEnumerator Parpadeo()
+    {
+        cocheRenderer.material.EnableKeyword("_EMISSION");
+        yield return new WaitForSeconds(0.5f);
+        cocheRenderer.material.DisableKeyword("_EMISSION");
+        yield return new WaitForSeconds(0.5f);
+        cocheRenderer.material.EnableKeyword("_EMISSION");
+        yield return new WaitForSeconds(0.5f);
+        cocheRenderer.material.DisableKeyword("_EMISSION");
     }
 }
