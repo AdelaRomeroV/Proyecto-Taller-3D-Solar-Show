@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 1, g: 0.10849059, b: 0.79755104, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 081b49cada479944f9233e4860be5145, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: b45b6ca7ac2fc2641ab6a3759273a609, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -10159,7 +10159,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.55
+  m_fontSize: 34.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
