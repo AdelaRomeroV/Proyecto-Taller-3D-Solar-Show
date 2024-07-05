@@ -12,6 +12,7 @@ public class ListaDeCheckpoints : MonoBehaviour
     [SerializeField] private List<GameObject> Aros;
     [SerializeField] private int count;
     [SerializeField] public int laps;
+    [SerializeField] private int lapsMax;
 
     private LapCounter lapcounter;
     [SerializeField] private string sceneName;
@@ -65,7 +66,7 @@ public class ListaDeCheckpoints : MonoBehaviour
                 if(lapcounter != null) lapcounter.UpdateText(laps);
 
                 count = 0;
-                if(laps==3)
+                if(laps== lapsMax)
                 {
                     if (gameManager != null)
                     {

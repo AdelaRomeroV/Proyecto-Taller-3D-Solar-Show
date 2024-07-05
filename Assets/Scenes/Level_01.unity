@@ -2070,7 +2070,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.3
+  m_fontSize: 15.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2179,7 +2179,7 @@ MonoBehaviour:
   - {fileID: 1253976980}
   count: 0
   laps: 0
-  sceneName: Level_Boss
+  sceneName: Level_2
   gameManager: {fileID: 0}
 --- !u!1001 &383874438
 PrefabInstance:
@@ -8186,7 +8186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096354103}
   serializedVersion: 2
-  m_LocalRotation: {x: 3.206903e-10, y: 0.98460054, z: -0.1748195, w: 0.0000000018061629}
+  m_LocalRotation: {x: 0.000000010420053, y: 0.98460054, z: -0.17481947, w: 0.000000058686773}
   m_LocalPosition: {x: -11.625305, y: 8.200001, z: -126.17877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13067,8 +13067,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595042341}
   serializedVersion: 2
-  m_LocalRotation: {x: 3.206903e-10, y: 0.98460054, z: -0.1748195, w: 0.0000000018061629}
-  m_LocalPosition: {x: -11.625305, y: 11.642549, z: -116.79001}
+  m_LocalRotation: {x: 0.000000010420053, y: 0.98460054, z: -0.17481947, w: 0.000000058686773}
+  m_LocalPosition: {x: -11.625306, y: 11.642548, z: -116.79001}
   m_LocalScale: {x: 1.2511902, y: 1.9424587, z: 0.40040955}
   m_ConstrainProportionsScale: 0
   m_Children: []

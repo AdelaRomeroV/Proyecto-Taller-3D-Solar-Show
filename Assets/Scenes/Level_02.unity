@@ -2816,7 +2816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235735024}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0020501958, y: 0.98453283, z: -0.17480735, w: -0.011546911}
+  m_LocalRotation: {x: -0.0020502026, y: 0.98453283, z: -0.17480738, w: -0.011546949}
   m_LocalPosition: {x: 0.1172774, y: 7.294, z: 5.8986273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9728,7 +9728,8 @@ MonoBehaviour:
   - {fileID: 1992737381}
   count: 0
   laps: 0
-  sceneName: MainMenu
+  lapsMax: 2
+  sceneName: Level_Boss
   gameManager: {fileID: 0}
 --- !u!4 &803717336
 Transform:
@@ -18437,8 +18438,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595042341}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0020501958, y: 0.98453283, z: -0.17480735, w: -0.011546911}
-  m_LocalPosition: {x: 0.33747587, y: 10.736546, z: 15.28481}
+  m_LocalRotation: {x: -0.0020502026, y: 0.98453283, z: -0.17480738, w: -0.011546949}
+  m_LocalPosition: {x: 0.3374766, y: 10.736546, z: 15.28481}
   m_LocalScale: {x: 1.2511902, y: 1.9424587, z: 0.40040955}
   m_ConstrainProportionsScale: 0
   m_Children: []
