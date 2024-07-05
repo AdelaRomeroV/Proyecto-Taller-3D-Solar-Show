@@ -140,7 +140,7 @@ public class Turbo : MonoBehaviour
             if (Charging)
             {
                 CurrentEnergy += 0.15f;
-                StartCoroutine(Parpadeo(Color.white, 1f));
+                StartCoroutine(Recarga(Color.white, 0.5f));
             }
         }
         else if (LifeControl != null && LifeControl.GetDamage)
@@ -207,7 +207,7 @@ public class Turbo : MonoBehaviour
             if (turbo != null) 
             { 
                 CurrentEnergy += turbo.count;
-                StartCoroutine(Parpadeo(Color.white, 1f));
+                StartCoroutine(Recarga(Color.white, 0.5f));
             }
         }
     }
@@ -260,6 +260,16 @@ public class Turbo : MonoBehaviour
         cocheRenderer.material.EnableKeyword("_EMISSION");
         yield return new WaitForSeconds(time);
         cocheRenderer.material.DisableKeyword("_EMISSION");
+        activedParpate = false;
+    }
+
+    IEnumerator Recarga(Color emissionColor, float time)
+    {
+        cocheRenderer.material.SetColor("_EmissionColor", emissionColor);
+        cocheRenderer.material.EnableKeyword("_EMISSION");
+        yield return new WaitForSeconds(time);
+        cocheRenderer.material.DisableKeyword("_EMISSION");
+        yield return new WaitForSeconds(time);
         activedParpate = false;
     }
 

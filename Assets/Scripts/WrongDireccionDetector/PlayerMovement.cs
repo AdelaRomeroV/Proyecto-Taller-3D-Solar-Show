@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckAngle()
     {
-        Debug.Log(Vector3.Angle(transform.forward, ListaDeCheckpoints.Instance.GetCurrentCheckpoint().transform.up));
+        Vector3.Angle(transform.forward, ListaDeCheckpoints.Instance.GetCurrentCheckpoint().transform.up);
         if (Vector3.Angle(transform.forward,ListaDeCheckpoints.Instance.GetCurrentCheckpoint().transform.up)>90)
         {
             GetComponent<MeshRenderer>().material = wrongDirection;
