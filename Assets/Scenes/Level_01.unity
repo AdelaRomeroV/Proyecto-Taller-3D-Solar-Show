@@ -2179,6 +2179,7 @@ MonoBehaviour:
   - {fileID: 1253976980}
   count: 0
   laps: 0
+  lapsMax: 3
   sceneName: Level_2
   gameManager: {fileID: 0}
 --- !u!1001 &383874438
