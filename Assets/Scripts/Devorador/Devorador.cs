@@ -90,7 +90,8 @@ public class Devorador : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            Turbo t = collision.gameObject.GetComponent<Turbo>();
+            t.CurrentEnergy = 0;
         }
     }
 
