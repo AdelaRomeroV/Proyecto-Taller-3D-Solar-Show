@@ -7,7 +7,7 @@ public class Complete_LevelBoss : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Victory");
         }
     }
 }
