@@ -17,8 +17,8 @@ public class CompleteTutorial : MonoBehaviour
         {
             if(gameManager != null) 
             {
-                gameManager.levels++;
-                if (gameManager.levels >= 1) { gameManager.levels = 1; }
+                if (gameManager.levels == 1) { gameManager.levels = 1; }
+                else { gameManager.FinishRace(); }
             }
         }
     }

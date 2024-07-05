@@ -16,6 +16,8 @@ public class ListaDeCheckpoints : MonoBehaviour
     private LapCounter lapcounter;
     [SerializeField] private string sceneName;
 
+    [SerializeField] GameManager gameManager;
+
     public static ListaDeCheckpoints Instance {  get { return instance; } }
     public void Start()
     {
@@ -34,7 +36,8 @@ public class ListaDeCheckpoints : MonoBehaviour
     private void Awake()
     {
         instance = this;
-      //  Aros[0].GetComponent<MeshRenderer>().material = next;
+        gameManager = FindAnyObjectByType<GameManager>();
+        //  Aros[0].GetComponent<MeshRenderer>().material = next;
     }
 
     public GameObject GetCurrentCheckpoint()
@@ -64,6 +67,11 @@ public class ListaDeCheckpoints : MonoBehaviour
                 count = 0;
                 if(laps==3)
                 {
+                    if (gameManager != null)
+                    {
+                        if (gameManager.levels == 2) { gameManager.levels = 2; }
+                        else { gameManager.FinishRace(); }
+                    }
                     SceneManager.LoadScene(sceneName);
                 }
             }

@@ -11,12 +11,9 @@ public class GameManager : MonoBehaviour
         sceneName = SceneManager.GetActiveScene().name;
         DontDestroyOnLoad(gameObject);
     }
-    void FinishRace()
+    public void FinishRace()
     {
         levels++;
     }
-    void Update()
-    {
 
-    }
 }
