@@ -599,7 +599,7 @@ MonoBehaviour:
     line: "Los encargados en Dise\xF1o son: "
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Nifty
-    line: 'Adela Romano
+    line: 'Adela Romero
 
       Fabiana Perez '
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
@@ -607,7 +607,7 @@ MonoBehaviour:
     line: 'Los encargados en Arte son: '
   - sprite: {fileID: 21300000, guid: e2204d2f6f88e374e914706d355b717c, type: 3}
     CharName: Nifty
-    line: "Adela Romano\nAndree Loayza \r\nFabiana Perez "
+    line: "Adela Romero\nAndree Loayza \r\nFabiana Perez "
   - sprite: {fileID: 21300000, guid: 15ed7560c740bcf49ba1aed600434729, type: 3}
     CharName: Qwark
     line: "Los encargados en Programaci\xF3n son: "
