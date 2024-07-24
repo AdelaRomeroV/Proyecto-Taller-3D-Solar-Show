@@ -29,13 +29,11 @@ public class ControladorTutorial : MonoBehaviour
     public bool Completo_MovimientoBasico;
     public bool Completo_Derrape;
     public bool Completo_Turbo;
-    public bool Completo_SideAttack;
     public bool Completo_RecargaEnergia;
     public bool PasarEscena;
 
     [Header("Scrips")]
     [SerializeField] GameObject Player;
-    [SerializeField] EnemiesControllerTutorial enemigos;
     Mov movScript;
     Turbo turboScript;
     [SerializeField] GameObject BarraDeEnergía;
@@ -53,10 +51,6 @@ public class ControladorTutorial : MonoBehaviour
     public int derrape = 0; //Necesita llegar a 5 esquinas derrapando para continuar
 
     [SerializeField][Range(0, 100)] float TurboGoal;
-
-    public int sideAttack = 0;
-    public bool Right_Pressed;
-    public bool Left_Pressed;
 
     [Header("Cambio de escena")]
     [SerializeField] string NombreDeEscena;
@@ -79,26 +73,6 @@ public class ControladorTutorial : MonoBehaviour
     {
         FaseControl();
 
-        if (Completo_SideAttack)
-        {
-            if (turboScript.CurrentEnergy > 15)
-            {
-                turboScript.canUseTurbo = true;
-                turboScript.CanAttackLeft = true;
-                turboScript.CanAttackRight = true;
-            }
-            else
-            {
-                turboScript.canUseTurbo = false;
-                turboScript.CanAttackLeft = false;
-                turboScript.CanAttackRight = false;
-            }
-        }
-        else
-        {
-            if (turboScript.CurrentEnergy < 30) turboScript.CurrentEnergy = 100;
-        }
-
         if (PasarEscena)
         {
             StartCoroutine(NextScene());
@@ -111,11 +85,9 @@ public class ControladorTutorial : MonoBehaviour
 
         else if (Completo_MovimientoBasico && !Completo_Derrape) Derrape();
 
-        else if (Completo_Derrape && !Completo_SideAttack) SideAttack();
+        else if (Completo_Derrape && !Completo_Turbo) Turbo();
 
-        else if (Completo_SideAttack && !Completo_Turbo) Turbo();
-
-        else if (Completo_SideAttack && !Completo_RecargaEnergia) EnergyCharge(); ;
+        else if (Completo_Turbo && !Completo_RecargaEnergia) EnergyCharge(); ;
     }
 
     void SpawnStraightPieces()
@@ -206,17 +178,6 @@ public class ControladorTutorial : MonoBehaviour
         SpawnTurboZone();
     }
 
-    void SideAttack()
-    {
-        turboScript.canUseTurbo = false;
-
-        if(enemigos.navesDestruidas >= 6)
-        {
-            Completo_SideAttack = true;
-        }
-
-        SpawnStraightPieces();
-    }
 
     void EnergyCharge()
     {
@@ -228,26 +189,9 @@ public class ControladorTutorial : MonoBehaviour
         SpawnHazardZone();
     }
 
-    public void ActiveSA()
-    {
-        turboScript.CanAttackLeft = true;
-        turboScript.CanAttackRight = true;
-    }
-
-    public void DeactiveSA()
-    {
-        turboScript.CanAttackLeft = false;
-        turboScript.CanAttackRight = false;
-    }
-
     public void GoingStraightFalse()
     {
         GoingStraight = false;
-    }
-
-    public void ActiveTurbo()
-    {
-        turboScript.canUseTurbo = true;
     }
 
     public void ChangeScene()

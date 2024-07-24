@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class Generador_Tutorial : GeneradorDePista
@@ -38,17 +36,12 @@ public class Generador_Tutorial : GeneradorDePista
             DriftDialogue();
 
         }
-        else if (Controlador.Completo_SideAttack && Controlador.dialogo == 2) //Dialogo Turbo (2)
+        else if (Controlador.Completo_Turbo && Controlador.dialogo == 2) //Dialogo Turbo (2)
         {
             GenerateDialogue();
 
         }
-        else if (Controlador.Completo_Turbo && Controlador.dialogo == 3) //Dialogo Energia (3)
-        {
-            GenerateDialogue();
-
-        }
-        else if (Controlador.Completo_RecargaEnergia && Controlador.dialogo == 4) //Dialogo Final (4)
+        else if (Controlador.Completo_RecargaEnergia && Controlador.dialogo == 3) //Dialogo Energia (3)
         {
             DriftDialogue();
 

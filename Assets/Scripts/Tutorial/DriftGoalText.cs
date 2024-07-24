@@ -4,7 +4,6 @@ using UnityEngine;
 public class DriftGoalText : MonoBehaviour
 {
     [SerializeField] ControladorTutorial controlador;
-    [SerializeField] EnemiesControllerTutorial enemiesController;
     TextMeshProUGUI text;
     [SerializeField] bool isDrift;
 
@@ -25,13 +24,6 @@ public class DriftGoalText : MonoBehaviour
             if(controlador.derrape <= 5)
             {
                 text.text = $"Derrapes Exitosos:{controlador.derrape}/5";
-            }
-        }
-        else
-        {
-            if(enemiesController.navesDestruidas <= 6)
-            {
-                text.text = $"Naves Destruídas: {enemiesController.navesDestruidas}/6";
             }
         }
     }
