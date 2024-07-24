@@ -32,7 +32,6 @@ public class PlayerAnimations : MonoBehaviour
         Drive();
         Freno();
         Turbo();
-        SideKick();
         Dead();
         
     }
@@ -97,12 +96,6 @@ public class PlayerAnimations : MonoBehaviour
         {
             Instantiate(TurboEffect, Posiciones[0].position, Posiciones[0].rotation);
         }
-    }
-
-    void SideKick()
-    {
-        anim.SetBool("RightAtk", turbo.RightAtacking);
-        anim.SetBool("LeftAtk", turbo.LeftAttaking);
     }
 
     void GetDamage()

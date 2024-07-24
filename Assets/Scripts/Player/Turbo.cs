@@ -18,16 +18,6 @@ public class Turbo : MonoBehaviour
     public bool Charging;
     [NonSerialized] public bool canUseTurbo = true;
 
-    [Header("SideKick Variables")]
-    [SerializeField] GameObject RightBox;
-    [SerializeField] GameObject LeftBox;
-    public bool isKicking;
-
-    public bool RightAtacking;
-    public bool LeftAttaking;
-    [NonSerialized] public bool CanAttackRight = true;
-    [NonSerialized] public bool CanAttackLeft = true;
-
     [Header("Audio")]
     public AudioClip audioTurbo;
     public AudioClip audioExplosion;
@@ -62,7 +52,6 @@ public class Turbo : MonoBehaviour
         BarSmoothness();
         UsingTurbo();
         ReloadBar();
-        SideKick();
         Energia();
         InputBuffer();
     }
@@ -147,45 +136,6 @@ public class Turbo : MonoBehaviour
         {
             CurrentEnergy -= 0.08f;
         }
-    }
-
-    public void SideKick()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && !isKicking && CurrentEnergy > 20 && CanAttackLeft)
-        {
-            audioSource.clip = audioAtaque; 
-            audioSource.Play();
-
-            RightBox.SetActive(true);
-
-            isKicking = true;
-            CurrentEnergy -= 10;
-            RightAtacking = true;
-
-            Invoke("DisableKicking", 0.55f);
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && !isKicking && CurrentEnergy > 20 && CanAttackRight)
-        {
-            audioSource.clip = audioAtaque; 
-            audioSource.Play();
-
-            LeftBox.SetActive(true);
-
-            isKicking = true;
-            CurrentEnergy -= 10;
-            LeftAttaking = true;
-
-            Invoke("DisableKicking", 0.55f);
-        }
-    }
-
-    public void DisableKicking()
-    {
-        isKicking = false;
-        RightBox.SetActive(false);
-        LeftBox.SetActive(false);
-        LeftAttaking = false;
-        RightAtacking = false;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -6,12 +6,6 @@ public class EndFaseText : MonoBehaviour
     ControladorTutorial controlador;
     TextMeshProUGUI text;
 
-    [SerializeField] bool move;
-    [SerializeField] bool drift;
-    [SerializeField] bool turbo;
-    [SerializeField] bool side;
-    [SerializeField] bool energy;
-
     private void Start()
     {
         controlador = GameObject.Find("Controlador").GetComponent<ControladorTutorial>();
@@ -25,9 +19,10 @@ public class EndFaseText : MonoBehaviour
 
     private void Update()
     {
-        if (move && controlador.Completo_MovimientoBasico) changeText();
-        else if(drift && controlador.Completo_Derrape) changeText();
-        else if(turbo && controlador.Completo_Turbo) changeText();
-        else if(energy && controlador.Completo_RecargaEnergia) changeText();
+        if (controlador.Completo_RecargaEnergia)
+        {
+            changeText();
+            Destroy(this);
+        }
     }
 }
