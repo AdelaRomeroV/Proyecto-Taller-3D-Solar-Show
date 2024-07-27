@@ -77,7 +77,6 @@ GameObject:
   - component: {fileID: 6349926751746559821}
   - component: {fileID: 2399905109627399491}
   - component: {fileID: 4757247443692825778}
-  - component: {fileID: 4261969265300859751}
   m_Layer: 0
   m_Name: SK-Left
   m_TagString: Untagged
@@ -163,21 +162,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 1, z: 4}
   m_Center: {x: 1.5, y: 0, z: 0}
---- !u!114 &4261969265300859751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366727128739714998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1856d1ecb185c445befcb55f875f1ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemigo:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &3121434760774014064
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +332,6 @@ GameObject:
   - component: {fileID: 5706794793412679940}
   - component: {fileID: 2961156634474628512}
   - component: {fileID: 8147773546945999488}
-  - component: {fileID: 8109837137377246073}
   m_Layer: 0
   m_Name: SK-Right
   m_TagString: Untagged
@@ -434,21 +417,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 1, z: 4}
   m_Center: {x: -1.5, y: 0, z: 0}
---- !u!114 &8109837137377246073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4462197399623115039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1856d1ecb185c445befcb55f875f1ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemigo:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &5509075943495538497
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +653,7 @@ GameObject:
   - component: {fileID: 404099849623186709}
   - component: {fileID: 1647893477261772610}
   - component: {fileID: 2533679767499185574}
+  - component: {fileID: 4842636301293006359}
   m_Layer: 0
   m_Name: ShipModel
   m_TagString: Untagged
@@ -799,6 +768,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4842636301293006359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497103792198194710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba17c4297f14cc46bcedd469d4c7b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9055682539409420552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,11 +999,6 @@ MonoBehaviour:
   TurboActive: 0
   CurrentEnergy: 100
   Charging: 0
-  RightBox: {fileID: 4462197399623115039}
-  LeftBox: {fileID: 2366727128739714998}
-  isKicking: 0
-  RightAtacking: 0
-  LeftAttaking: 0
   audioTurbo: {fileID: 8300000, guid: 648fb8a39ce13064ba3711bf8cd8eca7, type: 3}
   audioExplosion: {fileID: 8300000, guid: aa946111d86c4974e8e8bc1bcdd4f62b, type: 3}
   audioAtaque: {fileID: 8300000, guid: ec630af4174e34b478e2914caff825ee, type: 3}

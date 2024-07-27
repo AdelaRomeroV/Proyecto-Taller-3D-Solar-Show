@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-
-{
-    //[SerializeField] private Material normal;
-    [SerializeField] private Material wrongDirection;
+{        
+    private Material material;
+    private void Awake()
+    {
+        material = GetComponent<MeshRenderer>().material;
+    }
+   
     void Update()
     {
         CheckAngle();
@@ -14,15 +17,25 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckAngle()
     {
-        Vector3.Angle(transform.forward, ListaDeCheckpoints.Instance.GetCurrentCheckpoint().transform.up);
-        if (Vector3.Angle(transform.forward,ListaDeCheckpoints.Instance.GetCurrentCheckpoint().transform.up)>90)
+        Transform Checkpoint = ListaDeCheckpoints.Instance.GetCurrentCheckpoint().transform;
+        float angulo = Vector3.Dot(Checkpoint.forward, transform.right);
+        if(angulo<-0.5)
         {
-            GetComponent<MeshRenderer>().material = wrongDirection;
-
+            material.color = Color.red;
         }
         else
         {
-           // GetComponent<MeshRenderer>().material = normal;
+            material.color = Color.white;
         }
+        //Vector3.Angle(transform.forward, ListaDeCheckpoints.Instance.GetCurrentCheckpoint().transform.up);
+        //if (Vector3.Angle(transform.forward,ListaDeCheckpoints.Instance.GetCurrentCheckpoint().transform.up)>90)
+        //{
+        //    GetComponent<MeshRenderer>().material = wrongDirection;
+
+        //}
+        //else
+        //{
+        //   // GetComponent<MeshRenderer>().material = normal;
+        //}
     }
 }
