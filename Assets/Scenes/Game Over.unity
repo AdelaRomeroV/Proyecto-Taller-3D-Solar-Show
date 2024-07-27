@@ -822,7 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   button: {fileID: 464256278}
-  sceneName: MainMenu
+  sceneName: LevelSelect
 --- !u!1 &492713303
 GameObject:
   m_ObjectHideFlags: 0

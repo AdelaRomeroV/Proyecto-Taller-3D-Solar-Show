@@ -1,13 +1,13 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Complete_LevelBoss : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Victory");
+            EndLevel end = GameObject.Find("EndLevel").GetComponent<EndLevel>();
+            end.ChangeLevel = true;
         }
     }
 }

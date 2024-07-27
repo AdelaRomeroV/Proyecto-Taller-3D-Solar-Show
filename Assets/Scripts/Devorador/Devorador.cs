@@ -16,7 +16,6 @@ public class Devorador : MonoBehaviour
     public LayerMask whatIsPlayer;
     public CinemachineVirtualCamera shake;
 
-    public GameObject prefabMetoritos;
     public Transform player;
 
     public float intervalAtack;
@@ -77,7 +76,6 @@ public class Devorador : MonoBehaviour
             shake.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 2;
 
             yield return new WaitForSeconds(intervalAnti);
-            if (player != null) { Instantiate(prefabMetoritos, new Vector3(player.position.x, player.position.y + 20, player.position.z), Quaternion.identity); }
 
             shake.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
             shake.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0;

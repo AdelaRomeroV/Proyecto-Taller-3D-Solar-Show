@@ -73,7 +73,8 @@ public class ListaDeCheckpoints : MonoBehaviour
                         if (gameManager.levels == 2) { gameManager.levels = 2; }
                         else { gameManager.FinishRace(); }
                     }
-                    SceneManager.LoadScene(sceneName);
+                    EndLevel end = GameObject.Find("EndLevel").GetComponent<EndLevel>();
+                    end.ChangeLevel = true;
                 }
             }
         }
