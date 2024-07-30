@@ -125,22 +125,22 @@ public class Mov : MonoBehaviour
                 {
                     if (Input.GetKey(KeyCode.D))
                     {
-                        anguloGiro *= 0.2f;
+                        anguloGiro *= 0.55f;
                     }
                     else if (horizontalInput < 0 && velocidadActual > 0)
                     {
-                        anguloGiro *= 1.5f;
+                        anguloGiro *= 1.55f;
                     }
                 }
                 else if (RightDrifting)
                 {
                     if (Input.GetKey(KeyCode.A))
                     {
-                        anguloGiro *= 0.2f;
+                        anguloGiro *= 0.55f;
                     }
-                    else if (horizontalInput < 0 && velocidadActual > 0)
+                    else if (horizontalInput > 0 && velocidadActual > 0)
                     {
-                        anguloGiro *= 1.5f;
+                        anguloGiro *= 1.55f;
                     }
                 }
             }
@@ -220,6 +220,8 @@ public class Mov : MonoBehaviour
     {
         boostActivado = false;
         boostOn = false;
+
+        if(gameObject.activeSelf)
         StartCoroutine(ReducirVelocidadMaxima());
     }
 
