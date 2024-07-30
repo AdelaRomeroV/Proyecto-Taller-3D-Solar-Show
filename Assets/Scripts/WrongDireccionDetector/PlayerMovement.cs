@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Transform Checkpoint = ListaDeCheckpoints.Instance.GetCurrentCheckpoint().transform;
         float angulo = Vector3.Dot(Checkpoint.forward, transform.right);
-        if(angulo<-0.5)
+        if(angulo<-0.8)
         {
             material.color = Color.red;
         }
