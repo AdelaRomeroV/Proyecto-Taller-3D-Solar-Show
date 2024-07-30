@@ -21,9 +21,9 @@ public class DriftGoalText : MonoBehaviour
     {
         if (isDrift)
         {
-            if(controlador.derrape <= 5)
+            if(controlador.derrape <= 3)
             {
-                text.text = $"Derrapes Exitosos:{controlador.derrape}/5";
+                text.text = $"Derrapes Exitosos:{controlador.derrape}/3";
             }
         }
     }

@@ -30,7 +30,6 @@ public class ControladorTutorial : MonoBehaviour
     public bool Completo_Derrape;
     public bool Completo_Turbo;
     public bool Completo_RecargaEnergia;
-    public bool PasarEscena;
 
     [Header("Scrips")]
     [SerializeField] GameObject Player;
@@ -52,9 +51,6 @@ public class ControladorTutorial : MonoBehaviour
 
     [SerializeField][Range(0, 100)] float TurboGoal;
 
-    [Header("Cambio de escena")]
-    [SerializeField] string NombreDeEscena;
-
     //0: Derrape
     //1: Side Attack
     //2: Turbo
@@ -72,11 +68,6 @@ public class ControladorTutorial : MonoBehaviour
     private void Update()
     {
         FaseControl();
-
-        if (PasarEscena)
-        {
-            StartCoroutine(NextScene());
-        }
     }
 
     void FaseControl()
@@ -159,7 +150,7 @@ public class ControladorTutorial : MonoBehaviour
 
     void Derrape()
     {
-        if (derrape == 5)
+        if (derrape == 3)
         { 
             Completo_Derrape = true;
         }
@@ -192,16 +183,6 @@ public class ControladorTutorial : MonoBehaviour
     public void GoingStraightFalse()
     {
         GoingStraight = false;
-    }
-
-    public void ChangeScene()
-    {
-        StartCoroutine(NextScene());
-    }
-    IEnumerator NextScene()
-    {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(NombreDeEscena);
     }
     
 }
