@@ -32,18 +32,14 @@ public class EndLevel : MonoBehaviour
     {
         pause.CanUsePause = false;
         Time.timeScale = 1;
-        Turbo t = GameObject.Find("Player ").GetComponent<Turbo>();
+        GameObject player = GameObject.FindWithTag("Player");
+        Turbo t = player.GetComponent<Turbo>();
         t.CurrentEnergy = 100;
 
         yield return new WaitForSeconds(0.5f);
         fade.Play("Fade-Out");
 
         yield return new WaitForSeconds(1.5f);
-        if (GameObject.Find("Player ") == null)
-        {
-            GameObject oj = GameObject.Find("Player ");
-            oj.SetActive(false);
-        }
         LoadImage.SetActive(true);
 
         yield return new WaitForSeconds(WaitTime);

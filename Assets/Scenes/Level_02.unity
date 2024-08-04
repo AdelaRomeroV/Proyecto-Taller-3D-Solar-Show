@@ -527,7 +527,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.7
+  m_fontSize: 43.1
   m_fontSizeBase: 20.97
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2297,6 +2297,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee1359016ace4b439a7f472f4a146dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &206513855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7595148380849708920, guid: 472ae1c8a2f0f2e46b16247e7e55b680, type: 3}
+  m_PrefabInstance: {fileID: 206513851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e613e828086cc7048922523b32f2b464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &213347042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5224111315623057990, guid: 665981c25bf68284d8ffc7042e2e5af5, type: 3}
@@ -2834,7 +2845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235735024}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0020502026, y: 0.98453283, z: -0.17480738, w: -0.011546949}
+  m_LocalRotation: {x: -0.0020501958, y: 0.98453283, z: -0.17480735, w: -0.011546911}
   m_LocalPosition: {x: 0.1172774, y: 7.294, z: 5.8986273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2926,7 +2937,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 18.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6420,7 +6431,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.2
+  m_fontSize: 66.65
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8185,6 +8196,10 @@ PrefabInstance:
       propertyPath: cocheRenderer
       value: 
       objectReference: {fileID: 1390199273}
+    - target: {fileID: 4842636301293006359, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
+      propertyPath: alerta
+      value: 
+      objectReference: {fileID: 206513855}
     - target: {fileID: 5645825292631174950, guid: 2ad53e2b0d80ead498cd2c4e8bedf292, type: 3}
       propertyPath: m_TagString
       value: EnemyLeft
@@ -15164,7 +15179,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 15.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17936,8 +17951,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595042341}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0020502026, y: 0.98453283, z: -0.17480738, w: -0.011546949}
-  m_LocalPosition: {x: 0.3374766, y: 10.736546, z: 15.28481}
+  m_LocalRotation: {x: -0.0020501958, y: 0.98453283, z: -0.17480735, w: -0.011546911}
+  m_LocalPosition: {x: 0.33747587, y: 10.736546, z: 15.28481}
   m_LocalScale: {x: 1.2511902, y: 1.9424587, z: 0.40040955}
   m_ConstrainProportionsScale: 0
   m_Children: []

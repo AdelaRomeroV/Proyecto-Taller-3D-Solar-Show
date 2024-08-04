@@ -6,12 +6,11 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {        
     private Material material;
-
+    [SerializeField] AlertaUI alerta;
     //public AlertaUI alertaUI;
     private void Awake()
     {
         material = GetComponent<MeshRenderer>().material;
-      // alertaUI = GetComponent<AlertaUI>();
     }
 
     void Update()
@@ -26,11 +25,11 @@ public class PlayerMovement : MonoBehaviour
         if(angulo<-0.8)
         {
             material.color = Color.red;
-           // alertaUI.UpdateText("Dirección Contraria");
+            alerta.UpdateText("Dirección Contraria");
         }
         else
         {
-
+            alerta.UpdateText(string.Empty);
             material.color = Color.white;
         }
         //Vector3.Angle(transform.forward, ListaDeCheckpoints.Instance.GetCurrentCheckpoint().transform.up);

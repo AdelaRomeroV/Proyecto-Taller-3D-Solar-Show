@@ -513,7 +513,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.25
+  m_fontSize: 15.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -718,7 +718,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 50, y: 12.81, z: 14.3}
+  m_Size: {x: 75, y: 12.81, z: 14.3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &223613470
 GameObject:
@@ -1751,7 +1751,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 50, y: 12.81, z: 14.3}
+  m_Size: {x: 75.36, y: 12.81, z: 14.3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &395950639
 GameObject:
@@ -5230,7 +5230,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 50, y: 12.81, z: 14.3}
+  m_Size: {x: 75, y: 12.81, z: 14.3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &978556565 stripped
 Transform:
@@ -7516,7 +7516,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 50, y: 12.81, z: 14.3}
+  m_Size: {x: 75, y: 12.81, z: 14.3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1520030772
 GameObject:
@@ -8506,7 +8506,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 50, y: 12.81, z: 14.3}
+  m_Size: {x: 75, y: 12.81, z: 14.3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1708803962 stripped
 Transform:
@@ -8735,14 +8735,12 @@ MonoBehaviour:
   Completo_Derrape: 0
   Completo_Turbo: 0
   Completo_RecargaEnergia: 0
-  PasarEscena: 0
   Player: {fileID: 1918865576}
   "BarraDeEnerg\xEDa": {fileID: 863577180}
   dialogo: 0
   movimientoBasico: 0
   derrape: 0
   TurboGoal: 20
-  NombreDeEscena: Level_01
 --- !u!4 &1748706873
 Transform:
   m_ObjectHideFlags: 0
@@ -10216,7 +10214,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.55
+  m_fontSize: 34.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
