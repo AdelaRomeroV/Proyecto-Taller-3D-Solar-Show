@@ -14,6 +14,14 @@ public class EndLevel : MonoBehaviour
     [SerializeField] Pausa pause;
     public bool ChangeLevel = false;
 
+    [SerializeField] private int levelId;
+    private InsertLevelTimeController insertController;
+
+    private void Awake()
+    {
+        insertController = GetComponent<InsertLevelTimeController>();
+    }
+
     private void Update()
     {
         if (ChangeLevel)
@@ -30,6 +38,9 @@ public class EndLevel : MonoBehaviour
 
     IEnumerator ChangeScene()
     {
+        int tiempoUsado = Mathf.RoundToInt(Time.timeSinceLevelLoad);
+        insertController.SaveTime(PlayerIdManager.currentPlayerId, levelId, tiempoUsado, null);
+
         pause.CanUsePause = false;
         Time.timeScale = 1;
         GameObject player = GameObject.FindWithTag("Player");

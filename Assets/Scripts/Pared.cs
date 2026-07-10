@@ -22,7 +22,7 @@ public class Pared : MonoBehaviour
                 Vector3 pushDirection = -collision.transform.forward;
                 pushDirection.Normalize();
                 autoRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
-                autoRigidbody.velocity = Vector3.zero;
+                autoRigidbody.linearVelocity = Vector3.zero;
 
                 player.velocidadActual = 0;
                 player.onStun = true;

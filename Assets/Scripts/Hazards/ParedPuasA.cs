@@ -75,7 +75,7 @@ public class ParedPuasA : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
             {
                 player.velocidadActual = 0;
-                player.rb.velocity = Vector3.zero;
+                player.rb.linearVelocity = Vector3.zero;
                 player.onStun = true;
                 player.Invoke("OffStun", 1f);
                 StartCoroutine(DesactivarColision());

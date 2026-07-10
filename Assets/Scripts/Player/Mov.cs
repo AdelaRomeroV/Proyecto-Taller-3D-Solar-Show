@@ -208,7 +208,7 @@ public class Mov : MonoBehaviour
     {
         
         Vector3 velocidad = transform.forward * velocidadActual;
-        rb.velocity = new Vector3(velocidad.x, rb.velocity.y, velocidad.z);
+        rb.linearVelocity = new Vector3(velocidad.x, rb.linearVelocity.y, velocidad.z);
 
         if (!boostActivado)
         {

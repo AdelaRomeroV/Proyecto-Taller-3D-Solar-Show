@@ -14,7 +14,7 @@ public class Meteorito : MonoBehaviour
     }
     private void Start()
     {
-        meteorRb.velocity += Vector3.down * Random.Range(mixSpeed, maxSpeed); 
+        meteorRb.linearVelocity += Vector3.down * Random.Range(mixSpeed, maxSpeed); 
     }
 
     private void OnCollisionEnter(Collision collision)

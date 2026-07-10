@@ -16,14 +16,14 @@ public class Controlador : MonoBehaviour
     {
 
 
-        temporizador= GameObject.Find("Temporizador").GetComponent<TemporizadorUI>();
+        temporizador = GameObject.Find("Temporizador").GetComponent<TemporizadorUI>();
         temporizador.UpdateText(limiteTiempo);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(tiempoActivado)
+        if (tiempoActivado)
         {
             CambiarContador();
         }
@@ -32,12 +32,12 @@ public class Controlador : MonoBehaviour
 
     private void CambiarContador()
     {
-        tiempoActual-= Time.deltaTime;
+        tiempoActual -= Time.deltaTime;
 
         temporizador.UpdateText(tiempoActual);
 
 
-        if(tiempoActual <= 0)
+        if (tiempoActual <= 0)
         {
             vida.GetComponent<ControlDeVida>().GetDamage = true;
             turbo.GetComponent<Turbo>().GestionarEnergia(100);
@@ -48,7 +48,7 @@ public class Controlador : MonoBehaviour
     }
     private void CambiarTemporizador(bool estado)
     {
-        tiempoActivado= estado;
+        tiempoActivado = estado;
     }
     public void ActivarTemporizador()
     {
@@ -58,5 +58,10 @@ public class Controlador : MonoBehaviour
     public void DesactivarTemporizador()
     {
         CambiarTemporizador(false);
+    }
+
+    public float GetTiempoUsado()
+    {
+        return limiteTiempo - tiempoActual;
     }
 }

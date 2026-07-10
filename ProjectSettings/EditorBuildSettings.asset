@@ -33,9 +33,19 @@ EditorBuildSettings:
     path: Assets/Scenes/Pantalla de opciones.unity
     guid: a6fa5b3a26673ca449c24015c356c16f
   - enabled: 1
+    path: Assets/Scripts/Guillermo/EscenasG/Ranking.unity
+    guid: f9b51b59941b612419b64231efbc40d7
+  - enabled: 1
+    path: Assets/Scripts/Guillermo/EscenasG/Record_Niveles.unity
+    guid: fdb4cacf5f6cb5e4699c271a3518b11c
+  - enabled: 1
+    path: Assets/Scripts/Guillermo/EscenasG/Tiempo_Total.unity
+    guid: 48dbbfb1f2422234abb83dee8be44f11
+  - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: 6692c478aad7ffa41b4e2b9571a4a60b
   - enabled: 1
     path: Assets/Scenes/Victory.unity
     guid: 487b44c1a2a7f12498e236b5457e87ec
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
